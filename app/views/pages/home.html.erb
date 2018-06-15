@@ -1,0 +1,28 @@
+<h2>Projects</h2>
+<% @projects.each do |project| %>
+  <div>
+    <h3><%= project.name %></h3>
+    <% project.pictures.each do |img| %>
+      <%= cl_image_tag img.url %>
+    <% end %>
+  </div>
+<% end %>
+
+<h2>Offers</h2>
+<% @offers.each do |offer| %>
+  <div>
+    <h3><%= offer.name %></h3>
+    <% offer.pictures.each do |img| %>
+      <%= cl_image_tag img.url %>
+    <% end %>
+  </div>
+<% end %>
+
+<h2>Company</h2>
+<p><%= @company_values.content %></p>
+
+<h2>Histoire de l'entreprise</h2>
+<p><%= @history.first.content %></p>
+
+<h2>Savoir faire</h2>
+<p><%= @company_know_hows.first.content %></p>

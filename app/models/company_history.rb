@@ -1,0 +1,2 @@
+class CompanyHistory < ApplicationRecord
+end
