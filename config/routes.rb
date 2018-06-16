@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'your_project', to: 'pages#your_project'
   get 'contact', to: 'pages#contact'
   get 'commitments', to: 'pages#commitments'
+  get 'dashboard', to: 'pages#dashboard'
 end
 
 

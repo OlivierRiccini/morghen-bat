@@ -5,6 +5,7 @@
 
 <h2>Histoire de l'entreprise</h2>
 <p><%= @history.first.content %></p>
+<%= cl_image_tag @history.first.pictures.first.url %>
 
 <h2>Savoir faire</h2>
 <p><%= @company_know_hows.first.content %></p>

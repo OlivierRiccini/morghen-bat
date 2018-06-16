@@ -19,4 +19,6 @@ class PagesController < ApplicationController
   def commitments
   end
 
+  def dashboard
+  end
 end
