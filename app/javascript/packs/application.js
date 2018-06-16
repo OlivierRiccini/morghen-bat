@@ -8,3 +8,7 @@
 // layout file, like app/views/layouts/application.html.erb
 
 console.log('Hello World from Webpacker')
+
+$('#company-sub-categories').click(function() {
+  console.log('coucou!');
+});

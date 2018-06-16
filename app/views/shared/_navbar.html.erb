@@ -1,7 +1,13 @@
-<div class="navbar">
-  <%= link_to 'LOGO', root_path %>
-  <ul>
-    <li><%= link_to "L'ENTREPRISE", root_path %></li>
+<div class="custom-navbar">
+  <%= link_to 'MORGHEN BAT', root_path, class: 'logo' %>
+  <ul class="nav-list">
+    <li><%= link_to "L'ENTREPRISE", root_path, id: 'company-item' %>
+      <ul id="company-sub-categories">
+        <li>Savoir-Faire</li>
+        <li>Valeurs</li>
+        <li>Localisation</li>
+      </ul>
+    </li>
     <li><%= link_to "RÉALISATIONS", realizations_path %></li>
     <li><%= link_to "VOTRE PROJET", your_project_path %></li>
     <li><%= link_to "CONTACT", contact_path %></li>

@@ -1,9 +1,11 @@
-<h2>Histoire de l'entreprise</h2>
-<p><%= @history.first.content %></p>
-<%= cl_image_tag @history.first.pictures.first.url %>
+<div class="container">
+  <h2>Histoire de l'entreprise</h2>
+  <p><%= @history.first.content %></p>
+  <%= cl_image_tag @history.first.pictures.first.url %>
 
-<h2>Savoir faire</h2>
-<p><%= @company_know_hows.first.content %></p>
+  <h2>Savoir faire</h2>
+  <p><%= @company_know_hows.first.content %></p>
 
-<h2>Nos valeurs</h2>
-<p><%= @company_values.content %></p>
+  <h2>Nos valeurs</h2>
+  <p><%= @company_values.content %></p>
+</div>
