@@ -1,22 +1,22 @@
 class PagesController < ApplicationController
   def home
-    @projects = Project.all
-    @offers = Offer.all
-    @company_values = CompanyValue.first
-    @history = CompanyHistory.all
     @company_know_hows = CompanyKnowHow.all
-  end
-
-  def company
+    @history = CompanyHistory.all
+    @company_values = CompanyValue.first
   end
 
   def realizations
+    @projects = Project.all
   end
 
-  def projects
+  def your_project
+    @offers = Offer.all
   end
 
   def contact
+  end
+
+  def commitments
   end
 
 end
