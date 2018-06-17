@@ -15,16 +15,19 @@
   </ul>
 
   <ul class="nav-list">
-    <li><%= link_to "L'ENTREPRISE", root_path, id: 'company-item' %>
-      <ul id="company-sub-categories">
-        <li>Savoir-Faire</li>
-        <li>Valeurs</li>
-        <li>Localisation</li>
-      </ul>
+    <li class="nav-item" data-item-name="home">
+      <div id='company-item'>
+        <%= link_to "L'ENTREPRISE", root_path %>
+        <ul id="company-sub-categories">
+          <li>Savoir-Faire</li>
+          <li>Valeurs</li>
+          <li>Localisation</li>
+        </ul>
+      </div>
     </li>
-    <li class="nav-item"><%= link_to "RÉALISATIONS", realizations_path %></li>
-    <li class="nav-item"><%= link_to "VOTRE PROJET", your_project_path %></li>
-    <li class="nav-item"><%= link_to "CONTACT", contact_path %></li>
-    <li class="nav-item"><%= link_to "ENGAGEMENTS", commitments_path %></li>
+    <li class="nav-item" data-item-name="realizations"><%= link_to "RÉALISATIONS", realizations_path %></li>
+    <li class="nav-item" data-item-name="your-project"><%= link_to "VOTRE PROJET", your_project_path %></li>
+    <li class="nav-item" data-item-name="contact"><%= link_to "CONTACT", contact_path %></li>
+    <li class="nav-item" data-item-name="commitments"><%= link_to "ENGAGEMENTS", commitments_path %></li>
   </ul>
 </div>

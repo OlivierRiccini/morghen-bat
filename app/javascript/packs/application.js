@@ -19,4 +19,13 @@ $('.nav-item').hover(function() {
 
 $('#dropdown-menu-btn').click(function() {
   $('.nav-list-small-screen').slideToggle();
-})
+});
+
+const page = document.querySelector(".page");
+const navItems = document.querySelectorAll(".nav-item");
+
+navItems.forEach(function(navItem) {
+  if ( navItem.dataset.itemName == page.dataset.pageName) {
+    navItem.classList.add('nav-item-active');
+  };
+});
