@@ -16,24 +16,34 @@
   padding-left: 0;
   width: 60%;
   margin-bottom: 0;
+  font-size: 14px;
   li a {
     color: $black;
+    letter-spacing: 2px;
+    transition: all 0.2s;
     &:hover {
       text-decoration: none;
-      color: $black;
-    }
+    } 
   }
+}
+
+.nav-item-active {
+  text-decoration: none;
+  color: $black;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 4px;
+  display: block;
 }
 
 .logo {
   display: flex;
-  height: 150px;
-  width: 200px;
+  height: 120px;
+  width: 160px;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
-  color: $black;
-  background-color: $red;
+  font-size: 19px;
+  color: #3c3c3c;
+  background-color: #FF5B5B;
   border-radius: 3px;
   &:hover {
     text-decoration: none;
@@ -43,4 +53,10 @@
 
 #company-sub-categories {
   display: none;
+  position: absolute;
+  list-style: none;
+  padding: 7px;
+  font-size: 13px;
+  line-height: 2;
+  letter-spacing: 1.5px;
 }
