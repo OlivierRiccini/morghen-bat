@@ -16,3 +16,7 @@ $('#company-item, #company-sub-categories').hover(function() {
 $('.nav-item').hover(function() {
   $(this).toggleClass('nav-item-active');
 });
+
+$('#dropdown-menu-btn').click(function() {
+  $('.nav-list-small-screen').slideToggle();
+})
