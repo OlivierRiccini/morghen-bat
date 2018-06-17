@@ -1,1 +1,30 @@
 // Specific CSS for your home-page
+.section {
+  height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+}
+
+.section-history {
+  p {
+    border-left: 1px solid #000;
+    padding-left: 25px;
+  };
+  img {
+    width: 100%;
+    position: relative;
+    top: 100px;
+  }
+}
+
+.section-values {
+  .col-xs-12 {
+    text-align: center;
+  };
+  img {
+    width: 150px;
+  };
+  p {
+    margin-top: 20px;
+  }
+}

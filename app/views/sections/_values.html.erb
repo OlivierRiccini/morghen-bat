@@ -1,1 +1,8 @@
-<h1>Values</h1>
+<div class="row">
+  <% @company_values.each do |value| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <%= cl_image_tag value.icon %>
+      <p><%= value.content %></p>
+    </div>
+  <% end %>
+</div>
