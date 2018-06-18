@@ -74,11 +74,13 @@ popularised in the 1960s with the release of Letraset sheets containing Lorem Ip
 passages, and more recently with desktop publishing software like Aldus PageMaker
 including versions of Lorem Ipsum.")
 
-CompanyValue.create(content: "Lorem Ipsum is simply dummy text of the printing
-and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-ever since the 1500s, when an unknown printer took a galley of type and scrambled
-it to make a type specimen book.")
-
+3.times do 
+  new_value = CompanyValue.new(content: "Lorem Ipsum is simply dummy text of the printing
+  and typesetting industry. An unknown printer took a galley of type and scrambled
+  it to make a type specimen book.")
+  new_value.remote_icon_url = 'http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg'
+  new_value.save
+end
 
 projects.each do |project|
   new_project = Project.create(name: project[:name], location: project[:location], category: project[:category])
