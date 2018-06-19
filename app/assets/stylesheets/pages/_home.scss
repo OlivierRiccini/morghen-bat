@@ -5,6 +5,8 @@
   align-items: center;
 }
 
+// SECTION 
+
 .section-history {
   p {
     border-left: 1px solid #000;
@@ -17,6 +19,8 @@
   }
 }
 
+// SECTION 
+
 .section-values {
   .col-xs-12 {
     text-align: center;
@@ -28,3 +32,38 @@
     margin-top: 20px;
   }
 }
+
+// SECTION LOCALIIZATION 
+
+.guarantee-1, .guarantee-2 {
+  display: flex;
+  align-items: center;
+  padding: 60px; 
+  h4 {
+    margin-left: 20px;
+  }
+}
+
+.map {
+  height: 350px;
+  width: 500px;
+  background-size: cover;
+  .dom-tom {
+    display: block;
+    padding: 10px;
+    background: white;
+    max-width: fit-content;
+    border-radius: 2px;
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+  }
+}
+
+.section-localization .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
