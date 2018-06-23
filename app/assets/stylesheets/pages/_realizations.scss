@@ -1,0 +1,43 @@
+.page-realizations {
+  height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  .row {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.project-details-hover-display {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+  color: #fff;
+  background: linear-gradient(rgba(247, 86, 86, 0.7), rgba(247, 86, 86, 0.7));
+  h3 {
+    font-size: 18px;
+    letter-spacing: 2px;
+  };
+}
+
+.project-details-hover-display a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-size: 16px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  &:hover {
+    margin-right: 5px;
+  }
+}
+
+.page-realizations .row .col-xs-6 {
+  height: 210px;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
