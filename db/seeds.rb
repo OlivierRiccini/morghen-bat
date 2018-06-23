@@ -74,7 +74,7 @@ popularised in the 1960s with the release of Letraset sheets containing Lorem Ip
 passages, and more recently with desktop publishing software like Aldus PageMaker
 including versions of Lorem Ipsum.")
 
-3.times do 
+3.times do
   new_value = CompanyValue.new(content: "Lorem Ipsum is simply dummy text of the printing
   and typesetting industry. An unknown printer took a galley of type and scrambled
   it to make a type specimen book.")
@@ -82,12 +82,14 @@ including versions of Lorem Ipsum.")
   new_value.save
 end
 
-projects.each do |project|
-  new_project = Project.create(name: project[:name], location: project[:location], category: project[:category])
-  project[:picture].each do |pic|
-    new_picture = Picture.new(pic_duty: new_project)
-    new_picture.remote_url_url = pic
-    new_picture.save
+2.times do
+  projects.each do |project|
+    new_project = Project.create(name: project[:name], location: project[:location], category: project[:category])
+    project[:picture].each do |pic|
+      new_picture = Picture.new(pic_duty: new_project)
+      new_picture.remote_url_url = pic
+      new_picture.save
+    end
   end
 end
 

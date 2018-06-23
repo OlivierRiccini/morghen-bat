@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
   get 'commitments', to: 'pages#commitments'
   get 'dashboard', to: 'pages#dashboard'
+
+  resources :projects, only: [ :show ]
 end
 
 

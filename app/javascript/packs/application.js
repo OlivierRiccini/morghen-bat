@@ -9,6 +9,7 @@
 
 console.log('Hello World from Webpacker');
 
+
 $('#company-item, #company-sub-categories').hover(function() {
   $('#company-sub-categories').slideToggle();
 });
@@ -29,3 +30,14 @@ navItems.forEach(function(navItem) {
     navItem.classList.add('nav-item-active');
   };
 });
+
+$('.project-details-hover-display').click(function() {
+  $(this).slideToggle();
+  console.log('test');
+});
+
+$('.col-project').hover(function() {
+  var indexProject = $(this).data('project-index');
+  $(`#project-${indexProject}-details`).slideToggle();
+});
+
