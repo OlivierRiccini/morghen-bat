@@ -1,0 +1,17 @@
+.btn {
+  border: 1px solid #ccc;
+  transition: all 0.3s;
+  &:hover {
+    background-color: #ccc;
+    color: #fff;
+  }
+}
+
+label {
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+input {
+  box-shadow: none !important;
+}
