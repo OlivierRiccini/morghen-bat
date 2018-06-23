@@ -18,11 +18,20 @@
   background: linear-gradient(rgba(247, 86, 86, 0.7), rgba(247, 86, 86, 0.7));
   h3 {
     font-size: 18px;
+    letter-spacing: 2px;
   };
-  p:nth-child(3) {
-    position: absolute;
-    bottom: 0;
-  };
+}
+
+.project-details-hover-display a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-size: 16px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  &:hover {
+    margin-right: 5px;
+  }
 }
 
 .page-realizations .row .col-xs-6 {

@@ -7,7 +7,7 @@
         <div class="project-details-hover-display" id="project-<%= i %>-details">
           <h3><%= project.name.upcase %></h3>
           <p><%= project.category.capitalize %> à <%= project.location.capitalize %></p>
-          <%= link_to "Détails", project_path(project) %> <i class="fas fa-arrow-right"></i></a>
+          <%= link_to "Détails", project_path(project) %> <i class="fas fa-arrow-right"></i>
         </div>
       </div>
     <% end %>
