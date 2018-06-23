@@ -1,3 +1,23 @@
-<div class="page" data-page-name="contact">
-  <h1>Contact</h1>
-</div>  
+<div class="container page page-contact" data-page-name="contact">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <p><i class="fas fa-map-marker-alt"></i> <strong>Adresse: </strong>
+      <br>1 rue madon
+      <br>93150 le blanc mesnil
+      <br>France</p>
+      <br>
+      <p><i class="fas fa-phone"></i> <strong>Téléphone: </strong>
+      <br>0100010101</p>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <p>Nous serions ravis de répondre à vos quesrions!</p>
+      <%= simple_form_for @message do |f| %>
+        <%= f.input :name %>
+        <%= f.input :email %>
+        <%= f.input :subject %>
+        <%= f.input :content, as: :text %>
+        <%= f.button :submit, value: 'Envoyer' %>
+      <% end %>
+    </div>
+  </div>
+</div>

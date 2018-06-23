@@ -32,6 +32,8 @@ gem 'devise'
 
 gem 'simple_form'
 
+# mailer
+gem "letter_opener", group: :development
 
 # Image Uploader
 gem 'carrierwave', '~> 1.2'

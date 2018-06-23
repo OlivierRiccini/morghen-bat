@@ -24,3 +24,14 @@ body {
   position: relative;
   top: 145px;
 }
+
+.page-realizations,
+.page-contact {
+  height: calc(100vh - 220px);
+  display: flex;
+  align-items: center;
+  .row {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
