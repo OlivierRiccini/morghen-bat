@@ -1,11 +1,11 @@
 class MessagesController < ApplicationController
   def create
-    @new_message = Message.new(params_message)
+    @message = Message.new(params_message)
 
-    if @new_message.save
+    if @message.save
       redirect_to root_path
     else
-      render contact_path
+      render "pages/contact"
     end
   end
 
