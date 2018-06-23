@@ -1,3 +1,11 @@
 <div class="page" data-page-name="contact">
   <h1>Contact</h1>
-</div>  
+  <p>Nous serions ravis de répondre à vos quesrions!</p>
+  <%= simple_form_for @message do |f| %>
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :subject %>
+    <%= f.input :content, as: :text %>
+    <%= f.button :submit, value: 'Envoyer' %>
+  <% end %>
+</div>
