@@ -23,3 +23,15 @@
 .arrow-dashboard-section-active {
   transform: rotate(180deg);
 }
+
+
+// Messages
+
+.row-message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    margin-bottom: 0;
+  }
+}
