@@ -1,0 +1,25 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-toggle-section-model {
+  text-align: center;
+  background-color: $light-gray;
+  letter-spacing: 2px;
+  border-radius: 2px;
+  padding: 8px 0;
+  margin: 8px 0;
+  cursor: pointer;
+  &:hover {
+    background-color: #ccc;
+  }
+}
+
+.dashboard-section {
+  display: none;
+}
+
+.arrow-dashboard-section-active {
+  transform: rotate(180deg);
+}

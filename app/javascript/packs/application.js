@@ -26,7 +26,7 @@ const page = document.querySelector(".page");
 const navItems = document.querySelectorAll(".nav-item");
 
 navItems.forEach(function(navItem) {
-  if ( navItem.dataset.itemName == page.dataset.pageName) {
+  if (( navItem != null && page != null ) && navItem.dataset.itemName == page.dataset.pageName ) {
     navItem.classList.add('nav-item-active');
   };
 });
@@ -36,6 +36,7 @@ $('.project-details-hover-display').click(function() {
   console.log('test');
 });
 
+// Realizations page
 $('.col-project').hover(function() {
   var indexProject = $(this).data('project-index');
   $(`#project-${indexProject}-details`).slideToggle();

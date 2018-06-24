@@ -1,1 +1,63 @@
 <h1>Dashboard</h1>
+<div class="container dashboard-container">
+
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-messages">Messages (<%= @messages.count %>)<i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-messages">
+    <h2>Messages (<%= @messages.count %>)</h2>
+    <ul>
+      <% @messages.each do |message| %>
+        <li><%= message.created_at.strftime("%^b %d %Y at %I:%M%p") %> - <%= message.subject %>- <%= message.name %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-company-details">Coordonnées de l'entreprise <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-company-details">
+    <h2>Coordonnées de l'entreprise</h2>
+  </div>
+
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-landing">Landing Section <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-landing">
+    <h2>Landing Section</h2>
+  </div>
+
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-company-history">Histoire de l'entreprise <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-company-history">
+    <h2>Histoire de l'entreprise</h2>
+    <p><%= @company_history.content %></p>
+  </div>
+
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-values">Nos valeurs <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-values">
+    <h2>Nos valeurs</h2>
+    <%= @company_values.each do |value| %>
+      <div>
+        <p><%= value.content %></p>
+        <%= cl_image_tag value.icon %>
+      </div>
+    <% end %>
+  </div>
+
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-know-how">Savoir faire <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-know-how">
+    <h2>Savoir faire</h2>
+  </div>
+
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-projects">Réalisations <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-projects">
+    <h2>Réalisations</h2>
+  </div>
+
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-offers">Notre offre <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-offers">
+    <h2>Notre offre</h2>
+  </div>
+
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-commitments">Nos engagements <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-commitments">
+    <h2>Nos engagements</h2>
+  </div>
+
+</div>
+
+<%= javascript_pack_tag 'dashboard' %>
