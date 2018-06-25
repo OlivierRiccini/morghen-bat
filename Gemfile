@@ -31,7 +31,7 @@ gem 'figaro'
 gem 'devise'
 
 gem 'simple_form'
-
+gem 'country_select', require: 'country_select_without_sort_alphabetical'
 # mailer
 gem "letter_opener", group: :development
 

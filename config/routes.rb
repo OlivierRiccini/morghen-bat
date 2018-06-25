@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'company_details/update'
+
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "pages#home"
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :projects, only: [ :show ]
   resources :messages, only: [ :show, :create, :destroy ]
+  resources :company_details, only: [ :update ]
 end
 
 

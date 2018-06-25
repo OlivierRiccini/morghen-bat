@@ -23,9 +23,17 @@
     <% end %>
   </div>
 
+<!-- Company Details section -->
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-company-details">Coordonnées de l'entreprise <i class="fas fa-arrow-down"></i></span>
   <div class="dashboard-section" id="section-model-company-details">
-    <h2>Coordonnées de l'entreprise</h2>
+    <%= simple_form_for @company_details do |f| %>
+      <%= f.input :address %>
+      <%= f.input :postal_code %>
+      <%= f.input :city %>
+      <%= f.input :country, selected: "FR" %>
+      <%= f.input :phone %>
+      <%= f.button :submit, value: 'Save' %>
+    <% end %>
   </div>
 
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-landing">Landing Section <i class="fas fa-arrow-down"></i></span>
