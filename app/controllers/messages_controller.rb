@@ -1,4 +1,8 @@
 class MessagesController < ApplicationController
+  before_action :find_message, only: [ :show, :destroy ]
+  def show
+  end
+
   def create
     @message = Message.new(params_message)
 
@@ -10,8 +14,6 @@ class MessagesController < ApplicationController
   end
 
   def destroy
-    @message = Message.find(params[:id])
-
     @message.destroy
     respond_to do |format|
       format.js
@@ -19,6 +21,10 @@ class MessagesController < ApplicationController
   end
 
   private
+
+  def find_message
+    @message = Message.find(params[:id])
+  end
 
   def params_message
     params.require(:message).permit(:name, :email, :subject, :content)

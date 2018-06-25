@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#dashboard'
 
   resources :projects, only: [ :show ]
-  resources :messages, only: [ :create, :destroy ]
+  resources :messages, only: [ :show, :create, :destroy ]
 end
 
 
