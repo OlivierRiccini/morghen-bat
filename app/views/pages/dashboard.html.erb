@@ -43,8 +43,19 @@
 
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-company-history">Histoire de l'entreprise <i class="fas fa-arrow-down"></i></span>
   <div class="dashboard-section" id="section-model-company-history">
-    <h2>Histoire de l'entreprise</h2>
-    <p><%= @company_history.content %></p>
+    <%= simple_form_for @company_history do |f| %>
+      <%= f.input :content, as: :summernote %>
+      <%= f.button :submit, value: 'Save' %>
+    <% end %>
+
+    <div>
+      <%= cl_image_tag @company_history.pictures.first.url, height:'200' %>
+      <%= simple_form_for @company_history.pictures.first do |f| %>
+        <%= f.file_field :url %>
+        <%= f.input :url_cache, as: :hidden %>
+        <%= f.button :submit, value: 'Save' %>
+      <% end %>
+    </div>
   </div>
 
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-values">Nos valeurs <i class="fas fa-arrow-down"></i></span>

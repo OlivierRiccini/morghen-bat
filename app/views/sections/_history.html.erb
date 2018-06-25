@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-xs-12 col-sm-8">
     <h2>NOTRE HISTOIRE</h2>
-    <p><%= @company_history.content %></p>
+    <p><%= @company_history.content.html_safe %></p>
   </div>
   <div class="col-xs-12 col-sm-4">
     <%= cl_image_tag @company_history.pictures.first.url %>

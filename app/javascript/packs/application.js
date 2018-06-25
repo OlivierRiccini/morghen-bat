@@ -7,6 +7,16 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+//= require jquery
+//= require jquery_ujs
+//= require popper
+//= require bootstrap
+//= require summernote/summernote-bs4.min
+//= require summernote-init
+//= require activestorage
+//= require turbolinks
+//= require_tree .
+
 console.log('Hello World from Webpacker');
 
 
