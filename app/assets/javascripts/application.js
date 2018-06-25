@@ -10,6 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery
+//= require jquery_ujs
+
+//= require bootstrap
+//= require summernote/summernote-bs4.min
 //= require turbolinks
 //= require_tree .

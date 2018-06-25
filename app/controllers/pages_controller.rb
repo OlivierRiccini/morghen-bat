@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def home
     @company_know_hows = CompanyKnowHow.all
-    @history = CompanyHistory.first
+    @company_history = CompanyHistory.first
     @company_values = CompanyValue.all
   end
 
@@ -14,6 +14,7 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @company_details = CompanyDetail.first
     @message = Message.new
   end
 
@@ -21,5 +22,14 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @messages = Message.order("created_at DESC").all
+    @company_history = CompanyHistory.first
+    @company_know_hows = CompanyKnowHow.all
+    @company_values = CompanyValue.all
+    @company_details = CompanyDetail.first
+    @projects = Project.all
+    @offers = Offer.all
   end
 end
+
+

@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6">
       <p><i class="fas fa-map-marker-alt"></i> <strong>Adresse: </strong>
-      <br>1 rue madon
-      <br>93150 le blanc mesnil
-      <br>France</p>
+      <br><%= @company_details.address %>
+      <br><%= @company_details.postal_code %> <%= @company_details.city %>
+      <br><%= @company_details.country_name.capitalize %></p>
       <br>
       <p><i class="fas fa-phone"></i> <strong>Téléphone: </strong>
-      <br>0100010101</p>
+      <br><%= @company_details.phone %></p>
     </div>
     <div class="col-xs-12 col-sm-6">
       <p>Nous serions ravis de répondre à vos quesrions!</p>

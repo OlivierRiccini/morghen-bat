@@ -1,1 +1,101 @@
-<h1>Dashboard</h1>
+<div class="container dashboard-container">
+
+<!-- Messages section -->
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-messages">Messages (<span id="messages-count"><%= Message.where(read: false).count %>/<%= Message.count %></span>)<i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-messages">
+    <% @messages.each do |message| %>
+      <% if message.read %>
+        <div class="row-message" id="message-<%= message.id %>" style="background-color: rgba(240,240,240,0.3)">
+       <% else %>
+        <div class="row-message" id="message-<%= message.id %>" style="background-color: rgba(255, 91, 91, 0.2)">
+        <% end %>
+        <p><%= message.created_at.strftime("%^b %d %Y at %I:%M%p") %></p>
+        <p><%= message.name %></p>
+        <p><%= message.subject %></p>
+        <div>
+          <%= link_to message_path(message), target: '_blank' do %>
+            <i class="fas fa-search"></i>
+          <% end %>
+          <%= link_to message_path(message), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer ce message?"} do %><i class="fa fa-trash"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+<!-- Company Details section -->
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-company-details">Coordonnées de l'entreprise <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-company-details">
+    <%= simple_form_for @company_details do |f| %>
+      <%= f.input :address %>
+      <%= f.input :postal_code %>
+      <%= f.input :city %>
+      <%= f.input :country, selected: "FR" %>
+      <%= f.input :phone %>
+      <%= f.button :submit, value: 'Save' %>
+    <% end %>
+  </div>
+
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-landing">Landing Section <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-landing">
+    <h2>Landing Section</h2>
+  </div>
+
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-company-history">Histoire de l'entreprise <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-company-history">
+    <%= simple_form_for @company_history do |f| %>
+      <%= f.input :content, as: :summernote, label: false %>
+      <%= f.button :submit, value: 'Save' %>
+    <% end %>
+
+    <div>
+      <%= cl_image_tag @company_history.pictures.first.url, height:'200' %>
+      <%= simple_form_for @company_history.pictures.first do |f| %>
+        <%= f.file_field :url %>
+        <%= f.input :url_cache, as: :hidden %>
+        <%= f.button :submit, value: 'Save' %>
+      <% end %>
+    </div>
+  </div>
+
+<!-- Values section -->
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-values">Nos valeurs <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-values">
+    <div class="row">
+      <% @company_values.each do |company_value| %>
+        <div class="col-xs-12 col-sm-4">
+          <%= cl_image_tag company_value.icon, height: '150' %>
+          <%= simple_form_for company_value do |f| %>
+            <%= f.input :content, label: false %>
+            <%= f.file_field :icon %>
+            <%= f.input :icon_cache, as: :hidden %>
+            <%= f.button :submit, value: 'Save' %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-know-how">Savoir faire <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-know-how">
+    <h2>Savoir faire</h2>
+  </div>
+
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-projects">Réalisations <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-projects">
+    <h2>Réalisations</h2>
+  </div>
+
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-offers">Notre offre <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-offers">
+    <h2>Notre offre</h2>
+  </div>
+
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-commitments">Nos engagements <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-commitments">
+    <h2>Nos engagements</h2>
+  </div>
+
+</div>
+
+<%= javascript_pack_tag 'dashboard' %>
