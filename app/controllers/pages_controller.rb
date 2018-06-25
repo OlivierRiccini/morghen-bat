@@ -21,7 +21,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @messages = Message.all
+    @messages = Message.order("created_at DESC").all
     @company_history = CompanyHistory.first
     @company_know_hows = CompanyKnowHow.all
     @company_values = CompanyValue.all

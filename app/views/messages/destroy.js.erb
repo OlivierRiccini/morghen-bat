@@ -1,3 +1,3 @@
 var message = document.getElementById("message-<%= @message.id %>");
 message.parentNode.removeChild(message);
-document.getElementById('messages-count').innerText = '<%= Message.count %>';
+document.getElementById('messages-count').innerText = '<%= Message.where(read: false).count %>/<%= Message.count %>';

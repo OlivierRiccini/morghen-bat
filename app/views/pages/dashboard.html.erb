@@ -1,10 +1,15 @@
 <div class="container dashboard-container">
 
 <!-- Messages section -->
-  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-messages">Messages (<span id="messages-count"><%= @messages.count %></span>)<i class="fas fa-arrow-down"></i></span>
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-messages">Messages (<span id="messages-count"><%= Message.where(read: false).count %>/<%= Message.count %></span>)<i class="fas fa-arrow-down"></i></span>
   <div class="dashboard-section" id="section-model-messages">
     <% @messages.each do |message| %>
-      <div class="row-message" id="message-<%= message.id %>">  <p><%= message.created_at.strftime("%^b %d %Y at %I:%M%p") %></p>
+      <% if message.read %>
+        <div class="row-message" id="message-<%= message.id %>" style="background-color: rgba(240,240,240,0.3)">
+       <% else %>
+        <div class="row-message" id="message-<%= message.id %>" style="background-color: rgba(255, 91, 91, 0.2)">
+        <% end %>
+        <p><%= message.created_at.strftime("%^b %d %Y at %I:%M%p") %></p>
         <p><%= message.name %></p>
         <p><%= message.subject %></p>
         <div>

@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   before_action :find_message, only: [ :show, :destroy ]
   def show
+    @message.update(read: true)
   end
 
   def create
