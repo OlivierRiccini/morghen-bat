@@ -44,7 +44,7 @@
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-company-history">Histoire de l'entreprise <i class="fas fa-arrow-down"></i></span>
   <div class="dashboard-section" id="section-model-company-history">
     <%= simple_form_for @company_history do |f| %>
-      <%= f.input :content, as: :summernote %>
+      <%= f.input :content, as: :summernote, label: false %>
       <%= f.button :submit, value: 'Save' %>
     <% end %>
 
@@ -58,15 +58,22 @@
     </div>
   </div>
 
+<!-- Values section -->
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-values">Nos valeurs <i class="fas fa-arrow-down"></i></span>
   <div class="dashboard-section" id="section-model-values">
-    <h2>Nos valeurs</h2>
-    <%= @company_values.each do |value| %>
-      <div>
-        <p><%= value.content %></p>
-        <%= cl_image_tag value.icon %>
-      </div>
-    <% end %>
+    <div class="row">
+      <% @company_values.each do |company_value| %>
+        <div class="col-xs-12 col-sm-4">
+          <%= cl_image_tag company_value.icon, height: '150' %>
+          <%= simple_form_for company_value do |f| %>
+            <%= f.input :content, label: false %>
+            <%= f.file_field :icon %>
+            <%= f.input :icon_cache, as: :hidden %>
+            <%= f.button :submit, value: 'Save' %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-know-how">Savoir faire <i class="fas fa-arrow-down"></i></span>

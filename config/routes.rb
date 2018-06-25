@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :pictures, only: [ :create, :update, :destroy ]
   resources :company_details, only: [ :update ]
   resources :company_histories, only: [ :update ]
+  resources :company_values, only: [ :update ]
 end
 
 
