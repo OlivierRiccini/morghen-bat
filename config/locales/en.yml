@@ -30,4 +30,24 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  # Navbar
+  company: "the company"
+  know_how: "know-how"
+  values: "our values"
+  localization: "localization"
+  realizations: "realizations"
+  your_project: "your project"
+  contact: "contact"
+  commitments: "commitments"
+
+  # Contact page
+  address: "address"
+  phone: "phone"
+  contact_text: "we would love to answer your questions!"
+
+  # Form labels
+  name: "name"
+  email: "email"
+  subject: "subject"
+  content: "message"
+  send: "send"

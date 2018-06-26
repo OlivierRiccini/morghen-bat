@@ -1,0 +1,24 @@
+es:
+  # Navbar
+  company: "la empresa"
+  know_how: "saber hacer"
+  values: "nuestros valores"
+  localization: "ubicación"
+  realizations: "realizaciones"
+  your_project: "tu proyecto"
+  contact: "contacto"
+  commitments: "compromisos"
+
+  # Contact page
+  address: "dirección"
+  phone: "teléfono"
+  contact_text: "¡nos encantaría responder tus preguntas!"
+
+  # Form labels
+  name: "nombre"
+  email: "e-mail"
+  subject: "sujeto"
+  content: "mensaje"
+  send: "enviar"
+
+

@@ -1,0 +1,22 @@
+fr:
+  # Navbar
+  company: "l'entreprise"
+  know_how: "savoir faire"
+  values: "nos valeurs"
+  localization: "localisation"
+  realizations: "réalisations"
+  your_project: "votre projet"
+  contact: "contact"
+  commitments: "nos engagements"
+
+  # Contact page
+  address: "adresse"
+  phone: "téléphone"
+  contact_text: "nous serions ravis de répondre à vos questions!"
+
+  # Form labels
+  name: "nom"
+  email: "email"
+  subject: "sujet"
+  content: "message"
+  send: "envoyer"
