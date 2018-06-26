@@ -102,7 +102,8 @@ offers.each do |offer|
   end
 end
 
-CompanyDetail.create(address: "1 rue madon", postal_code: "93150", city: "blanc mesnil", country: "france", phone: "0100010101")
+puts "Company details NOT done!"
+CompanyDetail.create(address: "1 rue madon", postal_code: "93150", city: "blanc mesnil", country: "fr", phone: "0100010101")
 puts "Company details done!"
 
 puts "Finito!!!!"

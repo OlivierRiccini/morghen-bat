@@ -15,7 +15,7 @@ module MorghenBat
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     I18n.enforce_available_locales = false
-    I18n.config.available_locales = [ :en, :es ]
+    I18n.config.available_locales = [ :fr, :en, :es ]
     config.i18n.default_locale = :fr
   end
 end
