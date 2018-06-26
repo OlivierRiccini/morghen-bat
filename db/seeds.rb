@@ -54,7 +54,8 @@ offers = [ {
 
 User.create(email: 'test@test.com', password: '123456', admin: true)
 
-new_company_history = CompanyHistory.new(content: "Depuis maintenant 20 ans, nous rénovons vos
+new_company_history = CompanyHistory.new(title: "NOTRE HISTOIRE",
+  content: "Depuis maintenant 20 ans, nous rénovons vos
 appartements et maisons avec passion. Votre confort est notre priorité.
 En effet, on sait que votre logement c’est plus qu’un simple investissement,
 c’est souvent un projet de vie ou du moins le point de départ d’une belle histoire.
