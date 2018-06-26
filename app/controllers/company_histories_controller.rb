@@ -13,6 +13,6 @@ class CompanyHistoriesController < ApplicationController
   end
 
   def company_history_params
-    params.require(:company_history).permit(:content)
+    params.require(:company_history).permit(:title, :content)
   end
 end

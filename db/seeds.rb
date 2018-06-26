@@ -54,7 +54,8 @@ offers = [ {
 
 User.create(email: 'test@test.com', password: '123456', admin: true)
 
-new_company_history = CompanyHistory.new(content: "Depuis maintenant 20 ans, nous rénovons vos
+new_company_history = CompanyHistory.new(title: "NOTRE HISTOIRE",
+  content: "Depuis maintenant 20 ans, nous rénovons vos
 appartements et maisons avec passion. Votre confort est notre priorité.
 En effet, on sait que votre logement c’est plus qu’un simple investissement,
 c’est souvent un projet de vie ou du moins le point de départ d’une belle histoire.
@@ -65,7 +66,7 @@ new_picture_company = Picture.new(pic_duty: new_company_history)
 new_picture_company.remote_url_url = "http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg"
 new_picture_company.save
 
-CompanyKnowHow.create(content: "Lorem Ipsum is simply dummy text of the printing
+new_company_know_how = CompanyKnowHow.new(content: "Lorem Ipsum is simply dummy text of the printing
 and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
 ever since the 1500s, when an unknown printer took a galley of type and scrambled
 it to make a type specimen book. It has survived not only five centuries, but also
@@ -73,6 +74,7 @@ the leap into electronic typesetting, remaining essentially unchanged. It was
 popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
 passages, and more recently with desktop publishing software like Aldus PageMaker
 including versions of Lorem Ipsum.")
+new_company_know_how.save
 
 3.times do
   new_value = CompanyValue.new(content: "Lorem Ipsum is simply dummy text of the printing
@@ -102,7 +104,46 @@ offers.each do |offer|
   end
 end
 
-CompanyDetail.create(address: "1 rue madon", postal_code: "93150", city: "blanc mesnil", country: "france", phone: "0100010101")
+CompanyDetail.create(address: "1 rue madon", postal_code: "93150", city: "blanc mesnil", country: "fr", phone: "0100010101")
 puts "Company details done!"
+
+I18n.locale = :en
+new_company_history.update(title: "OUR HISTORY",
+  content: "For 20 years now, we have been renovating your apartments and houses
+  with passion. Your comfort is our priority. Indeed, we know that your home is
+  more than just an investment, it is often a project of life or at least the
+  starting point of a beautiful story. We accompany you with the attention to detail
+  for your projects to give life to your desires. From the conception to the realization
+    of your projects and even after the delivery we commit ourselves to maintain
+    an optimal communication to give life to your dreams.")
+
+new_company_know_how.update(content: "Lorem Ipsum is simply dummy text of the printing
+and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type and scrambled
+it to make a type specimen book. It has survived not only five centuries, but also
+the leap into electronic typesetting, remaining essentially unchanged. It was
+popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+passages, and more recently with desktop publishing software like Aldus PageMaker
+including versions of Lorem Ipsum.")
+
+I18n.locale = :es
+new_company_history.update(title: "NUESTRA HISTORIA",
+  content: "Durante 20 años, hemos estado renovando sus apartamentos y casas con
+  pasión. Tu comodidad es nuestra prioridad De hecho, sabemos que su hogar es más
+  que una inversión, a menudo es un proyecto de vida o al menos el punto de partida
+  de una bella historia. Te acompañamos con la atención al detalle de tus proyectos
+  para dar vida a tus deseos. Desde la concepción hasta la realización de sus proyectos
+  e incluso después de la entrega, nos comprometemos a mantener una comunicación
+  óptima para dar vida a sus sueños.")
+
+new_company_know_how.update(content: "Lorem Ipsum is simply dummy text of the printing
+and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type and scrambled
+it to make a type specimen book. It has survived not only five centuries, but also
+the leap into electronic typesetting, remaining essentially unchanged. It was
+popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+passages, and more recently with desktop publishing software like Aldus PageMaker
+including versions of Lorem Ipsum.")
+
 
 puts "Finito!!!!"

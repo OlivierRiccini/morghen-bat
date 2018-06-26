@@ -1,22 +1,27 @@
 <div class="container page page-contact" data-page-name="contact">
   <div class="row">
     <div class="col-xs-12 col-sm-6">
-      <p><i class="fas fa-map-marker-alt"></i> <strong>Adresse: </strong>
+      <p><i class="fas fa-map-marker-alt"></i> <strong><%= t('address').capitalize %>: </strong>
       <br><%= @company_details.address %>
       <br><%= @company_details.postal_code %> <%= @company_details.city %>
-      <br><%= @company_details.country_name.capitalize %></p>
       <br>
-      <p><i class="fas fa-phone"></i> <strong>Téléphone: </strong>
+      <% if !@company_details.country_name.nil? %>
+        <p><%= @company_details.country_name.capitalize %></p>
+      <% else %>
+        <p><%= @company_details.country.capitalize %></p>
+      <% end %>
+      <br>
+      <p><i class="fas fa-phone"></i> <strong><%= t('phone').capitalize %>: </strong>
       <br><%= @company_details.phone %></p>
     </div>
     <div class="col-xs-12 col-sm-6">
-      <p>Nous serions ravis de répondre à vos quesrions!</p>
+      <p><%= t('contact_text').capitalize %></p>
       <%= simple_form_for @message do |f| %>
-        <%= f.input :name %>
-        <%= f.input :email %>
-        <%= f.input :subject %>
-        <%= f.input :content, as: :text %>
-        <%= f.button :submit, value: 'Envoyer' %>
+        <%= f.input :name, label: t('name').capitalize %>
+        <%= f.input :email, label: t('email').capitalize %>
+        <%= f.input :subject, label: t('subject').capitalize %>
+        <%= f.input :content, as: :text, label: t('content').capitalize %>
+        <%= f.button :submit, value: t('send').capitalize %>
       <% end %>
     </div>
   </div>

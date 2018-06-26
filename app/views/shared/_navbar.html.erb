@@ -1,33 +1,38 @@
 <div class="custom-navbar">
   <div class="navbar-left">
     <%= link_to root_path, class: 'logo' do %>
-      <h1>MORGHEN BAT</h1> 
+      <h1>MORGHEN BAT</h1>
     <% end %>
     <i id="dropdown-menu-btn" class="fas fa-angle-down"></i>
   </div>
   <ul class="nav-list-small-screen">
-    <li><%= link_to "L'ENTREPRISE", root_path %>
+    <li><%= link_to t('company').upcase, root_path %>
     </li>
-    <li class="nav-item-small-screen"><%= link_to "RÉALISATIONS", realizations_path %></li>
-    <li class="nav-item-small-screen"><%= link_to "VOTRE PROJET", your_project_path %></li>
-    <li class="nav-item-small-screen"><%= link_to "CONTACT", contact_path %></li>
-    <li class="nav-item-small-screen"><%= link_to "ENGAGEMENTS", commitments_path %></li>
+    <li class="nav-item-small-screen"><%= link_to t('realizations').upcase, realizations_path %></li>
+    <li class="nav-item-small-screen"><%= link_to t('your_project').upcase, your_project_path %></li>
+    <li class="nav-item-small-screen"><%= link_to t('contact').upcase, contact_path %></li>
+    <li class="nav-item-small-screen"><%= link_to t('commitments').upcase, commitments_path %></li>
   </ul>
 
   <ul class="nav-list">
     <li class="nav-item" data-item-name="home">
       <div id='company-item'>
-        <%= link_to "L'ENTREPRISE", root_path %>
+        <%= link_to t('company').upcase, root_path %>
         <ul id="company-sub-categories">
-          <li>Savoir-Faire</li>
-          <li>Valeurs</li>
-          <li>Localisation</li>
+          <li><%= t('know_how').capitalize %></li>
+          <li><%= t('values').capitalize %></li>
+          <li><%= t('localization').capitalize %></li>
         </ul>
       </div>
     </li>
-    <li class="nav-item" data-item-name="realizations"><%= link_to "RÉALISATIONS", realizations_path %></li>
-    <li class="nav-item" data-item-name="your-project"><%= link_to "VOTRE PROJET", your_project_path %></li>
+    <li class="nav-item" data-item-name="realizations"><%= link_to t('realizations').upcase, realizations_path %></li>
+    <li class="nav-item" data-item-name="your-project"><%= link_to t('your_project').upcase, your_project_path %></li>
     <li class="nav-item" data-item-name="contact"><%= link_to "CONTACT", contact_path %></li>
-    <li class="nav-item" data-item-name="commitments"><%= link_to "ENGAGEMENTS", commitments_path %></li>
+    <li class="nav-item" data-item-name="commitments"><%= link_to t('commitments').upcase, commitments_path %></li>
+    <div class="language-choice">
+      <li><%= link_to "Français", locale: "fr" %></li>
+      <li><%= link_to "English", locale: "en" %></li>
+      <li><%= link_to "Español", locale: "es" %></li>
+    </div>
   </ul>
 </div>

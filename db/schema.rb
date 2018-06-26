@@ -10,22 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180625083402) do
+ActiveRecord::Schema.define(version: 20180625073832) do
 
   create_table "company_details", force: :cascade do |t|
     t.string "address"
     t.string "postal_code"
     t.string "city"
+    t.string "country"
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "country", default: "france"
   end
 
   create_table "company_histories", force: :cascade do |t|
+    t.string "title"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "company_history_translations", force: :cascade do |t|
+    t.integer "company_history_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.text "content"
+    t.index ["company_history_id"], name: "index_company_history_translations_on_company_history_id"
+    t.index ["locale"], name: "index_company_history_translations_on_locale"
+  end
+
+  create_table "company_know_how_translations", force: :cascade do |t|
+    t.integer "company_know_how_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "content"
+    t.index ["company_know_how_id"], name: "index_company_know_how_translations_on_company_know_how_id"
+    t.index ["locale"], name: "index_company_know_how_translations_on_locale"
   end
 
   create_table "company_know_hows", force: :cascade do |t|
@@ -33,6 +55,16 @@ ActiveRecord::Schema.define(version: 20180625083402) do
     t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "company_value_translations", force: :cascade do |t|
+    t.integer "company_value_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "content"
+    t.index ["company_value_id"], name: "index_company_value_translations_on_company_value_id"
+    t.index ["locale"], name: "index_company_value_translations_on_locale"
   end
 
   create_table "company_values", force: :cascade do |t|
@@ -47,9 +79,21 @@ ActiveRecord::Schema.define(version: 20180625083402) do
     t.string "email"
     t.string "subject"
     t.text "content"
+    t.boolean "read", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "read", default: false
+  end
+
+  create_table "offer_translations", force: :cascade do |t|
+    t.integer "offer_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "category"
+    t.text "content"
+    t.index ["locale"], name: "index_offer_translations_on_locale"
+    t.index ["offer_id"], name: "index_offer_translations_on_offer_id"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -57,6 +101,7 @@ ActiveRecord::Schema.define(version: 20180625083402) do
     t.string "category"
     t.float "price"
     t.integer "time_frame"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,15 +109,29 @@ ActiveRecord::Schema.define(version: 20180625083402) do
   create_table "pictures", force: :cascade do |t|
     t.integer "pic_duty_id"
     t.string "pic_duty_type"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "url"
+  end
+
+  create_table "project_translations", force: :cascade do |t|
+    t.integer "project_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "location"
+    t.string "category"
+    t.text "content"
+    t.index ["locale"], name: "index_project_translations_on_locale"
+    t.index ["project_id"], name: "index_project_translations_on_project_id"
   end
 
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.string "location"
     t.string "category"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
