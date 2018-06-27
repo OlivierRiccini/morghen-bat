@@ -1,8 +1,8 @@
 <div class="row">
   <% @company_values.each do |value| %>
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <%= cl_image_tag value.icon %>
-      <p><%= value.content %></p>
+      <%= cl_image_tag value.icon, height: '150' %>
+      <p><%= value.content.html_safe %></p>
     </div>
   <% end %>
 </div>

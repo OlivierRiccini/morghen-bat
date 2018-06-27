@@ -1,8 +1,23 @@
 class CompanyValuesController < ApplicationController
-  before_action :find_company_value, only: :update
+  before_action :find_company_value, only: [ :update, :destroy ]
+
+  def create
+    @new_company_value = CompanyValue.new(company_value_params)
+
+    if @new_company_value.save
+      redirect_to root_path
+    else
+      render "pages/dashboard"
+    end
+  end
 
   def update
     @company_value.update(company_value_params)
+    redirect_to dashboard_path
+  end
+
+  def destroy
+    @company_value.destroy
     redirect_to dashboard_path
   end
 
