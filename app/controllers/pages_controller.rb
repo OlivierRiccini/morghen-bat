@@ -32,6 +32,9 @@ class PagesController < ApplicationController
     @projects = Project.all
     @new_project = Project.new
     @offers = Offer.all
+    @new_pic = Picture.new
+
+    @pic_duty = find_pic_duty
   end
 end
 

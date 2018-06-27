@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :find_project, only: [ :show ]
+  before_action :find_project, only: [ :show, :update, :destroy ]
 
   def show
   end
@@ -15,11 +15,8 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    if @project.update(project_params).save
-      redirect_to root_path
-    else
-      render "pages/dashboard"
-    end
+    @project.update(project_params)
+    redirect_to dashboard_path
   end
 
   def destroy
