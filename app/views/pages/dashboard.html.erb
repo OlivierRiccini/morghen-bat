@@ -60,23 +60,23 @@
     <div class="row">
       <% @company_values.each do |company_value| %>
         <div class="col-xs-12 col-sm-4">
-          <%= cl_image_tag company_value.icon, height: '150' %>
           <%= simple_form_for company_value do |f| %>
-            <%= f.input :content, as: :summernote, label: false %>
+            <%= cl_image_tag company_value.icon, height: '150' %>
             <%= f.file_field :icon %>
             <%= f.input :icon_cache, as: :hidden %>
+            <%= f.input :content, as: :summernote, label: false %>
             <%= f.button :submit, value: 'Save' %>
-          <% end %>
-          <%= link_to company_value_path(company_value), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer cet valeur?"} do %><i class="fa fa-trash"></i>
+            <%= link_to 'Delete', company_value_path(company_value), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer cet valeur?"}, class: 'btn btn-danger' %>
           <% end %>
         </div>
       <% end %>
       <div class="col-xs-12 col-sm-4">
+        <h3>Ajouter une valeur</h3>
         <%= simple_form_for @new_company_value do |f| %>
           <%= f.input :content, as: :summernote, label: false %>
           <%= f.file_field :icon %>
           <%= f.input :icon_cache, as: :hidden %>
-          <%= f.button :submit, value: 'Save' %>
+          <%= f.button :submit, value: 'Ajouter' %>
         <% end %>
       </div>
     </div>
@@ -87,23 +87,23 @@
     <div class="row">
       <% @company_know_hows.each do |company_know_how| %>
         <div class="col-xs-12 col-sm-4">
-          <%= cl_image_tag company_know_how.icon, height: '150' %>
           <%= simple_form_for company_know_how do |f| %>
-            <%= f.input :content, as: :summernote, label: false %>
+            <%= cl_image_tag company_know_how.icon, height: '150' %>
             <%= f.file_field :icon %>
             <%= f.input :icon_cache, as: :hidden %>
+            <%= f.input :content, as: :summernote, label: false %>
             <%= f.button :submit, value: 'Save' %>
-          <% end %>
-          <%= link_to company_know_how_path(company_know_how), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer ce savoir faire?"} do %><i class="fa fa-trash"></i>
+            <%= link_to 'Delete', company_know_how_path(company_know_how), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer ce savoir faire?"}, class: 'btn btn-danger' %>
           <% end %>
         </div>
       <% end %>
       <div class="col-xs-12 col-sm-4">
+        <h3>Ajouter un savoir faire</h3>
         <%= simple_form_for @new_company_know_how do |f| %>
           <%= f.input :content, as: :summernote, label: false %>
           <%= f.file_field :icon %>
           <%= f.input :icon_cache, as: :hidden %>
-          <%= f.button :submit, value: 'Save' %>
+          <%= f.button :submit, value: 'Ajouter' %>
         <% end %>
       </div>
     </div>
@@ -111,7 +111,43 @@
 
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-projects">Réalisations <i class="fas fa-arrow-down"></i></span>
   <div class="dashboard-section" id="section-model-projects">
-    <h2>Réalisations</h2>
+    <div class="row">
+      <% @projects.each do |project| %>
+        <div class="col-xs-12 col-sm-6 project-col">
+          <%= simple_form_for project do |f| %>
+            <%= f.input :name %>
+            <%= f.input :location %>
+            <%= f.input :category %>
+            <%= f.input :content, as: :summernote %>
+            <%= f.button :submit, value: 'Save' %>
+          <% end %>
+          <div class="row">
+            <% project.pictures.each do |pic| %>
+              <div class="col-xs-12 col-sm-6 project-pictures-col">
+                <%= simple_form_for pic do |f| %>
+                  <%= cl_image_tag pic.url, height:'60' %>
+                  <%= f.file_field :url %>
+                  <%= f.input :url_cache, as: :hidden %>
+                  <%= f.button :submit, value: 'Save' %>
+                  <%= link_to picture_path(pic), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer cette image?"} do %><i class="fa fa-trash"></i>
+                  <% end %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <div class="col-xs-12 col-sm-6">
+        <%= simple_form_for @new_project do |f| %>
+          <%= f.input :name %>
+          <%= f.input :location %>
+          <%= f.input :category %>
+          <%= f.input :content, as: :summernote %>
+          <%= f.button :submit, value: 'Save' %>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-offers">Notre offre <i class="fas fa-arrow-down"></i></span>

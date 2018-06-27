@@ -30,6 +30,7 @@ class PagesController < ApplicationController
     @new_company_know_how = CompanyKnowHow.new
     @company_details = CompanyDetail.first
     @projects = Project.all
+    @new_project = Project.new
     @offers = Offer.all
   end
 end

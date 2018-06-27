@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get 'commitments', to: 'pages#commitments'
     get 'dashboard', to: 'pages#dashboard'
 
-    resources :projects, only: [ :show ]
+    resources :projects, only: [ :show, :create, :update, :destroy ]
     resources :messages, only: [ :show, :create, :destroy ]
     resources :pictures, only: [ :create, :update, :destroy ]
     resources :company_details, only: [ :update ]

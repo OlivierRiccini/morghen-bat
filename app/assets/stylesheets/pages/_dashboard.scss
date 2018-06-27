@@ -24,6 +24,10 @@
   transform: rotate(180deg);
 }
 
+// For all text editors
+.note-editable {
+  height: 150px !important;
+}
 
 // Messages
 
@@ -49,4 +53,24 @@
 
 .edit_company_history {
   margin-bottom: 20px;
+}
+
+// Company Values & Company Know Hows
+#section-model-values, #section-model-know-how {
+  .col-xs-12 {
+    text-align: center;
+  };
+  .note-editor {
+    margin-top: 30px;
+  }
+}
+
+// Projects
+.project-col {
+  margin-bottom: 100px;
+}
+
+.project-pictures-col {
+  border: 1px solid #ccc;
+  padding: 10px;
 }
