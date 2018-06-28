@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  # before_action :load_pic_duty, only: :dashboard
+
   def home
     @company_know_hows = CompanyKnowHow.all
     @company_history = CompanyHistory.first
@@ -32,10 +34,21 @@ class PagesController < ApplicationController
     @projects = Project.all
     @new_project = Project.new
     @offers = Offer.all
-    @new_pic = Picture.new
 
-    @pic_duty = find_pic_duty
+    # unless @new_pic.nil?
+    @new_pic = Picture.new
+    # end
   end
+
+  # private
+
+  # def load_pic_duty
+  #   resource, id = request.path.split('/')[1,2]
+  #   unless resource.nil? || id.nil?
+  #     @pic_duty = resource.singularize.classify.constantize.find(id)
+  #   end
+  # end
+
 end
 
 

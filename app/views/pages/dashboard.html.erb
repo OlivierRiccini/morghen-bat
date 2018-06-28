@@ -46,7 +46,7 @@
 
     <div>
       <%= cl_image_tag @company_history.pictures.first.url, height:'200' %>
-      <%= simple_form_for @company_history.pictures.first do |f| %>
+      <%= simple_form_for [ @company_history, @company_history.pictures.first ] do |f| %>
         <%= f.file_field :url %>
         <%= f.input :url_cache, as: :hidden %>
         <%= f.button :submit, value: 'Save' %>
@@ -124,18 +124,18 @@
           <div class="row">
             <% project.pictures.each do |pic| %>
               <div class="col-xs-12 col-sm-6 project-pictures-col">
-                <%= simple_form_for pic do |f| %>
+                <%= simple_form_for [ project, pic ] do |f| %>
                   <%= cl_image_tag pic.url, height:'60' %>
                   <%= f.file_field :url %>
                   <%= f.input :url_cache, as: :hidden %>
                   <%= f.button :submit, value: 'Save' %>
-                  <%= link_to 'Delete', picture_path(pic), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer cette image?"}, class: 'btn btn-danger' %>
+                  <%= link_to 'Delete', project_pictures_path(pic), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer cette image?"}, class: 'btn btn-danger' %>
                 <% end %>
               </div>
             <% end %>
             <div class="col-xs-12 col-sm-6 project-pictures-col">
               <h4>Ajouter une image</h4>
-              <%= simple_form_for [@pic_duty, @new_pic ] do |f| %>
+              <%= simple_form_for [ project, @new_pic ] do |f| %>
                 <%= f.file_field :url %>
                 <%= f.input :url_cache, as: :hidden %>
                 <%= f.button :submit, value: 'Ajouter' %>
