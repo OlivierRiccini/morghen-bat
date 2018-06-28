@@ -8,7 +8,9 @@ class ProjectsController < ApplicationController
     @new_project = Project.new(project_params)
 
     if @new_project.save
-      redirect_to root_path
+      raise
+      Picture.create(url: params[:project][:picture][:url], pic_duty: @new_project)
+      redirect_to realizations_path
     else
       render "pages/dashboard"
     end

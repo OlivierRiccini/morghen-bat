@@ -32,7 +32,10 @@ class PagesController < ApplicationController
     @new_company_know_how = CompanyKnowHow.new
     @company_details = CompanyDetail.first
     @projects = Project.all
+
     @new_project = Project.new
+    4.times { @new_project.pictures.build }
+
     @offers = Offer.all
 
     # unless @new_pic.nil?
