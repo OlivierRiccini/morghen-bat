@@ -82,6 +82,7 @@
     </div>
   </div>
 
+<!-- Know-How section -->
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-know-how">Savoir faire <i class="fas fa-arrow-down"></i></span>
   <div class="dashboard-section" id="section-model-know-how">
     <div class="row">
@@ -109,6 +110,8 @@
     </div>
   </div>
 
+
+<!-- Projects section -->
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-projects">Réalisations <i class="fas fa-arrow-down"></i></span>
   <div class="dashboard-section" id="section-model-projects">
     <% @projects.each do |project| %>
@@ -153,15 +156,26 @@
         <%= f.input :location %>
         <%= f.input :category %>
         <%= f.input :content, as: :summernote %>
-        <%= f.fields_for :pictures do |new_pic| %>
-          <%= new_pic.file_field :url %>
-          <%= new_pic.input :url_cache, as: :hidden %>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <h3>Add images</h3>
+      <div id="pictures">
+        <%= f.simple_fields_for :pictures do |new_pic| %>
+          <%= render 'picture_fields', :f => new_pic %>
         <% end %>
-        <%= f.button :submit, value: 'Save' %>
-      <% end %>
+        <div class='links'>
+          <%= link_to_add_association f, :pictures do %>
+            <h4><i class="fas fa-plus"></i></h4>
+          <% end %>
+        </div>
+      </div>
+          <%= f.button :submit, value: 'Save Project' %>
+        <% end %>
     </div>
   </div>
 
+
+<!-- Offers section -->
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-offers">Notre offre <i class="fas fa-arrow-down"></i></span>
   <div class="dashboard-section" id="section-model-offers">
     <h2>Notre offre</h2>

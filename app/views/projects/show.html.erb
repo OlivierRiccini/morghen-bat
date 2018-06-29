@@ -1,5 +1,8 @@
 <div class="container page" data-page-name="realizations">
   <h1><%= @project.name.upcase %></h1>
   <p><%= @project.location %></p>
+  <% @project.pictures.each do |pic| %>
+    <%= cl_image_tag pic.url, height: '150' %>
+  <% end %>
   <%= link_to 'retour', realizations_path %>
 </div>

@@ -6,10 +6,11 @@ class ProjectsController < ApplicationController
 
   def create
     @new_project = Project.new(project_params)
+    @new_project.pictures.each do |pic|
+      pic.pic_duty = @new_project
+    end
 
     if @new_project.save
-      raise
-      Picture.create(url: params[:project][:picture][:url], pic_duty: @new_project)
       redirect_to realizations_path
     else
       render "pages/dashboard"
@@ -33,6 +34,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :location, :category, :content)
+    params.require(:project).permit(:name, :location, :category, :content, pictures_attributes: [:id, :url, :_destroy])
   end
 end

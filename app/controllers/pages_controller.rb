@@ -34,24 +34,12 @@ class PagesController < ApplicationController
     @projects = Project.all
 
     @new_project = Project.new
-    4.times { @new_project.pictures.build }
+    @new_project.pictures.build
 
     @offers = Offer.all
 
-    # unless @new_pic.nil?
     @new_pic = Picture.new
-    # end
   end
-
-  # private
-
-  # def load_pic_duty
-  #   resource, id = request.path.split('/')[1,2]
-  #   unless resource.nil? || id.nil?
-  #     @pic_duty = resource.singularize.classify.constantize.find(id)
-  #   end
-  # end
-
 end
 
 
