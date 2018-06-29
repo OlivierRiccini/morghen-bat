@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-  # before_action :load_pic_duty, only: :dashboard
 
   def home
     @company_know_hows = CompanyKnowHow.all
@@ -31,12 +30,14 @@ class PagesController < ApplicationController
     @company_know_hows = CompanyKnowHow.all
     @new_company_know_how = CompanyKnowHow.new
     @company_details = CompanyDetail.first
-    @projects = Project.all
 
+    @projects = Project.all
     @new_project = Project.new
     @new_project.pictures.build
 
     @offers = Offer.all
+    @new_offer = Offer.new
+    @new_offer.pictures.build
 
     @new_pic = Picture.new
   end

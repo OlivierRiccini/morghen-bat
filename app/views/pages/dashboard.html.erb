@@ -114,6 +114,8 @@
 <!-- Projects section -->
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-projects">Réalisations <i class="fas fa-arrow-down"></i></span>
   <div class="dashboard-section" id="section-model-projects">
+
+    <!-- Edit project -->
     <% @projects.each do |project| %>
       <div class="row">
         <div class="col-xs-12 col-sm-6">
@@ -127,6 +129,14 @@
           <% end %>
         </div>
         <div class="col-xs-12 col-sm-6">
+          <div class="project-pic">
+            <h4>New image</h4>
+            <%= simple_form_for [ project, @new_pic ] do |f| %>
+              <%= f.file_field :url %>
+              <%= f.input :url_cache, as: :hidden %>
+              <%= f.button :submit, value: 'Ajouter' %>
+            <% end %>
+          </div>
           <% project.pictures.each do |pic| %>
             <div class="project-pic">
               <%= cl_image_tag pic.url, height:'60' %>
@@ -138,17 +148,11 @@
               <% end %>
             </div>
           <% end %>
-          <div class="project-pic">
-            <h4><i class="fas fa-plus"></i></h4>
-            <%= simple_form_for [ project, @new_pic ] do |f| %>
-              <%= f.file_field :url %>
-              <%= f.input :url_cache, as: :hidden %>
-              <%= f.button :submit, value: 'Ajouter' %>
-            <% end %>
-          </div>
         </div>
       </div>
     <% end %>
+
+    <!-- Create project -->
     <div class="col-xs-12 col-sm-6">
       <h3>Ajouter un projet</h3>
       <%= simple_form_for @new_project do |f| %>
@@ -174,18 +178,80 @@
     </div>
   </div>
 
-
 <!-- Offers section -->
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-offers">Notre offre <i class="fas fa-arrow-down"></i></span>
   <div class="dashboard-section" id="section-model-offers">
-    <h2>Notre offre</h2>
+    <!-- Edit offer -->
+    <% @offers.each do |offer| %>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <%= simple_form_for offer do |f| %>
+            <%= f.input :name %>
+            <%= f.input :category %>
+            <%= f.input :price %>
+            <%= f.input :time_frame %>
+            <%= f.input :content, as: :summernote %>
+            <%= f.button :submit, value: 'Save offer' %>
+            <%= link_to 'Delete offer', offer_path(offer), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer cette offre?"}, class: 'btn btn-danger' %>
+          <% end %>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="offer-pic">
+            <h4>New image</h4>
+            <%= simple_form_for [ offer, @new_pic ] do |f| %>
+              <%= f.file_field :url %>
+              <%= f.input :url_cache, as: :hidden %>
+              <%= f.button :submit, value: 'Ajouter' %>
+            <% end %>
+          </div>
+          <% offer.pictures.order("created_at DESC").each do |pic| %>
+            <div class="offer-pic">
+              <%= cl_image_tag pic.url, height:'60' %>
+              <%= simple_form_for [ offer, pic ] do |f| %>
+                <%= f.file_field :url %>
+                <%= f.input :url_cache, as: :hidden %>
+                <%= f.button :submit, value: 'Save' %>
+                <%= link_to 'Delete', offer_picture_path(offer, pic), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer cette image?"}, class: 'btn btn-danger' %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <!-- Create offer -->
+    <div class="col-xs-12 col-sm-6">
+      <h3>Ajouter une offre</h3>
+      <%= simple_form_for @new_offer do |f| %>
+        <%= f.input :name %>
+        <%= f.input :category %>
+        <%= f.input :price %>
+        <%= f.input :time_frame %>
+        <%= f.input :content, as: :summernote %>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <h3>Add images</h3>
+      <div id="pictures">
+        <%= f.simple_fields_for :pictures do |new_pic| %>
+          <%= render 'picture_fields', :f => new_pic %>
+        <% end %>
+        <div class='links'>
+          <%= link_to_add_association f, :pictures do %>
+            <h4><i class="fas fa-plus"></i></h4>
+          <% end %>
+        </div>
+      </div>
+        <%= f.button :submit, value: 'Save offer' %>
+      <% end %>
+    </div>
   </div>
 
-  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-commitments">Nos engagements <i class="fas fa-arrow-down"></i></span>
+
+<!--  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-commitments">Nos engagements <i class="fas fa-arrow-down"></i></span>
   <div class="dashboard-section" id="section-model-commitments">
     <h2>Nos engagements</h2>
   </div>
-
+-->
 </div>
 
 <%= javascript_pack_tag 'dashboard' %>
