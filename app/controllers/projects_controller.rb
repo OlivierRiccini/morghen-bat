@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
     end
 
     if @new_project.save
-      redirect_to realizations_path
+      redirect_to project_path(@new_project)
     else
       render "pages/dashboard"
     end
@@ -23,13 +23,8 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    respond_to do |format|
-      if @project.destroy
-        format.js
-      else
-        format.js
-      end
-    end
+    @project.destroy
+    respond_to { |format| format.js }
   end
 
   private

@@ -21,15 +21,8 @@ class PicturesController < ApplicationController
   end
 
   def destroy
-    # @picture.destroy
-    # redirect_to dashboard_path
-    respond_to do |format|
-      if @picture.destroy
-        format.js
-      else
-        format.js
-      end
-    end
+    @picture.destroy
+    respond_to { |format| format.js }
   end
 
   private
