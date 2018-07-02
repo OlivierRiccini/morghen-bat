@@ -7,6 +7,41 @@
   }
 }
 
+.btn-delete, .btn-save, .btn-add {
+  padding: 5px 10px;
+  display: block;
+  width: fit-content;
+  color: #fff;
+  border-radius: 3px;
+  transition: all 0.3s;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.btn-delete {
+  background-color: rgb(255,0,0);
+  &:hover {
+   background-color: rgba(255,0,0, 0.7);
+  }
+}
+
+.btn-add {
+  background-color: rgb(30,144,255);
+  &:hover {
+   background-color: rgba(30,144,255, 0.7);
+  }
+}
+
+.btn-save {
+  background-color: rgb(50,205,50);
+  border: none;
+  &:hover {
+   background-color: rgba(50,205,50, 0.7);
+  }
+}
+
 label {
   font-weight: normal;
   letter-spacing: 2px;
