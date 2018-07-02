@@ -23,8 +23,13 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @project.destroy
-    redirect_to dashboard_path
+    respond_to do |format|
+      if @project.destroy
+        format.js
+      else
+        format.js
+      end
+    end
   end
 
   private
