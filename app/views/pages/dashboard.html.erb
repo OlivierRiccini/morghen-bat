@@ -161,7 +161,7 @@
         <div class="dashboard-pictures-sections">
           <h3>Images</h3>
           <% project.pictures.each do |pic| %>
-            <div class="project-pic">
+            <div class="project-pic" id="project-pic-<%= pic.id %>">
               <%= cl_image_tag pic.url, height:'60' %>
               <%= simple_form_for [ project, pic ] do |f| %>
               <%= link_to 'Delete', project_picture_path(project, pic), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer cette image?"}, class: 'btn-delete' %>
@@ -170,7 +170,7 @@
           <% end %>
           <div class="project-pic">
             <p>Ajouter une nouvelle image</p>
-            <%= simple_form_for [ project, @new_pic ] do |f| %>
+            <%= simple_form_for [ project, @new_pic ], remote: true do |f| %>
               <%= f.file_field :url %>
               <%= f.input :url_cache, as: :hidden %>
               <%= f.button :submit, value: 'Save', class: 'btn-save' %>

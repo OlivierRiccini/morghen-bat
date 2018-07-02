@@ -6,10 +6,12 @@ class PicturesController < ApplicationController
     @new_pic = Picture.new(picture_params)
     @new_pic.pic_duty = pic_duty
 
-    if @new_pic.save
-      redirect_to root_path
-    else
-      render "pages/dashboard"
+    respond_to do |format|
+      if @new_pic.save
+        format.js
+      else
+        format.js
+      end
     end
   end
 
@@ -19,8 +21,15 @@ class PicturesController < ApplicationController
   end
 
   def destroy
-    @picture.destroy
-    redirect_to dashboard_path
+    # @picture.destroy
+    # redirect_to dashboard_path
+    respond_to do |format|
+      if @picture.destroy
+        format.js
+      else
+        format.js
+      end
+    end
   end
 
   private
