@@ -31,11 +31,11 @@ class PagesController < ApplicationController
     @new_company_know_how = CompanyKnowHow.new
     @company_details = CompanyDetail.first
 
-    @projects = Project.all
+    @projects = Project.order("created_at DESC").all
     @new_project = Project.new
     @new_project.pictures.build
 
-    @offers = Offer.all
+    @offers = Offer.order("created_at DESC").all
     @new_offer = Offer.new
     @new_offer.pictures.build
 

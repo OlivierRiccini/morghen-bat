@@ -111,3 +111,10 @@
     flex-wrap: wrap;
   }
 }
+
+.new-project-form .nested-fields {
+    display: inline-block;
+    input {
+      width: 225px;
+    }
+}

@@ -115,6 +115,29 @@
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-projects">Réalisations <i class="fas fa-arrow-down"></i></span>
   <div class="dashboard-section" id="section-model-projects">
 
+    <!-- Create project -->
+    <div class="new-project-form">
+      <h3>Ajouter un projet</h3>
+      <%= simple_form_for @new_project do |f| %>
+        <%= f.input :name %>
+        <%= f.input :location %>
+        <%= f.input :category %>
+        <%= f.input :content, as: :summernote %>
+      <div id="pictures">
+      <h3>Add images</h3>
+        <%= f.simple_fields_for :pictures do |new_pic| %>
+          <%= render 'picture_fields', f: new_pic %>
+        <% end %>
+        <div class='links'>
+        <%= link_to_add_association f, :pictures do %>
+          <h4><i class="fas fa-plus"></i></h4>
+        <% end %>
+        </div>
+      </div>
+        <%= f.button :submit, value: 'Save Project' %>
+      <% end %>
+    </div>
+
     <!-- Edit project -->
     <% @projects.each do |project| %>
       <div class="row">
@@ -152,30 +175,6 @@
       </div>
     <% end %>
 
-    <!-- Create project -->
-    <div class="col-xs-12 col-sm-6">
-      <h3>Ajouter un projet</h3>
-      <%= simple_form_for @new_project do |f| %>
-        <%= f.input :name %>
-        <%= f.input :location %>
-        <%= f.input :category %>
-        <%= f.input :content, as: :summernote %>
-    </div>
-    <div class="col-xs-12 col-sm-6">
-      <h3>Add images</h3>
-      <div id="pictures">
-        <%= f.simple_fields_for :pictures do |new_pic| %>
-          <%= render 'picture_fields', :f => new_pic %>
-        <% end %>
-        <div class='links'>
-          <%= link_to_add_association f, :pictures do %>
-            <h4><i class="fas fa-plus"></i></h4>
-          <% end %>
-        </div>
-      </div>
-          <%= f.button :submit, value: 'Save Project' %>
-        <% end %>
-    </div>
   </div>
 
 <!-- Offers section -->
