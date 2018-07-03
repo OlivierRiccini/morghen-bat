@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+
   def home
     @company_know_hows = CompanyKnowHow.all
     @company_history = CompanyHistory.first
@@ -24,11 +25,21 @@ class PagesController < ApplicationController
   def dashboard
     @messages = Message.order("created_at DESC").all
     @company_history = CompanyHistory.first
-    @company_know_hows = CompanyKnowHow.all
     @company_values = CompanyValue.all
+    @new_company_value = CompanyValue.new
+    @company_know_hows = CompanyKnowHow.all
+    @new_company_know_how = CompanyKnowHow.new
     @company_details = CompanyDetail.first
-    @projects = Project.all
-    @offers = Offer.all
+
+    @projects = Project.order("created_at DESC").all
+    @new_project = Project.new
+    @new_project.pictures.build
+
+    @offers = Offer.order("created_at DESC").all
+    @new_offer = Offer.new
+    @new_offer.pictures.build
+
+    @new_pic = Picture.new
   end
 end
 

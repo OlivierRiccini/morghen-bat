@@ -24,6 +24,10 @@
   transform: rotate(180deg);
 }
 
+// For all text editors
+.note-editable {
+  height: 150px !important;
+}
 
 // Messages
 
@@ -49,4 +53,104 @@
 
 .edit_company_history {
   margin-bottom: 20px;
+}
+
+// Company Values & Company Know Hows
+#section-model-values, #section-model-know-how {
+  .col-xs-12 {
+    text-align: center;
+  };
+  .note-editor {
+    margin-top: 30px;
+  }
+}
+
+// Projects
+.project-col {
+  margin-bottom: 100px;
+  .row {
+    padding: 10px;
+  }
+}
+
+// .project-pictures-col {
+//   border: 1px solid #ccc;
+//   padding: 10px;
+// }
+
+// Projects
+/*
+#section-model-projects, #section-model-offers {
+  .row {
+    margin: 10px 0;
+    margin-bottom: 35px;
+    padding: 15px;
+    background-color: $light-gray;
+    border-radius: 3px;
+    box-shadow: 1px 1px 3px rgba(200,200,200,0.5);
+  };
+  .col-sm-6:nth-child(1) {
+    font-size: 16px;
+  };
+  .col-sm-6:nth-child(2) {
+    height: 530px;
+    overflow: scroll;
+    font-size: 12px;
+  }
+}
+
+.project-pic, .offer-pic {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  margin-top: 15px;
+  padding: 5px;
+  .edit_picture {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+*/
+//////
+
+.new-project-form, .edit-project-form  {
+  position: relative;
+  margin-bottom: 35px;
+  padding: 15px;
+  background-color: $light-gray;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px rgba(200,200,200,0.5);
+}
+
+.project-pic {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px rgba(200,200,200,0.5);
+  img {
+    margin-bottom: 10px;
+  };
+  input {
+    font-size: 14px;
+    width: 200px;
+  }
+}
+
+.buttons-project {
+  display: flex;
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  * {
+    margin: 10px;
+  }
+}
+
+.dashboard-pictures-sections {
+  margin-bottom: 40px;
 }

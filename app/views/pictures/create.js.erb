@@ -1,0 +1,9 @@
+var picturesSection = document.querySelector('.dashboard-pictures-sections');
+
+picturesSection.insertAdjacentHTML =
+`<div class="project-pic">
+  <%= cl_image_tag @new_pic.url, height:'60' %>
+  <%= simple_form_for [ project, @new_pic ] do |f| %>
+  <%= link_to 'Delete', project_picture_path(project, @new_pic), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer cette image?"}, class: 'btn-delete' %>
+  <% end %>
+</div>`

@@ -17,3 +17,5 @@
 //= require summernote/summernote-bs4.min
 //= require turbolinks
 //= require_tree .
+
+//= require cocoon

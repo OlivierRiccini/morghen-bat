@@ -20,6 +20,10 @@ gem 'font-awesome-sass', '~> 5.0.9'
 gem 'jquery-rails'
 gem 'summernote-rails', '~> 0.8.10.0'
 gem 'simple_form'
+
+# Nested form associations
+gem "cocoon"
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -30,7 +34,6 @@ gem 'figaro'
 
 # Devise for User
 gem 'devise'
-
 
 gem 'country_select', require: 'country_select_without_sort_alphabetical'
 # mailer

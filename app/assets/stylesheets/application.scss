@@ -29,7 +29,7 @@ body {
 
 .page-realizations,
 .page-contact {
-  height: calc(100vh - 220px);
+  min-height: calc(100vh - 220px);
   display: flex;
   align-items: center;
   .row {

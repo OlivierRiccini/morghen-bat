@@ -1,1 +1,8 @@
-<h1>Know_how</h1>
+<div class="row">
+  <% @company_know_hows.each do |know_how| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <%= cl_image_tag know_how.icon, height: '150' %>
+      <p><%= know_how.content.html_safe %></p>
+    </div>
+  <% end %>
+</div>
