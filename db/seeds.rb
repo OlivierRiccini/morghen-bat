@@ -9,25 +9,37 @@ projects = [ {
               name: "super mega maison",
               category: "maison",
               location: "monaco",
-              picture: ['http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg', 'http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg']
+              budget: 60000,
+              area: 100,
+              time_frame: "3 semaines",
+              picture: ['https://res.cloudinary.com/dqgpcthzg/image/upload/v1530614498/mmr76jralggm2bowz2gh.jpg', 'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg']
             },
             {
               name: "super mega maison",
               category: "maison",
-              location: "dubai",
-              picture: ['http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg', 'http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg']
+              location: "monaco",
+              budget: 60000,
+              area: 100,
+              time_frame: "3 semaines",
+              picture: ['https://res.cloudinary.com/dqgpcthzg/image/upload/v1530614498/mmr76jralggm2bowz2gh.jpg', 'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg']
             },
             {
               name: "super mega maison",
               category: "maison",
-              location: "poitier",
-              picture: ['http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg', 'http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg']
+              location: "monaco",
+              budget: 60000,
+              area: 100,
+              time_frame: "3 semaines",
+              picture: ['https://res.cloudinary.com/dqgpcthzg/image/upload/v1530614498/mmr76jralggm2bowz2gh.jpg', 'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg']
             },
             {
               name: "super mega maison",
               category: "maison",
-              location: "bali",
-              picture: ['http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg', 'http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg']
+              location: "monaco",
+              budget: 60000,
+              area: 100,
+              time_frame: "3 semaines",
+              picture: ['https://res.cloudinary.com/dqgpcthzg/image/upload/v1530614498/mmr76jralggm2bowz2gh.jpg', 'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg']
             }
           ]
 
@@ -35,20 +47,20 @@ projects = [ {
 offers = [ {
               name: "super appartement",
               category: "appartement",
-              time_frame: 12,
-              picture: ['http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg', 'http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg']
+              time_frame: "3 semaines",
+              picture: ['https://res.cloudinary.com/dqgpcthzg/image/upload/v1530614498/mmr76jralggm2bowz2gh.jpg', 'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg']
             },
             {
               name: "super maison",
               category: "maison",
-              time_frame: 12,
-              picture: ['http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg', 'http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg']
+              time_frame: "3 semaines",
+              picture: ['https://res.cloudinary.com/dqgpcthzg/image/upload/v1530614498/mmr76jralggm2bowz2gh.jpg', 'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg']
             },
             {
               name: "super chateau",
               category: "chateau",
-              time_frame: 12,
-              picture: ['http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg', 'http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg']
+              time_frame: "3 semaines",
+              picture: ['https://res.cloudinary.com/dqgpcthzg/image/upload/v1530614498/mmr76jralggm2bowz2gh.jpg', 'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg']
             }
           ]
 
@@ -63,7 +75,7 @@ Nous vous accompagnons avec le souci du détails pour vos projets afin de donner
 De la conception à la réalisation de vos projets et même après la livraison nous
 nous engageons à maintenir une communication optimale pour donner vie à vos rêves.")
 new_picture_company = Picture.new(pic_duty: new_company_history)
-new_picture_company.remote_url_url = "http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg"
+new_picture_company.remote_url_url = 'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg'
 new_picture_company.save
 
 new_company_know_how = CompanyKnowHow.new(content: "Lorem Ipsum is simply dummy text of the printing
@@ -80,13 +92,13 @@ new_company_know_how.save
   new_value = CompanyValue.new(content: "Lorem Ipsum is simply dummy text of the printing
   and typesetting industry. An unknown printer took a galley of type and scrambled
   it to make a type specimen book.")
-  new_value.remote_icon_url = 'http://library.sandiegozoo.org/factsheets/capybara/images/capybara.jpg'
+  new_value.remote_icon_url = 'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530614498/mmr76jralggm2bowz2gh.jpg'
   new_value.save
 end
 
 2.times do
   projects.each do |project|
-    new_project = Project.create(name: project[:name], location: project[:location], category: project[:category])
+    new_project = Project.create(name: project[:name], location: project[:location], category: project[:category], budget: project[:budget], area: project[:area], time_frame: project[:time_frame])
     project[:picture].each do |pic|
       new_picture = Picture.new(pic_duty: new_project)
       new_picture.remote_url_url = pic
@@ -94,6 +106,7 @@ end
     end
   end
 end
+puts "Porjects created!"
 
 offers.each do |offer|
   new_offer = Offer.create(name: offer[:name], category: offer[:category], time_frame: offer[:time_frame])
@@ -103,6 +116,18 @@ offers.each do |offer|
     new_picture.save
   end
 end
+puts "Offers created!"
+
+Mission.create(content: "For 20 years now, we have been renovating your apartments and houses
+  with passion. Your comfort is our priority. Indeed, we know that your home is
+  more than just an investment, it is often a project of life or at least the
+  starting point of a beautiful story.")
+puts "Mission created!"
+
+new_banner = Banner.new
+new_banner.remote_image_url = "https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg"
+new_banner.save
+puts "Banner created!"
 
 CompanyDetail.create(address: "1 rue madon", postal_code: "93150", city: "blanc mesnil", country: "fr", phone: "0100010101")
 puts "Company details done!"
@@ -117,15 +142,6 @@ new_company_history.update(title: "OUR HISTORY",
     of your projects and even after the delivery we commit ourselves to maintain
     an optimal communication to give life to your dreams.")
 
-new_company_know_how.update(content: "Lorem Ipsum is simply dummy text of the printing
-and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-ever since the 1500s, when an unknown printer took a galley of type and scrambled
-it to make a type specimen book. It has survived not only five centuries, but also
-the leap into electronic typesetting, remaining essentially unchanged. It was
-popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-passages, and more recently with desktop publishing software like Aldus PageMaker
-including versions of Lorem Ipsum.")
-
 I18n.locale = :es
 new_company_history.update(title: "NUESTRA HISTORIA",
   content: "Durante 20 años, hemos estado renovando sus apartamentos y casas con
@@ -135,15 +151,5 @@ new_company_history.update(title: "NUESTRA HISTORIA",
   para dar vida a tus deseos. Desde la concepción hasta la realización de sus proyectos
   e incluso después de la entrega, nos comprometemos a mantener una comunicación
   óptima para dar vida a sus sueños.")
-
-new_company_know_how.update(content: "Lorem Ipsum is simply dummy text of the printing
-and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
-ever since the 1500s, when an unknown printer took a galley of type and scrambled
-it to make a type specimen book. It has survived not only five centuries, but also
-the leap into electronic typesetting, remaining essentially unchanged. It was
-popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-passages, and more recently with desktop publishing software like Aldus PageMaker
-including versions of Lorem Ipsum.")
-
 
 puts "Finito!!!!"

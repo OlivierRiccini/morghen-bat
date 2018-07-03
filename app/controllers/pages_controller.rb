@@ -29,7 +29,13 @@ class PagesController < ApplicationController
     @new_company_value = CompanyValue.new
     @company_know_hows = CompanyKnowHow.all
     @new_company_know_how = CompanyKnowHow.new
+    @services = Service.all
+    @new_service = Service.new
     @company_details = CompanyDetail.first
+
+    @banner = Banner.first
+
+    @mission = Mission.first
 
     @projects = Project.order("created_at DESC").all
     @new_project = Project.new

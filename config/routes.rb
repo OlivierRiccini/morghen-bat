@@ -26,6 +26,9 @@ Rails.application.routes.draw do
     resources :company_details, only: [ :update ]
     resources :company_values, only: [ :create, :update, :destroy ]
     resources :company_know_hows, only: [ :create, :update, :destroy ]
+    resources :services, only: [ :create, :update, :destroy ]
+    resources :banners, only: [ :update ]
+    resources :missions, only: [ :update ]
   end
 end
 
