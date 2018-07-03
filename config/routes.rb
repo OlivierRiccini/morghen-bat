@@ -22,9 +22,6 @@ Rails.application.routes.draw do
       resources :pictures, only: [ :create, :update, :destroy ]
     end
 
-    # resources :projects, only: [ :show, :create, :update, :destroy ]
-    # resources :company_histories, only: [ :update ]
-    # resources :pictures, only: [ :create, :update, :destroy ]
     resources :messages, only: [ :show, :create, :destroy ]
     resources :company_details, only: [ :update ]
     resources :company_values, only: [ :create, :update, :destroy ]

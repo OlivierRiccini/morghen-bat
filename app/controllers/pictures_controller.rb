@@ -6,13 +6,19 @@ class PicturesController < ApplicationController
     @new_pic = Picture.new(picture_params)
     @new_pic.pic_duty = pic_duty
 
-    respond_to do |format|
-      if @new_pic.save
-        format.js
-      else
-        format.js
-      end
+    if @new_pic.save
+      redirect_to root_path
+    else
+      render dashboard_path
     end
+
+    # respond_to do |format|
+    #   if @new_pic.save
+    #     format.js
+    #   else
+    #     format.js
+    #   end
+    # end
   end
 
   def update

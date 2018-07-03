@@ -170,7 +170,7 @@
           <% end %>
           <div class="project-pic">
             <p>Ajouter une nouvelle image</p>
-            <%= simple_form_for [ project, @new_pic ], remote: true do |f| %>
+            <%= simple_form_for [ project, @new_pic ] do |f| %>
               <%= f.file_field :url %>
               <%= f.input :url_cache, as: :hidden %>
               <%= f.button :submit, value: 'Save', class: 'btn-save' %>
