@@ -1,11 +1,12 @@
 .custom-navbar {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   position: fixed;
   width: 100vw;
-  top: -5px;
   background-color: #fff;
   z-index: 1;
+  height: 100px;
 }
 
 .nav-list-small-screen {
@@ -40,23 +41,31 @@
 }
 
 .logo {
-  display: flex;
-  height: 120px;
-  width: 160px;
-  justify-content: center;
-  align-items: center;
-  color: #3c3c3c;
-  background-color: #FF5B5B;
-  border-radius: 3px;
-  position: relative;
+  background-color: #000;
+  border-radius: 2px;
+  display: block;
+  padding: 20px;
+  color: #fff;
+  transition: all 1s;
   h1 {
-    font-size: 19px;
+    font-size: 22px;
+    font-weight: normal;
     margin: 0;
   };
+  span {
+    height: 2px;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    background-color: $red;
+  }
   &:hover {
     text-decoration: none;
-    color: $black;
+    color: $red;
   };
+  &:hover span {
+    background-color: #fff;
+  }
 }
 
 .navbar-left {
