@@ -4,7 +4,7 @@ class CreateOffers < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :category
       t.float :price
-      t.integer :time_frame
+      t.string :time_frame
       t.text :content
 
       t.timestamps
@@ -12,7 +12,7 @@ class CreateOffers < ActiveRecord::Migration[5.1]
 
     reversible do |dir|
       dir.up do
-        Offer.create_translation_table! :name => :string, :category => :string, :content => :text
+        Offer.create_translation_table! :name => :string, :category => :string, :content => :text, :time_frame => :string
       end
 
       dir.down do

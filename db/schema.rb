@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180625073832) do
+ActiveRecord::Schema.define(version: 20180703134633) do
+
+  create_table "banners", force: :cascade do |t|
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "company_details", force: :cascade do |t|
     t.string "address"
@@ -84,6 +90,22 @@ ActiveRecord::Schema.define(version: 20180625073832) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "mission_translations", force: :cascade do |t|
+    t.integer "mission_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "content"
+    t.index ["locale"], name: "index_mission_translations_on_locale"
+    t.index ["mission_id"], name: "index_mission_translations_on_mission_id"
+  end
+
+  create_table "missions", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "offer_translations", force: :cascade do |t|
     t.integer "offer_id", null: false
     t.string "locale", null: false
@@ -92,6 +114,7 @@ ActiveRecord::Schema.define(version: 20180625073832) do
     t.string "name"
     t.string "category"
     t.text "content"
+    t.string "time_frame"
     t.index ["locale"], name: "index_offer_translations_on_locale"
     t.index ["offer_id"], name: "index_offer_translations_on_offer_id"
   end
@@ -100,7 +123,7 @@ ActiveRecord::Schema.define(version: 20180625073832) do
     t.string "name"
     t.string "category"
     t.float "price"
-    t.integer "time_frame"
+    t.string "time_frame"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -123,6 +146,7 @@ ActiveRecord::Schema.define(version: 20180625073832) do
     t.string "location"
     t.string "category"
     t.text "content"
+    t.string "time_frame"
     t.index ["locale"], name: "index_project_translations_on_locale"
     t.index ["project_id"], name: "index_project_translations_on_project_id"
   end
@@ -132,6 +156,28 @@ ActiveRecord::Schema.define(version: 20180625073832) do
     t.string "location"
     t.string "category"
     t.text "content"
+    t.integer "budget"
+    t.integer "area"
+    t.string "time_frame"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "service_translations", force: :cascade do |t|
+    t.integer "service_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.text "content"
+    t.index ["locale"], name: "index_service_translations_on_locale"
+    t.index ["service_id"], name: "index_service_translations_on_service_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
