@@ -1,7 +1,10 @@
 <div class="row">
+  <div class="home-section-title">
+    <h2>NOS VALEURS</h2>
+  </div>
   <% @company_values.each do |value| %>
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <%= cl_image_tag value.icon, height: '150' %>
+      <%= cl_image_tag value.icon, height: '100' %>
       <p><%= value.content.html_safe %></p>
     </div>
   <% end %>
