@@ -126,7 +126,7 @@
     <div class="row">
       <% @services.each do |service| %>
         <div class="col-xs-12 col-sm-4">
-          <%= simple_form_for services do |f| %>
+          <%= simple_form_for service do |f| %>
             <%= cl_image_tag service.icon, height: '150' %>
             <%= f.file_field :icon %>
             <%= f.input :icon_cache, as: :hidden %>

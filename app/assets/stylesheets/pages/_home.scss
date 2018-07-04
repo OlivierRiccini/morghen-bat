@@ -1,10 +1,3 @@
-// Specific CSS for your home-page
-// .section {
-//   height: calc(100vh - 120px);
-//   display: flex;
-//   align-items: center;
-// }
-
 // FOR ALL SECTIONS
 
 .home-section-title {
@@ -90,15 +83,9 @@
 }
 
 
-// SECTION LOCALIIZATION
-
-.guarantee-1, .guarantee-2 {
-  display: flex;
-  align-items: center;
-  padding: 60px;
-  h4 {
-    margin-left: 20px;
-  }
+// SECTION LOCALIIZATION AND SERVICES
+.section-localization {
+  margin-bottom: 100px;
 }
 
 .map {
@@ -117,10 +104,19 @@
   }
 }
 
-.section-localization .row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.home-service-box {
+  width: fit-content;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  img {
+    margin-right: 40px;
+  }
 }
 
-
+.home-service-box, .map {
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
