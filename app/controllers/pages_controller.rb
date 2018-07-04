@@ -1,9 +1,11 @@
 class PagesController < ApplicationController
 
   def home
-    @company_know_hows = CompanyKnowHow.all
     @company_history = CompanyHistory.first
+    @mission = Mission.first
+    @company_know_hows = CompanyKnowHow.all
     @company_values = CompanyValue.all
+    @services = Service.all
   end
 
   def realizations

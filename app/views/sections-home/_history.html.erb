@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="history-image-flex-box">
+    <%= cl_image_tag @company_history.pictures.first.url %>
+  </div>
+  <div class="history-content-box">
+    <div class="history-title">
+      <%= image_tag "insurance", height: '80' %>
+      <h2><%= @company_history.title %></h2>
+    </div>
+    <p><%= @company_history.content.html_safe %></p>
+  </div>
+</div>

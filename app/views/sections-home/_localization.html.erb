@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-6">
+    <div class="home-section-title">
+      <h2>SERVICES</h2>
+    </div>
+    <div class="home-services-flex-box">
+      <% @services.each do |service| %>
+        <div class="home-service-box" title='<%= service.title.capitalize %>' data-toggle="popover" data-trigger="hover" data-content='<%= service.content %>'>
+          <%= cl_image_tag service.icon, height: '80' %>
+          <p><%= service.title.upcase %></p>
+        </div>
+        <script>
+          $(document).ready(function(){
+            $('[data-toggle="popover"]').popover({
+              html : true,
+              });
+          });
+        </script>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <div class="home-section-title">
+      <h2>ZONE DE CHALANDISE</h2>
+    </div>
+    <div class="map" style="background-image: url('<%= image_path "map.png"%>');">
+      <p class= "dom-tom"> DOM-TOM </p>
+    </div>
+  </div>
+</div>
