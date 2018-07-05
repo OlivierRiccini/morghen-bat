@@ -1,10 +1,22 @@
 <div class="page" data-page-name="your-project">
-  <div class="banner">
-    <h3><%= @banner.tagline %></h3>
+  <div class="banner your-project-banner" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('<%= @banner.image %>')">
+    <h3><%= @banner.tagline.capitalize %></h3>
     <ul>
       <li><%= t('modular').upcase %></li>
       <li><%= t('tailored').upcase %></li>
       <li><%= t('preconceived').upcase %></li>
     </ul>
+  </div>
+  <div class="row row-buttons-categories">
+    <div class="your-project-category">
+      <%= image_tag 'sunny.svg', height: '70', id: 'sun-houses' %>
+      <%= image_tag 'house.svg', height: '90' %>
+      <%= link_to t('houses').capitalize, your_project_houses_path, class: 'your-project-category-button', :data => { :category => 'houses'} %>
+    </div>
+    <div class="your-project-category">
+      <%= image_tag 'sunny.svg', height: '70', id: 'sun-apartments' %>
+      <%= image_tag 'office-block.svg', height: '90' %>
+      <%= link_to t('apartments').capitalize, your_project_apartments_path, class: 'your-project-category-button', :data => { :category => 'apartments'} %>
+    </div>
   </div>
 </div>

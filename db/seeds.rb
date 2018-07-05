@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 projects = [ {
               name: "super mega maison",
-              category: "maison",
+              category: "house",
               location: "monaco",
               budget: 60000,
               area: 100,
@@ -28,7 +28,7 @@ projects = [ {
             },
             {
               name: "super mega maison",
-              category: "maison",
+              category: "house",
               location: "monaco",
               budget: 60000,
               area: 100,
@@ -49,8 +49,8 @@ projects = [ {
             },
             {
               name: "super mega maison",
-              category: "maison",
-              location: "monaco",
+              category: "house",
+              location: "apartment",
               budget: 60000,
               area: 100,
               time_frame: "3 semaines",
@@ -70,7 +70,7 @@ projects = [ {
             },
             {
               name: "super mega maison",
-              category: "maison",
+              category: "apartment",
               location: "monaco",
               budget: 60000,
               area: 100,
@@ -94,7 +94,7 @@ projects = [ {
 
 offers = [ {
               name: "super appartement",
-              category: "appartement",
+              category: "apartment",
               time_frame: "3 semaines",
               content: "Le Lorem Ipsum est simplement du faux texte employé dans
                         la composition et la mise en page avant impression. Le Lorem
@@ -112,7 +112,7 @@ offers = [ {
             },
             {
               name: "super maison",
-              category: "maison",
+              category: "house",
               time_frame: "3 semaines",
               content: "Le Lorem Ipsum est simplement du faux texte employé dans
                         la composition et la mise en page avant impression. Le Lorem
@@ -129,7 +129,7 @@ offers = [ {
             },
             {
               name: "super chateau",
-              category: "chateau",
+              category: "house",
               time_frame: "3 semaines",
               content: "Le Lorem Ipsum est simplement du faux texte employé dans
                         la composition et la mise en page avant impression. Le Lorem
@@ -173,7 +173,7 @@ puts "Company Know-Hows created!"
   new_value = CompanyValue.new(content: "Lorem Ipsum is simply dummy text of the printing
   and typesetting industry. An unknown printer took a galley of type and scrambled
   it to make a type specimen book.")
-  new_value.remote_icon_url = 'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530614498/mmr76jralggm2bowz2gh.jpg'
+  new_value.remote_icon_url = "https://res.cloudinary.com/dqgpcthzg/image/upload/v1530698299/lokxawlnsubve7gocdfj.svg"
   new_value.save
 end
 

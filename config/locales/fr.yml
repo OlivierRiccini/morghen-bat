@@ -31,3 +31,7 @@ fr:
   modular: "modulable"
   tailored: "sur-mesure"
   preconceived: "préconçu"
+
+  # Your Project buttons
+  houses: "maisons"
+  apartments: "appartements"
