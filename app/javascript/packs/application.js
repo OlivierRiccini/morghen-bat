@@ -18,7 +18,7 @@
 //= require_tree .
 
 console.log('Hello World from Webpacker');
-
+import 'carousel'
 
 $('#company-item, #company-sub-categories').hover(function() {
   $('#company-sub-categories').slideToggle();

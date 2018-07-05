@@ -1,0 +1,92 @@
+.row-project-carousel {
+  margin: 0;
+  width: 55%;
+  float: right;
+}
+
+.project-carousel {
+  height: 380px;
+  img {
+    height: 380px;
+    object-fit: cover;
+  }
+}
+
+.slick-arrow {
+  display: none !important;
+}
+
+.slick-dots {
+  display: flex;
+  flex-direction: column;
+  bottom: 0px;
+  right: -45px;
+  width: fit-content;
+}
+
+.slick-dots li button::before {
+  color: $red;
+  font-size: 10px;
+}
+
+.slick-dots li.slick-active button::before {
+  color: $red;
+  font-size: 12px;
+}
+
+.project-infos {
+  display: flex;
+  justify-content: flex-start;
+  div {
+    padding: 0 25px;
+  };
+  div p {
+    margin: 5px 0;
+  }
+}
+
+.row-project-content {
+  clear: right;
+  width: 45%;
+  margin-left: 150px;
+  position: relative;
+  top: -45px;
+  margin-bottom: 100px;
+  h2 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 180px;
+  }
+}
+
+.project-show-title-vertical-bar {
+  height: 100px;
+  width: 1px;
+  background-color: #000;
+}
+
+// Responsive
+
+@media screen and (max-width: 1000px) {
+  .row-project-carousel {
+    width: 100%;
+  };
+  .slick-dots {
+    display: inline-block;;
+    width: 100%;
+    bottom: -30px;
+    right: 0;
+  };
+  .project-infos {
+    justify-content: center;
+  };
+  .row-project-content {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  };
+  .row-project-content h2 {
+    width: 100%;
+  }
+}
+

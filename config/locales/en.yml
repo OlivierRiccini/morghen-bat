@@ -51,3 +51,9 @@ en:
   subject: "subject"
   content: "message"
   send: "send"
+
+  # Project show Page
+  budget: "budget"
+  time_frame: "time frame"
+  area: 'm2'
+  location: 'location'
