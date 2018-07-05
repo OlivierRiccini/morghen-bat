@@ -1,0 +1,37 @@
+.project-carousel {
+  float: right;
+  width: 55%;
+  height: 380px;
+  img {
+    height: 380px;
+    object-fit: contain;
+  }
+}
+
+.slick-arrow {
+  display: none !important;
+}
+
+.slick-dots {
+  display: flex;
+  flex-direction: column;
+  bottom: 0px;
+  right: -45px;
+  width: fit-content;
+}
+
+.slick-dots li button::before {
+  color: $red;
+  font-size: 10px;
+}
+
+.slick-dots li.slick-active button::before {
+  color: $red;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 1000px) {
+  .project-carousel {
+    width: 100%;
+  }
+}
