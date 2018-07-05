@@ -12,8 +12,19 @@
 
 ActiveRecord::Schema.define(version: 20180703134633) do
 
+  create_table "banner_translations", force: :cascade do |t|
+    t.integer "banner_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "tagline"
+    t.index ["banner_id"], name: "index_banner_translations_on_banner_id"
+    t.index ["locale"], name: "index_banner_translations_on_locale"
+  end
+
   create_table "banners", force: :cascade do |t|
     t.string "image"
+    t.text "tagline"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

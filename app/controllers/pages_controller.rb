@@ -13,6 +13,7 @@ class PagesController < ApplicationController
   end
 
   def your_project
+    @banner = Banner.first
     @offers = Offer.all
   end
 
