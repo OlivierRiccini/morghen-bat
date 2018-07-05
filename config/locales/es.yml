@@ -21,4 +21,8 @@ es:
   content: "mensaje"
   send: "enviar"
 
-
+  # Project show Page
+  budget: "presupuesto"
+  time_frame: "plazos"
+  area: 'm2'
+  location: 'lugar'

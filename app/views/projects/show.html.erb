@@ -1,7 +1,35 @@
 <div class="container page" data-page-name="realizations">
-  <div class="project-carousel">
-    <% @project.pictures.each do |pic| %>
-      <%= cl_image_tag pic.url, height: '150' %>
-    <% end %>
+  <div class="row row-project-carousel">
+    <div class="project-carousel">
+      <% @project.pictures.each do |pic| %>
+        <%= cl_image_tag pic.url, height: '150' %>
+      <% end %>
+    </div>
+    <div class="project-infos">
+      <div>
+        <p><strong><%= t('budget').upcase %></strong></p>
+        <p><%= number_to_currency(@project.budget,:unit=>'€', precision: 0) %></p>
+      </div>
+      <div>
+        <p><strong><%= t('time_frame').upcase %></strong></p>
+        <p><%= @project.time_frame %></p>
+      </div>
+      <div>
+        <p><strong><%= t('area').upcase %></strong></p>
+        <p><%= @project.area %></p>
+      </div>
+      <div>
+        <p><strong><%= t('location').upcase %></strong></p>
+        <p><%= @project.location.capitalize %></p>
+      </div>
+    </div>
+  </div>
+  <div class="row row-project-content">
+    <div class="project-show-title-vertical-bar">
+    </div>
+    <h2><%= @project.name.upcase %></h2>
+    <div class="project-show-description">
+      <p><%= @project.content.html_safe %></p>
+    </div>
   </div>
 </div>

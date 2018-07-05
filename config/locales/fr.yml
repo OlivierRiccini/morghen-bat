@@ -20,3 +20,9 @@ fr:
   subject: "sujet"
   content: "message"
   send: "envoyer"
+
+  # Project show Page
+  budget: "budget"
+  time_frame: "délais"
+  area: 'm2'
+  location: 'lieu'
