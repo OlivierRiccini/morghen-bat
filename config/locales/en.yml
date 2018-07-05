@@ -55,5 +55,14 @@ en:
   # Project show Page
   budget: "budget"
   time_frame: "time frame"
-  area: 'm2'
-  location: 'location'
+  area: "m2"
+  location: "location"
+
+  # Banner Your Project
+  modular: "modular"
+  tailored: "tailored"
+  preconceived: "preconceived"
+
+  # Your Project buttons
+  houses: "houses"
+  apartments: "apartments"

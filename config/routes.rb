@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
     get 'realizations', to: 'pages#realizations'
     get 'your_project', to: 'pages#your_project'
+    get 'your_project_apartments', to: 'pages#your_project_apartments'
+    get 'your_project_houses', to: 'pages#your_project_houses'
     get 'contact', to: 'pages#contact'
     get 'dashboard', to: 'pages#dashboard'
 

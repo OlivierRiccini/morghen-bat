@@ -19,6 +19,7 @@
 
 console.log('Hello World from Webpacker');
 import 'carousel'
+import 'your_project'
 
 $('#company-item, #company-sub-categories').hover(function() {
   $('#company-sub-categories').slideToggle();
@@ -51,3 +52,5 @@ $('.col-project').hover(function() {
   var indexProject = $(this).data('project-index');
   $(`#project-${indexProject}-details`).slideToggle();
 });
+
+

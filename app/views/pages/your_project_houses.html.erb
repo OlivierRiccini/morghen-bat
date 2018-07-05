@@ -1,0 +1,8 @@
+<div class="page" data-page-name="your-project">
+  <h1>Houses</h1>
+  <ul>
+    <% @houses.each do |house| %>
+    <li><%= house.category %> - <%= house.name %></li>
+    <% end %>
+  </ul>
+</div>

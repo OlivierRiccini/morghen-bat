@@ -26,3 +26,12 @@ es:
   time_frame: "plazos"
   area: 'm2'
   location: 'lugar'
+
+  # Banner Your Project
+  modular: "modular"
+  tailored: "personalizado"
+  preconceived: "preconcebida"
+
+  # Your Project buttons
+  houses: "casas"
+  apartments: "apartamentos"

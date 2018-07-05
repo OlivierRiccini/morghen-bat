@@ -13,7 +13,16 @@ class PagesController < ApplicationController
   end
 
   def your_project
+    @banner = Banner.first
     @offers = Offer.all
+  end
+
+  def your_project_apartments
+    @apartments = Offer.where(category: "apartment")
+  end
+
+  def your_project_houses
+    @houses = Offer.where(category: "house")
   end
 
   def contact
