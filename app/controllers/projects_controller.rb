@@ -1,7 +1,9 @@
 class ProjectsController < ApplicationController
   before_action :find_project, only: [ :show, :update, :destroy ]
+  skip_before_action :authenticate_user!, only: :show
 
   def show
+    authorize @project
   end
 
   def create

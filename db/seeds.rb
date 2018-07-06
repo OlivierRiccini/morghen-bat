@@ -24,7 +24,8 @@ projects = [ {
                         passages du Lorem Ipsum, et, plus récemment, par son inclusion
                         dans des applications de mise en page de texte, comme Aldus PageMaker.",
               picture: ['https://res.cloudinary.com/dqgpcthzg/image/upload/v1530614498/mmr76jralggm2bowz2gh.jpg',
-                        'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg']
+                        'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg',
+                        'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530866335/brian-babb-256298-unsplash.jpg']
             },
             {
               name: "super mega maison",
@@ -45,7 +46,8 @@ projects = [ {
                         passages du Lorem Ipsum, et, plus récemment, par son inclusion
                         dans des applications de mise en page de texte, comme Aldus PageMaker.",
               picture: ['https://res.cloudinary.com/dqgpcthzg/image/upload/v1530614498/mmr76jralggm2bowz2gh.jpg',
-                        'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg']
+                        'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg',
+                        'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530866335/brian-babb-256298-unsplash.jpg']
             },
             {
               name: "super mega maison",
@@ -66,7 +68,8 @@ projects = [ {
                         passages du Lorem Ipsum, et, plus récemment, par son inclusion
                         dans des applications de mise en page de texte, comme Aldus PageMaker.",
               picture: ['https://res.cloudinary.com/dqgpcthzg/image/upload/v1530614498/mmr76jralggm2bowz2gh.jpg',
-                        'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg']
+                        'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg',
+                        'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530866335/brian-babb-256298-unsplash.jpg']
             },
             {
               name: "super mega maison",
@@ -87,7 +90,8 @@ projects = [ {
                         passages du Lorem Ipsum, et, plus récemment, par son inclusion
                         dans des applications de mise en page de texte, comme Aldus PageMaker.",
               picture: ['https://res.cloudinary.com/dqgpcthzg/image/upload/v1530614498/mmr76jralggm2bowz2gh.jpg',
-                        'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg']
+                        'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg',
+                        'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530866335/brian-babb-256298-unsplash.jpg']
             }
           ]
 
@@ -203,6 +207,26 @@ offers.each do |offer|
 end
 puts "Offers created!"
 
+service_1 = Service.new(title: 'garantie 10 ans', content: 'Lorem Ipsum is simply dummy text of the printing
+  and typesetting industry. An unknown printer took a galley of type and scrambled
+  it to make a type specimen book.')
+service_1.remote_icon_url = "https://res.cloudinary.com/dqgpcthzg/image/upload/v1530698299/lokxawlnsubve7gocdfj.svg"
+service_1.save
+
+service_2 = Service.new(title: 'qualité 100% professionnelle', content: 'Lorem Ipsum is simply dummy text of the printing
+  and typesetting industry. An unknown printer took a galley of type and scrambled
+  it to make a type specimen book.')
+service_2.remote_icon_url = "https://res.cloudinary.com/dqgpcthzg/image/upload/v1530698299/lokxawlnsubve7gocdfj.svg"
+service_2.save
+
+service_3 = Service.new(title: 'financement fléxible', content: 'Lorem Ipsum is simply dummy text of the printing
+  and typesetting industry. An unknown printer took a galley of type and scrambled
+  it to make a type specimen book.')
+service_3.remote_icon_url = "https://res.cloudinary.com/dqgpcthzg/image/upload/v1530698299/lokxawlnsubve7gocdfj.svg"
+service_3.save
+
+puts "Services created!"
+
 new_mission = Mission.create(content: "Depuis maintenant 20 ans, nous rénovons vos
 appartements et maisons avec passion. Votre confort est notre priorité.
 En effet, on sait que votre logement c’est plus qu’un simple investissement,
@@ -210,7 +234,7 @@ c’est souvent un projet de vie ou du moins le point de départ d’une belle h
 puts "Mission created!"
 
 new_banner = Banner.new(tagline: "donnez vie à vos projets, construisez votre avenir avec nous.")
-new_banner.remote_image_url = "https://res.cloudinary.com/dqgpcthzg/image/upload/v1530522219/gdoiv5uzqngqcdc7d0a8.jpg"
+new_banner.remote_image_url = 'https://res.cloudinary.com/dqgpcthzg/image/upload/v1530866335/brian-babb-256298-unsplash.jpg'
 new_banner.save
 puts "Banner created!"
 
@@ -234,6 +258,18 @@ new_mission.update(content: "For 20 years now, we have been renovating your apar
 
 new_banner.update(tagline: "give life to your projects, build your future with us.")
 
+service_1.update(title: '10 year warranty', content: 'Lorem Ipsum is simply dummy text of the printing
+  and typesetting industry. An unknown printer took a galley of type and scrambled
+  it to make a type specimen book.')
+
+service_2.update(title: '100% professional quality', content: 'Lorem Ipsum is simply dummy text of the printing
+  and typesetting industry. An unknown printer took a galley of type and scrambled
+  it to make a type specimen book.')
+
+service_3.update(title: 'flexible financing', content: 'Lorem Ipsum is simply dummy text of the printing
+  and typesetting industry. An unknown printer took a galley of type and scrambled
+  it to make a type specimen book.')
+
 I18n.locale = :es
 new_company_history.update(title: "NUESTRA HISTORIA",
   content: "Durante 20 años, hemos estado renovando sus apartamentos y casas con
@@ -250,5 +286,17 @@ new_mission.update(content: "En espanol, For 20 years now, we have been renovati
   starting point of a beautiful story.")
 
 new_banner.update(tagline: "dale vida a tus proyectos, construye tu futuro con nosotros.")
+
+service_1.update(title: 'garantía de 10 años', content: 'Lorem Ipsum is simply dummy text of the printing
+  and typesetting industry. An unknown printer took a galley of type and scrambled
+  it to make a type specimen book.')
+
+service_2.update(title: 'Calidad 100% profesional', content: 'Lorem Ipsum is simply dummy text of the printing
+  and typesetting industry. An unknown printer took a galley of type and scrambled
+  it to make a type specimen book.')
+
+service_3.update(title: 'financiamiento flexible', content: 'Lorem Ipsum is simply dummy text of the printing
+  and typesetting industry. An unknown printer took a galley of type and scrambled
+  it to make a type specimen book.')
 
 puts "Finito!!!!"
