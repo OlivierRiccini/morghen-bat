@@ -2,6 +2,7 @@ class CompanyHistoriesController < ApplicationController
   before_action :find_company_history, only: :update
 
   def update
+    authorize @company_history
     @company_history.update(company_history_params)
     redirect_to dashboard_path
   end

@@ -3,6 +3,7 @@ class OffersController < ApplicationController
 
   def create
     @new_offer = Offer.new(offer_params)
+    authorize @new_offer
     @new_offer.pictures.each do |pic|
       pic.pic_duty = @new_offer
     end
@@ -15,11 +16,13 @@ class OffersController < ApplicationController
   end
 
   def update
+    authorize @offer
     @offer.update(offer_params)
     redirect_to dashboard_path
   end
 
   def destroy
+    authorize @offer
     @offer.destroy
     redirect_to dashboard_path
   end

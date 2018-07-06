@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   before_action :find_message, only: [ :show, :destroy ]
   def show
+    authorize @message
     @message.update(read: true)
   end
 
@@ -15,6 +16,7 @@ class MessagesController < ApplicationController
   end
 
   def destroy
+    authorize @message
     @message.destroy
     respond_to do |format|
       format.js

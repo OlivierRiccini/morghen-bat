@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :home, :realizations, :your_project,
+                                                  :your_project_houses, :your_project_apartments,
+                                                  :contact ]
 
   def home
     @company_history = CompanyHistory.first
@@ -17,12 +20,12 @@ class PagesController < ApplicationController
     @offers = Offer.all
   end
 
-  def your_project_apartments
-    @apartments = Offer.where(category: "apartment")
-  end
-
   def your_project_houses
     @houses = Offer.where(category: "house")
+  end
+
+  def your_project_apartments
+    @apartments = Offer.where(category: "apartment")
   end
 
   def contact
@@ -30,18 +33,22 @@ class PagesController < ApplicationController
     @message = Message.new
   end
 
-  def commitments
-  end
-
   def dashboard
+    authorize current_user
+
     @messages = Message.order("created_at DESC").all
+
     @company_history = CompanyHistory.first
+
     @company_values = CompanyValue.all
     @new_company_value = CompanyValue.new
+
     @company_know_hows = CompanyKnowHow.all
     @new_company_know_how = CompanyKnowHow.new
+
     @services = Service.all
     @new_service = Service.new
+
     @company_details = CompanyDetail.first
 
     @banner = Banner.first

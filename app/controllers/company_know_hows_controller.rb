@@ -3,7 +3,7 @@ class CompanyKnowHowsController < ApplicationController
 
   def create
     @new_company_know_how = CompanyKnowHow.new(company_know_how_params)
-
+    authorize @new_company_know_how
     if @new_company_know_how.save
       redirect_to root_path
     else
@@ -12,11 +12,13 @@ class CompanyKnowHowsController < ApplicationController
   end
 
   def update
+    authorize @company_know_how
     @company_know_how.update(company_know_how_params)
     redirect_to dashboard_path
   end
 
   def destroy
+    authorize @company_know_how
     @company_know_how.destroy
     redirect_to dashboard_path
   end

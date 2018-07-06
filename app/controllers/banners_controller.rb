@@ -2,6 +2,7 @@ class BannersController < ApplicationController
   before_action :find_banner, only: :update
 
   def update
+    authorize @banner
     @banner.update(banner_params)
     redirect_to dashboard_path
   end
