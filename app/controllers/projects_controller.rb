@@ -1,11 +1,14 @@
 class ProjectsController < ApplicationController
   before_action :find_project, only: [ :show, :update, :destroy ]
+  skip_before_action :authenticate_user!, only: :show
 
   def show
+    authorize @project
   end
 
   def create
     @new_project = Project.new(project_params)
+    authorize @new_project
     @new_project.pictures.each do |pic|
       pic.pic_duty = @new_project
     end
@@ -18,11 +21,13 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    authorize @project
     @project.update(project_params)
     redirect_to dashboard_path
   end
 
   def destroy
+    authorize @project
     @project.destroy
     respond_to { |format| format.js }
   end

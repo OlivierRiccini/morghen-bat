@@ -3,7 +3,7 @@ class ServicesController < ApplicationController
 
   def create
     @new_service = Service.new(service_params)
-
+    authorize @new_service
     if @new_service.save
       redirect_to root_path
     else
@@ -12,11 +12,13 @@ class ServicesController < ApplicationController
   end
 
   def update
+    authorize @service
     @service.update(service_params)
     redirect_to dashboard_path
   end
 
   def destroy
+    authorize @service
     @service.destroy
     redirect_to dashboard_path
   end

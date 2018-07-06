@@ -2,6 +2,7 @@ class CompanyDetailsController < ApplicationController
   before_action :find_company_details, only: :update
 
   def update
+    authorize @company_details
     @company_details.update(company_details_params)
     redirect_to dashboard_path
   end

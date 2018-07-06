@@ -1,4 +1,4 @@
-<div class="container dashboard-container">
+<div class="page container dashboard-container">
 
 <!-- Messages section -->
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-messages">Messages (<span id="messages-count"><%= Message.where(read: false).count %>/<%= Message.count %></span>)<i class="fas fa-arrow-down"></i></span>
@@ -350,5 +350,6 @@
   </div>
 -->
 </div>
+<%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
 
 <%= javascript_pack_tag 'dashboard' %>

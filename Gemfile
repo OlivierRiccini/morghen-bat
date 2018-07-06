@@ -34,6 +34,7 @@ gem 'figaro'
 
 # Devise for User
 gem 'devise'
+gem 'pundit'
 
 gem 'country_select', require: 'country_select_without_sort_alphabetical'
 # mailer
