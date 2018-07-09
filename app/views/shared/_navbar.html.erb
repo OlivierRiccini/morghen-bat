@@ -29,9 +29,15 @@
     <li class="nav-item" data-item-name="your-project"><%= link_to t('your_project').capitalize, your_project_path %></li>
     <li class="nav-item" data-item-name="contact"><%= link_to "Contact", contact_path %></li>
     <div class="language-choice">
-      <li><%= link_to "Français", locale: "fr" %></li>
-      <li><%= link_to "English", locale: "en" %></li>
-      <li><%= link_to "Español", locale: "es" %></li>
+      <li><%= link_to locale: "fr" do %>
+      <%= image_tag 'fr.svg', height: '18' %>
+      <% end %></li>
+      <li><%= link_to locale: "en", height: '18' do %>
+      <%= image_tag 'eng.svg' %>
+      <% end %></li>
+      <li><%= link_to locale: "es", height: '18' do %>
+      <%= image_tag 'es.svg' %>
+      <% end %></li>
     </div>
   </ul>
 </div>
