@@ -25,7 +25,12 @@
   justify-content: space-around;
   padding-left: 0;
   li {
-    text-decoration: underline;
+    border: solid 2px;
+    padding: 10px;
+    border-radius: 3px;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 300;
   }
 }
 
