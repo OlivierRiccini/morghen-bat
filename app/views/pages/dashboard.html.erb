@@ -32,7 +32,7 @@
       <%= f.input :city %>
       <%= f.input :country, selected: "FR" %>
       <%= f.input :phone %>
-      <%= f.button :submit, value: 'Save' %>
+      <%= f.button :submit, value: 'Save', class: 'btn-save' %>
     <% end %>
   </div>
 
@@ -42,7 +42,7 @@
     <%= simple_form_for @company_history do |f| %>
       <%= f.input :title %>
       <%= f.input :content, as: :summernote, label: false %>
-      <%= f.button :submit, value: 'Save' %>
+      <%= f.button :submit, value: 'Save', class: 'btn-save' %>
     <% end %>
 
     <div>
@@ -50,7 +50,7 @@
       <%= simple_form_for [ @company_history, @company_history.pictures.first ] do |f| %>
         <%= f.file_field :url %>
         <%= f.input :url_cache, as: :hidden %>
-        <%= f.button :submit, value: 'Save' %>
+        <%= f.button :submit, value: 'Save', class: 'btn-save' %>
       <% end %>
     </div>
   </div>
@@ -328,7 +328,7 @@
           <% end %>
         </div>
       </div>
-        <%= f.button :submit, value: 'Save offer' %>
+        <%= f.button :submit, value: 'Save offer', class: 'btn-save' %>
       <% end %>
     </div>
   </div>

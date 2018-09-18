@@ -18,39 +18,7 @@
 //= require_tree .
 
 console.log('Hello World from Webpacker');
-import 'carousel'
-import 'your_project'
-
-$('#company-item, #company-sub-categories').hover(function() {
-  $('#company-sub-categories').slideToggle();
-});
-
-$('.nav-item').hover(function() {
-  $(this).toggleClass('nav-item-active');
-});
-
-$('#dropdown-menu-btn').click(function() {
-  $('.nav-list-small-screen').slideToggle();
-});
-
-const page = document.querySelector(".page");
-const navItems = document.querySelectorAll(".nav-item");
-
-navItems.forEach(function(navItem) {
-  if (( navItem != null && page != null ) && navItem.dataset.itemName == page.dataset.pageName ) {
-    navItem.classList.add('nav-item-active');
-  };
-});
-
-$('.project-details-hover-display').click(function() {
-  $(this).slideToggle();
-  console.log('test');
-});
-
-// Realizations page
-$('.col-project').hover(function() {
-  var indexProject = $(this).data('project-index');
-  $(`#project-${indexProject}-details`).slideToggle();
-});
-
-
+import '_carousel'
+import '_your_project_page'
+import '_realizations_page'
+import '_navbar'

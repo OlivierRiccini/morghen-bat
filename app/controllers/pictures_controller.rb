@@ -8,18 +8,10 @@ class PicturesController < ApplicationController
     @new_pic.pic_duty = pic_duty
 
     if @new_pic.save
-      redirect_to root_path
+      redirect_to project_path(pic_duty.id)
     else
       render dashboard_path
     end
-
-    # respond_to do |format|
-    #   if @new_pic.save
-    #     format.js
-    #   else
-    #     format.js
-    #   end
-    # end
   end
 
   def update
