@@ -3,13 +3,14 @@
     <% i = 0 %>
     <% @projects.each do |project| %>
     <% i += 1 %>
-      <div class="col-xs-6 col-md-3 col-project" style="background-image: url('<%= cl_image_path project.pictures.last.url %>');"  data-project-index="<%= i %>">
-        <div class="project-details-hover-display" id="project-<%= i %>-details">
-          <h3><%= project.name.upcase %></h3>
-          <p><%= project.category.capitalize %> à <%= project.location.capitalize %></p>
-          <%= link_to "Détails", project_path(project) %> <i class="fas fa-arrow-right"></i>
+      <%= link_to project_path(project) do %>
+        <div class="col-xs-6 col-md-3 col-project" style="background-image: url('<%= cl_image_path project.pictures.last.url if !project.pictures.empty?%>');"  data-project-index="<%= i %>">
+          <div class="project-details-hover-display" id="project-<%= i %>-details">
+            <h3><%= project.name.upcase %></h3>
+            <p><%= project.category.capitalize %> à <%= project.location.capitalize %></p>
           <!-- Project page in projects/show.html.erb -->
         </div>
+      <% end %>
       </div>
     <% end %>
   </div>

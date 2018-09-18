@@ -1,4 +1,4 @@
-class CompanyHowKnowPolicy < ApplicationPolicy
+class CompanyValuePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope
