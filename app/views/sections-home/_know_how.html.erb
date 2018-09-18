@@ -1,11 +1,14 @@
-<div class="row">
-  <div class="home-section-title">
-    <h2>Savoir-faire</h2>
+<div class="banner">
+  <h2>NOTRE <strong>SAVOIR-FAIRE</strong></h2>
+  <p>
+    <% if @know_how.content.nil? %>
+      <%= @no_translation %>
+    <% else %>
+      <%= @know_how.content.html_safe %>
+    <% end %>
+  </p>
+  <div class="buttons-flexbox">
+    <%= link_to t('realizations').capitalize, realizations_path %>
+    <%= link_to t('your_project').capitalize, your_project_path %>
   </div>
-  <% @company_know_hows.each do |know_how| %>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <%= cl_image_tag know_how.icon, height: '100' %>
-      <p><%= know_how.content.html_safe %></p>
-    </div>
-  <% end %>
 </div>

@@ -1,5 +1,4 @@
 // FOR ALL SECTIONS
-
 .home-section-title {
   width: fit-content;
   height: 120px;
@@ -43,27 +42,52 @@
   }
 }
 
-// SECTION MISSION
+// SECTION MISSION AND SECTION KNOW HOWS
 
-.section-mission {
+.section-mission, .section-know-how {
   .banner {
-    height: 185px;
     text-align: center;
     background-color: #000;
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
+    padding: 40px 0;
+  };
+  p, h2 {
+    color: #fff;
+    margin-top: 0;
   };
   p {
-    color: #fff;
-    width: 50%;
+     width: 50%;
   }
 }
 
+.section-know-how .buttons-flexbox {
+  display: flex;
+  a {
+    color: #fff;
+    margin: 20px 50px;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    transition: all 1s;
+  }
+}
 
-// SECTION VALUES AND SECTION KNOW HOWS
+.section-know-how .buttons-flexbox a:hover {
+  text-decoration: none;
+  border-color: $red;
+}
 
-.section-values, .section-know-hows {
+// SECTION KNOW HOW
+.section-know-how {
+  margin: 100px 0;
+}
+
+// SECTION VALUES
+
+.section-values {
   .col-xs-12 {
     text-align: center;
   };
@@ -76,12 +100,46 @@
   margin: 50px auto;
 }
 
+// VALUE CARD
 
-// SECTION KNOW HOWS
-.section-know-hows {
-  margin: 120px auto;
+.value-card {
+  height: 360px;
+  width: 280px;
+  background: linear-gradient(to bottom, #ffffff 0%,#ffffff 60%,#000000 60%,#000000 100%);
+  border: solid 3px;
+  border-radius: 3px;
+  position: relative;
+  .value-icon {
+  position: absolute;
+    top: 25%;
+    left: 50%;
+  transform: translate(-50%, -50%);
+  }
+  .value-name {
+  height:50px;
+  min-width:150px;
+  background-color: white;
+  border: solid 4px;
+  border-radius: 1px;
+  position: absolute;
+    top: 60%;
+    left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  }
+  p {
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+  transform: translate(-50%, 50%);
+  width: 80%;
+  }
 }
-
 
 // SECTION LOCALIIZATION AND SERVICES
 .section-localization {

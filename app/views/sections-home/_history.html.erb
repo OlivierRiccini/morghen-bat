@@ -5,7 +5,7 @@
   <div class="history-content-box">
     <div class="history-title">
       <%= image_tag "insurance", height: '80' %>
-      <h2><%= @company_history.title %></h2>
+      <h2><%= @company_history.title.html_safe %></h2>
     </div>
     <p><%= @company_history.content.html_safe %></p>
   </div>

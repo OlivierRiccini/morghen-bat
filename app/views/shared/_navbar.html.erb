@@ -7,27 +7,22 @@
     <i id="dropdown-menu-btn" class="fas fa-angle-down"></i>
   </div>
   <ul class="nav-list-small-screen">
-    <li><%= link_to t('company').capitalize, root_path %>
+    <li><%= link_to t('company').upcase, root_path %>
     </li>
-    <li class="nav-item-small-screen"><%= link_to t('realizations').capitalize, realizations_path %></li>
-    <li class="nav-item-small-screen"><%= link_to t('your_project').capitalize, your_project_path %></li>
-    <li class="nav-item-small-screen"><%= link_to t('contact').capitalize, contact_path %></li>
+    <li class="nav-item-small-screen"><%= link_to t('realizations').upcase, realizations_path %></li>
+    <li class="nav-item-small-screen"><%= link_to t('your_project').upcase, your_project_path %></li>
+    <li class="nav-item-small-screen"><%= link_to t('quotation').upcase, contact_path %></li>
   </ul>
 
   <ul class="nav-list">
     <li class="nav-item" data-item-name="home">
       <div id='company-item'>
-        <%= link_to t('company').capitalize, root_path %>
-        <ul id="company-sub-categories">
-          <li><%= t('know_how').capitalize %></li>
-          <li><%= t('values').capitalize %></li>
-          <li><%= t('localization').capitalize %></li>
-        </ul>
+        <%= link_to t('company').upcase, root_path %>
       </div>
     </li>
-    <li class="nav-item" data-item-name="realizations"><%= link_to t('realizations').capitalize, realizations_path %></li>
-    <li class="nav-item" data-item-name="your-project"><%= link_to t('your_project').capitalize, your_project_path %></li>
-    <li class="nav-item" data-item-name="contact"><%= link_to "Contact", contact_path %></li>
+    <li class="nav-item" data-item-name="realizations"><%= link_to t('realizations').upcase, realizations_path %></li>
+    <li class="nav-item" data-item-name="your-project"><%= link_to t('your_project').upcase, your_project_path %></li>
+    <li class="nav-item" data-item-name="contact"><%= link_to t('quotation').upcase, contact_path %></li>
     <div class="language-choice">
       <li><%= link_to locale: "fr" do %>
       <%= image_tag 'fr.svg', height: '18' %>

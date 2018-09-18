@@ -6,8 +6,20 @@
       <%= link_to project_path(project) do %>
         <div class="col-xs-6 col-md-3 col-project" style="background-image: url('<%= cl_image_path project.pictures.last.url if !project.pictures.empty?%>');"  data-project-index="<%= i %>">
           <div class="project-details-hover-display" id="project-<%= i %>-details">
-            <h3><%= project.name.upcase %></h3>
-            <p><%= project.category.capitalize %> à <%= project.location.capitalize %></p>
+            <h3>
+              <% if project.name.nil? %>
+                <%= @no_translation %>
+              <% else %>
+                <%= project.name.upcase %>
+              <% end %>
+            </h3>
+            <p>
+              <% if project.category.nil? || project.location.nil? %>
+                <%= @no_translation %>
+              <% else %>
+              <%= project.category.capitalize %> à <%= project.location.capitalize %>
+              <% end %>
+            </p>
           <!-- Project page in projects/show.html.erb -->
         </div>
       <% end %>
