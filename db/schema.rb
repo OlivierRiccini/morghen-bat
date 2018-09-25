@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180703134633) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "banner_translations", force: :cascade do |t|
     t.integer "banner_id", null: false
     t.string "locale", null: false

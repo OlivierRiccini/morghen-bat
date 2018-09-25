@@ -1,4 +1,4 @@
 <div class="banner">
   <h2>NOTRE <strong>MISSION</strong></h2>
-  <p><%= @mission.content.html_safe %></p>
+  <p><%= @mission.content.html_safe unless @mission.nil? %></p>
 </div>

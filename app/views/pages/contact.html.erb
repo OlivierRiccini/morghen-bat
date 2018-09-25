@@ -2,17 +2,19 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6">
       <p><i class="fas fa-map-marker-alt"></i> <strong><%= t('address').capitalize %>: </strong>
-      <br><%= @company_details.address %>
-      <br><%= @company_details.postal_code %> <%= @company_details.city %>
-      <br>
-      <% if !@company_details.country_name.nil? %>
-        <p><%= @company_details.country_name.capitalize %></p>
-      <% else %>
-        <p><%= @company_details.country.capitalize %></p>
+      <% unless @company_details.nil? %>
+        <br><%= @company_details.address %>
+        <br><%= @company_details.postal_code %> <%= @company_details.city %>
+        <br>
+        <% if !@company_details.country_name.nil? %>
+          <p><%= @company_details.country_name.capitalize %></p>
+        <% else %>
+          <p><%= @company_details.country.capitalize %></p>
+        <% end %>
+        <br>
+        <p><i class="fas fa-phone"></i> <strong><%= t('phone').capitalize %>: </strong>
+        <br><%= @company_details.phone %></p>
       <% end %>
-      <br>
-      <p><i class="fas fa-phone"></i> <strong><%= t('phone').capitalize %>: </strong>
-      <br><%= @company_details.phone %></p>
     </div>
     <div class="col-xs-12 col-sm-6">
       <p><%= t('contact_text').capitalize %></p>

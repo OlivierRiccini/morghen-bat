@@ -1,12 +1,12 @@
 <div class="row">
   <div class="history-image-flex-box">
-    <%= cl_image_tag @company_history.pictures.first.url %>
+    <%= cl_image_tag @company_history.pictures.first.url unless @company_history.nil?  %>
   </div>
   <div class="history-content-box">
     <div class="history-title">
       <%= image_tag "insurance", height: '80' %>
-      <h2><%= @company_history.title.html_safe %></h2>
+      <h2><%= @company_history.title.html_safe unless @company_history.nil? %></h2>
     </div>
-    <p><%= @company_history.content.html_safe %></p>
+    <p><%= @company_history.content.html_safe unless @company_history.nil? %></p>
   </div>
 </div>

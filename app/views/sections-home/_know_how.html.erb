@@ -1,10 +1,10 @@
 <div class="banner">
   <h2>NOTRE <strong>SAVOIR-FAIRE</strong></h2>
   <p>
-    <% if @know_how.content.nil? %>
+    <% if !@know_how.nil? && @know_how.content.nil? %>
       <%= @no_translation %>
     <% else %>
-      <%= @know_how.content.html_safe %>
+      <%= @know_how.content.html_safe unless @know_how.nil? %>
     <% end %>
   </p>
   <div class="buttons-flexbox">
