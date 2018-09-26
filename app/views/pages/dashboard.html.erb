@@ -26,7 +26,7 @@
 <!-- Company Details section -->
   <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-company-details">Coordonnées de l'entreprise <i class="fas fa-arrow-down"></i></span>
   <div class="dashboard-section" id="section-model-company-details">
-    <%= simple_form_for @company_details do |f| %>
+    <%= simple_form_for (@company_details unless @company_details.nil?) do |f| %>
       <%= f.input :address %>
       <%= f.input :postal_code %>
       <%= f.input :city %>
