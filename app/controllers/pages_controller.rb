@@ -49,7 +49,7 @@ class PagesController < ApplicationController
     @services = Service.all
     @new_service = Service.new
 
-    @company_details = CompanyDetail.first ? CompanyDetail.first : CompanyDetail.new
+    @company_details = CompanyDetail.first
 
     @banner = Banner.first
 
