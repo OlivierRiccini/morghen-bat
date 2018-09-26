@@ -1,6 +1,6 @@
 <div class="row">
   <div class="history-image-flex-box">
-    <%= cl_image_tag @company_history.pictures.first.url unless @company_history.pictures.empty?  %>
+    <%= cl_image_tag @company_history.pictures.first.url unless @company_history.pictures.empty? || @company_history.nil? %>
   </div>
   <div class="history-content-box">
     <div class="history-title">
