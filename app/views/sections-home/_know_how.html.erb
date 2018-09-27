@@ -4,7 +4,7 @@
     <% if !@know_how.nil? && @know_how.content.nil? %>
       <%= @no_translation %>
     <% else %>
-      <%= @know_how.content.html_safe unless @know_how.nil? %>
+      <%= @know_how.content.html_safe %>
     <% end %>
   </p>
   <div class="buttons-flexbox">

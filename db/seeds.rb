@@ -152,23 +152,23 @@ projects = [ {
 
 User.create(email: 'test@test.com', password: '123456', admin: true)
 
-new_company_history = CompanyHistory.new(title: "NOTRE HISTOIRE",
-  content: "Depuis maintenant 20 ans, nous rénovons vos
-appartements et maisons avec passion. Votre confort est notre priorité.
-En effet, on sait que votre logement c’est plus qu’un simple investissement,
-c’est souvent un projet de vie ou du moins le point de départ d’une belle histoire.
-Nous vous accompagnons avec le souci du détails pour vos projets afin de donner vie à vos envies.
-De la conception à la réalisation de vos projets et même après la livraison nous
-nous engageons à maintenir une communication optimale pour donner vie à vos rêves.")
-new_picture_company = Picture.new(pic_duty: new_company_history)
-new_picture_company.remote_url_url = 'https://res.cloudinary.com/morghenbat/image/upload/v1537973922/images_1.jpg'
-new_company_history.save
+# new_company_history = CompanyHistory.new(title: "NOTRE HISTOIRE",
+#   content: "Depuis maintenant 20 ans, nous rénovons vos
+# appartements et maisons avec passion. Votre confort est notre priorité.
+# En effet, on sait que votre logement c’est plus qu’un simple investissement,
+# c’est souvent un projet de vie ou du moins le point de départ d’une belle histoire.
+# Nous vous accompagnons avec le souci du détails pour vos projets afin de donner vie à vos envies.
+# De la conception à la réalisation de vos projets et même après la livraison nous
+# nous engageons à maintenir une communication optimale pour donner vie à vos rêves.")
+# new_picture_company = Picture.new(pic_duty: new_company_history)
+# new_picture_company.url = 'https://res.cloudinary.com/morghenbat/image/upload/v1537973922/images_1.jpg'
+# new_company_history.save
 
 1.times do
   new_company_know_how = CompanyKnowHow.new(content: "Lorem Ipsum is simply dummy text of the printing
   and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
   ever since the 1500s.")
-  new_company_know_how.remote_icon_url = "../app/assets/images/insurance.svg"
+  # new_company_know_how.remote_icon_url = "../app/assets/images/insurance.svg"
   new_company_know_how.save
 end
 puts "Company Know-Hows created!"
