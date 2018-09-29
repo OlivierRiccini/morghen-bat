@@ -9,6 +9,14 @@ fr:
   quotation: "devis"
   commitments: "nos engagements"
 
+  # Home page
+  our_history: "notre histoire"
+  our_values: "nos valeurs"
+  our_mission: "notre mission"
+  our_know_how: "notre savoir faire"
+  our_services: "nos services"
+  catchment_area: "zone de chalandise"
+
   # Contact page
   address: "adresse"
   phone: "téléphone"

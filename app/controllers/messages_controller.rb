@@ -1,5 +1,8 @@
 class MessagesController < ApplicationController
   before_action :find_message, only: [ :show, :destroy ]
+  skip_before_action :authenticate_user!, only: [ :create ]
+  skip_after_action :verify_authorized, only: [ :create ]
+
   def show
     authorize @message
     @message.update(read: true)
@@ -30,6 +33,6 @@ class MessagesController < ApplicationController
   end
 
   def params_message
-    params.require(:message).permit(:name, :email, :subject, :content)
+    params.require(:message).permit(:name, :email, :subject, :content, :type_de_travaux, :corps_de_metier)
   end
 end

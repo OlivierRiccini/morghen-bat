@@ -2,34 +2,34 @@
   <div class="row row-project-carousel">
     <div class="project-carousel">
       <% @project.pictures.each do |pic| %>
-        <%= cl_image_tag pic.url, height: '150' %>
+        <%= cl_image_tag pic.url, height: '150' unless (pic.nil? || pic.url.nil?) %>
       <% end %>
     </div>
     <div class="project-infos">
       <div>
         <p><strong><%= t('budget').upcase %></strong></p>
-        <p><%= number_to_currency(@project.budget,:unit=>'€', precision: 0) %></p>
+        <p><%= (@project.nil? || @project.budget.nil?) ? @no_translation : number_to_currency(@project.budget,:unit=>'€', precision: 0) %></p>
       </div>
       <div>
         <p><strong><%= t('time_frame').upcase %></strong></p>
-        <p><%= @project.time_frame %></p>
+        <p><%= (@project.nil? || @project.time_frame.nil?) ? @no_translation : @project.time_frame %></p>
       </div>
       <div>
         <p><strong><%= t('area').upcase %></strong></p>
-        <p><%= @project.area %></p>
+        <p><%= (@project.nil? || @project.area.nil?) ? @no_translation : @project.area %></p>
       </div>
       <div>
         <p><strong><%= t('location').upcase %></strong></p>
-        <p><%= @project.location.capitalize %></p>
+        <p><%= (@project.nil? || @project.location.nil?) ? @no_translation : @project.location.capitalize %></p>
       </div>
     </div>
   </div>
   <div class="row row-project-content">
     <div class="project-show-title-vertical-bar">
     </div>
-    <h2><%= @project.name.upcase %></h2>
+    <h2><%= (@project.nil? || @project.name.nil?) ? @no_translation : @project.name.upcase %></h2>
     <div class="project-show-description">
-      <p><%= @project.content.html_safe %></p>
+      <p><%= (@project.nil? || @project.content.nil?) ? @no_translation : @project.content.html_safe %></p>
     </div>
   </div>
 </div>

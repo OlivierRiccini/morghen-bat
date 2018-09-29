@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col-xs-12 col-sm-6">
     <div class="home-section-title">
-      <h2>NOS <strong>SERVICES</strong></h2>
+      <h2><%= title_section(t('our_services')) %></h2>
     </div>
     <div class="home-services-flex-box">
       <% @services.each do |service| %>
-        <div class="home-service-box" title='<%= service.title.capitalize %>' data-toggle="popover" data-trigger="hover" data-content='<%= service.content %>'>
+        <div class="home-service-box" title='<%= service.title.capitalize unless (service.nil? || service.title.nil?) %>' data-toggle="popover" data-trigger="hover" data-content='<%= service.content %>'>
           <%= cl_image_tag service.icon, height: '80' %>
-          <p><%= service.title.upcase %></p>
+          <p><%= (service.nil? || service.title.nil?) ? @no_translation : service.title.upcase %></p>
         </div>
         <script>
           $(document).ready(function(){
@@ -21,7 +21,7 @@
   </div>
   <div class="col-xs-12 col-sm-6">
     <div class="home-section-title">
-      <h2>ZONE DE <strong>CHALANDISE</strong></h2>
+      <h2><%= title_section(t('catchment_area')) %></h2>
     </div>
     <div class="map" style="background-image: url('<%= image_path "map.png"%>');">
       <p class= "dom-tom"> DOM-TOM </p>

@@ -5,8 +5,8 @@
   <div class="history-content-box">
     <div class="history-title">
       <%= image_tag "insurance.svg", height: '80' %>
-      <h2><%= @company_history.title.html_safe unless (@company_history.nil? || @company_history.title.nil?) %></h2>
+      <h2><%= title_section(t('our_history')) %></h2>
     </div>
-    <p><%= @company_history.content.html_safe unless (@company_history.nil? || @company_history.content.nil?) %></p>
+    <p><%= (@company_history.nil? || @company_history.content.nil?) ? @no_translation : @company_history.content.html_safe %></p>
   </div>
 </div>

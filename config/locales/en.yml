@@ -40,6 +40,14 @@ en:
   quotation: "quotation"
   commitments: "commitments"
 
+  # Home page
+  our_history: "our history"
+  our_values: "our values"
+  our_mission: "our mission"
+  our_know_how: "our know-how"
+  our_services: "our services"
+  catchment_area: "catchment area"
+
   # Contact page
   address: "address"
   phone: "phone"

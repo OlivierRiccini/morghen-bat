@@ -1,4 +1,4 @@
 <div class="banner">
-  <h2>NOTRE <strong>MISSION</strong></h2>
-  <p><%= @mission.content.html_safe unless @mission.nil? %></p>
+  <h2><%= title_section(t('our_mission')) %></h2>
+  <p><%= (@mission.nil? || @mission.content.nil?) ?  @no_translation : @mission.content.html_safe %></p>
 </div>
