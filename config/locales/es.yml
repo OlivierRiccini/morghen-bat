@@ -20,6 +20,18 @@ es:
   subject: "sujeto"
   content: "mensaje"
   send: "enviar"
+  corps_de_metier: "cuerpo de comercio"
+  # Collection
+  electricity: "electricidad"
+  painting: "pintura"
+  masonry: "albañilería"
+  cleaning: "limpieza"
+  plumbing_carpentry: "carpintería"
+  other: "otro"
+  type_de_travaux: "tipo de trabajo"
+  # Collection
+  renovation: "renovación"
+  construction: "construcción"
 
   # Project show Page
   budget: "presupuesto"

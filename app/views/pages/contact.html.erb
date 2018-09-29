@@ -22,6 +22,12 @@
         <%= f.input :name, label: t('name').capitalize %>
         <%= f.input :email, label: t('email').capitalize %>
         <%= f.input :subject, label: t('subject').capitalize %>
+        <div class="col-xs-12 col-sm-6 col-type-de-travaux">
+          <%= f.input :type_de_travaux, label: t('type_de_travaux').capitalize, collection: [ t('renovation').capitalize, t('construction').capitalize] %>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-corps-de-metier">
+          <%= f.input :corps_de_metier, label: t('corps_de_metier').capitalize, collection: [ t('electricity').capitalize, t('painting').capitalize, t('masonry').capitalize, t('cleaning').capitalize, t('plumbing_carpentry').capitalize, t('other').capitalize] %>
+        </div>
         <%= f.input :content, as: :text, label: t('content').capitalize %>
         <%= f.button :submit, value: t('send').capitalize %>
       <% end %>

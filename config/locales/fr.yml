@@ -20,6 +20,18 @@ fr:
   subject: "sujet"
   content: "message"
   send: "envoyer"
+  corps_de_metier: "corps de metier"
+  # Collection
+  electricity: "électricité"
+  painting: "peinture"
+  masonry: "maçonnerie"
+  cleaning: "ravalement"
+  plumbing_carpentry: "plomberie menuiserie"
+  other: "autres"
+  type_de_travaux: "type de travaux"
+  # Collection
+  renovation: "rénovation"
+  construction: "construction"
 
   # Project show Page
   budget: "budget"

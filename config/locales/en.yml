@@ -51,6 +51,18 @@ en:
   subject: "subject"
   content: "message"
   send: "send"
+  corps_de_metier: "body of trade"
+  # Collection
+  electricity: "electricity"
+  painting: "painting"
+  masonry: "masonry"
+  cleaning: "cleaning"
+  plumbing_carpentry: "plumbing carpentry"
+  other: "other"
+  type_de_travaux: "type of work"
+  # Collection
+  renovation: "renovation"
+  construction: "construction"
 
   # Project show Page
   budget: "budget"
