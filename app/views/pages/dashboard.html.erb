@@ -73,6 +73,7 @@
             <%= cl_image_tag company_value.icon, height: '150' %>
             <%= f.file_field :icon %>
             <%= f.input :icon_cache, as: :hidden %>
+            <%= f.input :title %>
             <%= f.input :content, as: :summernote, label: false %>
             <%= f.button :submit, value: 'Save' %>
             <%= link_to 'Delete', company_value_path(company_value), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer cet valeur?"}, class: 'btn btn-danger' %>

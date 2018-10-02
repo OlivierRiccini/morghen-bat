@@ -9,7 +9,7 @@
           <%= cl_image_tag value.icon, height: '100' unless (value.nil? || value.icon.nil?) %>
         </div>
         <div class="value-name">
-          QUALITÉ
+          <%= (value.nil? || value.content.nil?) ? @no_translation : value.title.upcase %>
         </div>
         <p class="value-description">
           <%= (value.nil? || value.content.nil?) ? @no_translation : value.content.html_safe %>
