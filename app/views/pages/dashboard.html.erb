@@ -43,7 +43,6 @@
       <%= f.input :content, as: :summernote, label: false %>
       <%= f.button :submit, value: 'Save', class: 'btn-save' %>
     <% end %>
-
     <div>
       <%= cl_image_tag @company_history.pictures.first.url, height:'200' %>
       <%= simple_form_for [ @company_history, @company_history.pictures.first ] do |f| %>
