@@ -6,10 +6,6 @@
   padding-left: 15px;
 }
 
-.section-localization .home-section-title {
-  height: 50px;
-}
-
 // SECTION HISTORY
 .history-image-flex-box {
   display: flex;
@@ -148,7 +144,14 @@
 // SECTION LOCALIIZATION AND SERVICES
 .section-localization {
   margin-bottom: 100px;
+  .home-section-title {
+    height: 50px;
+  };
+  h2:last-child {
+    margin-left: 15px;
+  }
 }
+
 
 .map {
   height: 350px;
