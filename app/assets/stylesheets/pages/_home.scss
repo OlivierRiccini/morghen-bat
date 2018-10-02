@@ -101,7 +101,6 @@
 }
 
 // VALUE CARD
-
 .value-card {
   height: 360px;
   width: 280px;
@@ -147,7 +146,7 @@
   .home-section-title {
     height: 50px;
   };
-  h2:last-child {
+  .col-xs-12:last-child h2 {
     margin-left: 15px;
   }
 }
