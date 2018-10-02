@@ -18,7 +18,10 @@
 //= require_tree .
 
 console.log('Hello World from Webpacker');
-import '_carousel'
-import '_your_project_page'
-import '_realizations_page'
-import '_navbar'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import '../_carousel'
+import '../_your_project_page'
+import '../_realizations_page'
+import '../_navbar'
