@@ -47,8 +47,8 @@ development:
     quiet: false
     headers:
       'Access-Control-Allow-Origin': '*'
-    # watch_options:
-    #   ignored: /node_modules/
+    watch_options:
+      ignored: /node_modules/
 
 
 test:
@@ -62,7 +62,7 @@ production:
   <<: *default
 
   # Production depends on precompilation of packs prior to booting for performance.
-  compile: false
+  compile: true
 
   # Cache manifest.json for performance
   cache_manifest: true
