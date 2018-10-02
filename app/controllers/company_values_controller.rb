@@ -30,6 +30,6 @@ class CompanyValuesController < ApplicationController
   end
 
   def company_value_params
-    params.require(:company_value).permit(:content, :icon)
+    params.require(:company_value).permit(:content, :icon, :title)
   end
 end
