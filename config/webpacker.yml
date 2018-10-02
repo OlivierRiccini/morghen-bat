@@ -47,8 +47,8 @@ development:
     quiet: false
     headers:
       'Access-Control-Allow-Origin': '*'
-    watch_options:
-      ignored: /node_modules/
+    # watch_options:
+    #   ignored: /node_modules/
 
 
 test:
