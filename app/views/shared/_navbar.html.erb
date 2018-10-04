@@ -12,12 +12,35 @@
     <li class="nav-item-small-screen"><%= link_to t('realizations').upcase, realizations_path %></li>
     <li class="nav-item-small-screen"><%= link_to t('your_project').upcase, your_project_path %></li>
     <li class="nav-item-small-screen"><%= link_to t('quotation').upcase, contact_path %></li>
+    <li>
+      <%= link_to locale: "fr" do %>
+        <%= image_tag 'fr.svg', height: '18' %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to locale: "en" do %>
+        <%= image_tag 'eng.svg', height: '18' %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to locale: "es" do %>
+        <%= image_tag 'es.svg', height: '18'%>
+      <% end %>
+    </li>
   </ul>
 
   <ul class="nav-list">
     <li class="nav-item" data-item-name="home">
-      <div id='company-item'>
+      <li id='company-navbar-item' class="nav-item" data-item-name="home">
+      <div>
         <%= link_to t('company').upcase, root_path %>
+        <ul>
+          <li><a href="./#section-history"><%= t('our_history').split[1].capitalize %></a></li>
+          <li><a href="./#section-mission"><%= t('our_mission').split[1].capitalize %></a></li>
+          <li><a href="./#section-values"><%= t('our_values').split[1].capitalize %></a></li>
+          <li><a href="./#section-know-how"><%= t('our_know_how').split[1].capitalize %></a></li>
+          <li><a href="./#section-localization"><%= t('our_services').split[1].capitalize %></a></li>
+        </ul>
       </div>
     </li>
     <li class="nav-item" data-item-name="realizations"><%= link_to t('realizations').upcase, realizations_path %></li>
@@ -27,11 +50,11 @@
       <li><%= link_to locale: "fr" do %>
       <%= image_tag 'fr.svg', height: '18' %>
       <% end %></li>
-      <li><%= link_to locale: "en", height: '18' do %>
-      <%= image_tag 'eng.svg' %>
+      <li><%= link_to locale: "en" do %>
+      <%= image_tag 'eng.svg', height: '18' %>
       <% end %></li>
-      <li><%= link_to locale: "es", height: '18' do %>
-      <%= image_tag 'es.svg' %>
+      <li><%= link_to locale: "es" do %>
+      <%= image_tag 'es.svg', height: '18' %>
       <% end %></li>
     </div>
   </ul>
