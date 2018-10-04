@@ -3,7 +3,11 @@
 // });
 
 $('.nav-item').hover(function() {
-  $(this).toggleClass('nav-item-active');
+  if (this.dataset.itemName !== "home") {
+    $(this).toggleClass('nav-item-active');
+  } else {
+    $('#company-navbar-item ul').toggleClass('company-navbar-item-active');
+  }
 });
 
 $('#dropdown-menu-btn').click(function() {
