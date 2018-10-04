@@ -1,10 +1,9 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
-@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
 // Define fonts for body and headers
 $body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Poiret One", "cursive";
+$headers-font: "Montserrat", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -29,6 +28,7 @@ p {
 }
 
 h2 {
+  font-family: 'Montserrat', sans-serif;
   font-size: 24px !important;
   font-style: bold;
   letter-spacing: 2px;

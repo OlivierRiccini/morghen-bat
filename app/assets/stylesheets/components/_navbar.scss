@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  // position: fixed;
+  position: fixed;
   width: 100vw;
   background-color: #fff;
   z-index: 1;
@@ -16,32 +16,6 @@ font-size: 14px;
 font-style: medium;
 }
 
-// Dropdown on company item
-#company-navbar-item {
-  position: relative;
-  ul {
-    position: absolute;
-    padding: 10px 5px;
-    list-style: none;
-    width: 100%;
-    background: #fff;
-    display: none;
-    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    line-height: 2;
-  }
-}
-
-#company-navbar-item ul li {
-  padding-left: 2px;
-}
-
-#company-navbar-item ul li:hover {
-  background-color: #ccc;
-}
-
-.company-navbar-item-active {
-  display: block !important;
-}
 
 
 .nav-list-small-screen {
