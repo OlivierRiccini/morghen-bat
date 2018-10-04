@@ -12,8 +12,23 @@
   }
 }
 
+.slick-arrow::before {
+  font-size: 40px;
+  color: $red;
+}
+
 .slick-arrow {
-  display: none !important;
+  left: -35px;
+}
+
+.slick-prev {
+  top: 45%;
+  transform: rotate(90deg);
+}
+
+.slick-next {
+  top: 55%;
+  transform: rotate(90deg);
 }
 
 .slick-dots {
