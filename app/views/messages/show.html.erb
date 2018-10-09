@@ -1,6 +1,11 @@
 <div class="container">
   <p><strong>From: <%= @message.name %></strong></p>
   <p><strong>Subject: <%= @message.subject %></strong></p>
+  <p><strong>Type de travaux:</strong> <%= @message.type_de¨travaux %></p>
+  <p><strong>Corps de métier:</strong></p>
+  <% @message.corps_de_metier.each do |metier| %>
+    <p><%= metier %></p>
+  <% end %>
   <p><strong>Message:</strong>
     <br><%= @message.content %>
   </p>
