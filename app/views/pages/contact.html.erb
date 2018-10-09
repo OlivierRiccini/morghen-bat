@@ -19,15 +19,29 @@
     <div class="col-xs-12 col-sm-6">
       <p><%= t('contact_text').capitalize %></p>
       <%= simple_form_for @message do |f| %>
-        <%= f.input :name, label: t('name').capitalize %>
-        <%= f.input :email, label: t('email').capitalize %>
-        <%= f.input :subject, label: t('subject').capitalize %>
-        <div class="col-xs-12 col-sm-6 col-type-de-travaux">
+        <div class="col-xs-12 col-sm-6 col-bootstrap-in-form-left">
+          <%= f.input :name, label: t('name').capitalize %>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-bootstrap-in-form-right">
+          <%= f.input :email, label: t('email').capitalize %>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-bootstrap-in-form-left">
+          <%= f.input :subject, label: t('subject').capitalize %>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-bootstrap-in-form-right">
           <%= f.input :type_de_travaux, label: t('type_de_travaux').capitalize, collection: [ t('renovation').capitalize, t('construction').capitalize] %>
         </div>
-        <div class="col-xs-12 col-sm-6 col-corps-de-metier">
-          <%= f.input :corps_de_metier, label: t('corps_de_metier').capitalize, collection: [ t('electricity').capitalize, t('painting').capitalize, t('masonry').capitalize, t('cleaning').capitalize, t('plumbing_carpentry').capitalize, t('other').capitalize] %>
+          <%= label_tag t('corps_de_metier').capitalize + ':' %>
+        </br>
+        <div class="metier-checkboxes">
+          <%  [t('electricity').capitalize, t('painting').capitalize, t('masonry').capitalize, t('cleaning').capitalize, t('plumbing_carpentry').capitalize, t('other').capitalize].each do |e| %>
+            <div class="check-box-btn">
+              <%= label_tag e %>
+              <%= check_box_tag 'message[corps_de_metier][]', e, checked(e), id: "corps_de_metier_#{e}" %>
+            </div>
+          <% end %>
         </div>
+        </br>
         <%= f.input :content, as: :text, label: t('content').capitalize %>
         <%= f.button :submit, value: t('send').capitalize %>
       <% end %>

@@ -45,16 +45,62 @@
 label {
   font-weight: normal;
   letter-spacing: 2px;
+  font-size: 14px;
 }
 
 input {
   box-shadow: none !important;
 }
 
-.col-type-de-travaux {
+.col-bootstrap-in-form-left {
   padding-left: 0;
 }
 
-.col-corps-de-metier {
+.col-bootstrap-in-form-right {
   padding-right: 0;
 }
+
+// CHECK-BOXES
+
+.metier-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.check-box-btn {
+  font-size: 12px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 2px;
+  margin: 5px;
+  cursor: pointer;
+  label {
+    margin-bottom: 0;
+    cursor: pointer;
+  };
+  input {
+    display: none;
+  };
+  &:hover {
+    background-color: #ccc;
+    color: #fff;
+  }
+}
+
+.check-box-cliked {
+  background-color: #ccc;
+  color: #fff;
+}
+
+.invalid-feedback {
+  color: $red;
+  font-size: 12px;
+}
+
+
+
+
+
+
+
+

@@ -55,3 +55,17 @@ es:
   # Your Project buttons
   houses: "casas"
   apartments: "apartamentos"
+
+  # Form
+  activerecord:
+    errors:
+      models:
+        message:
+          attributes:
+            name:
+              blank: "Debes especificar un nombre"
+            email:
+              blank: "Debes introducir una dirección de correo electrónico"
+              invalid: "Esta dirección de correo electrónico no es válida"
+            content:
+              too_short: "El mensaje es demasiado corto"

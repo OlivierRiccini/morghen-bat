@@ -33,6 +33,6 @@ class MessagesController < ApplicationController
   end
 
   def params_message
-    params.require(:message).permit(:name, :email, :subject, :content, :type_de_travaux, :corps_de_metier)
+    params.require(:message).permit(:name, :email, :subject, :content, :type_de_travaux, corps_de_metier:[])
   end
 end
