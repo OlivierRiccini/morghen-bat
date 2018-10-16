@@ -8,11 +8,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  h3, ul {
+  h1, ul {
     width: 65%;
     font-size: 0.8em;
   };
-  h3 {
+  h1 {
     margin-top: 0;
     margin-bottom: 50px;
     font-size: 1.5em;
@@ -71,18 +71,98 @@
   };
 }
 
-#sun-houses, #sun-apartments {
-  display: none;
-  position: absolute;
-  height: 70px;
-  right: -20px;
-  top: -60px;
+// #sun-houses, #sun-apartments {
+//   display: none;
+//   position: absolute;
+//   height: 70px;
+//   right: -20px;
+//   top: -60px;
+// }
+
+.your-project-title, .your-project-subtitle {
+  text-align: center;
+}
+
+.row_flex_your_project {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 150px auto;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.left_column_your_project {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.right_column_your_project {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  img {
+    width: 80%;
+  };
+  p {
+    width: 80%;
+    text-align: center;
+    position: relative;
+    top: 40px;
+  }
+}
+
+.bootstrap-row {
+  margin: 200px auto;
+  h2 {
+    margin-bottom: 50px;
+  };
+  .col-xs-12 {
+    padding: 0;
+  };
+  img {
+    width: 100%;
+  }
+}
+
+.subtitle-attic {
+  text-align: center;
+  position: relative;
+  top: 100px;
+}
+
+.row_column_images {
+  margin: 150px auto;
+  text-align: center;
+  img:first-child {
+    width: 45%;
+  };
+  img:nth-child(2) {
+    width: 65%;
+  };
+}
+
+.pack p {
+  padding-left: 15px;
 }
 
 @media screen and (max-width: 1000px) {
   .your-project-banner {
-    h3, ul {
+    h1, ul {
       width: 95%;
     };
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .left_column_your_project,
+  .right_column_your_project {
+    flex: 1 100%;
   }
 }

@@ -1,0 +1,16 @@
+.black-banner {
+  text-align: center;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 0;
+   p, h2 {
+    color: #fff;
+    margin-top: 0;
+  };
+  p {
+     width: 50%;
+  }
+};

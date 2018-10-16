@@ -1,11 +1,3 @@
-// FOR ALL SECTIONS
-.home-section-title {
-  width: fit-content;
-  height: 120px;
-  border-left: 1px solid #000;
-  padding-left: 15px;
-}
-
 // SECTION HISTORY
 .history-image-flex-box {
   display: flex;
@@ -43,26 +35,6 @@
 }
 
 // SECTION MISSION AND SECTION KNOW HOWS
-
-.section-mission, .section-know-how {
-  .banner {
-    text-align: center;
-    background-color: #000;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px 0;
-  };
-  p, h2 {
-    color: #fff;
-    margin-top: 0;
-  };
-  p {
-     width: 50%;
-  }
-}
-
 .section-know-how .buttons-flexbox {
   display: flex;
   a {
@@ -144,9 +116,6 @@
 // SECTION LOCALIIZATION AND SERVICES
 .section-localization {
   margin-bottom: 100px;
-  .home-section-title {
-    height: 50px;
-  };
   .col-xs-12:last-child h2 {
     margin-left: 15px;
   }

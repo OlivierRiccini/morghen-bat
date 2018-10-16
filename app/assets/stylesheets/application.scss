@@ -37,3 +37,18 @@ body {
     margin: 0 auto;
   }
 }
+
+.title-with-bar,
+.title-with-short-bar {
+  width: fit-content;
+  border-left: 1px solid #000;
+  padding-left: 15px;
+}
+
+.title-with-bar {
+  height: 120px;
+}
+
+.title-with-short-bar {
+  height: 50px;
+}
