@@ -148,8 +148,13 @@
   };
 }
 
-.pack p {
-  padding-left: 15px;
+.pack {
+  h2 {
+    font-weight: bolder;
+  };
+  p {
+    padding-left: 15px;
+  }
 }
 
 @media screen and (max-width: 1000px) {

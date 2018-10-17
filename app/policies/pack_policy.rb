@@ -1,4 +1,4 @@
-class OfferPolicy < ApplicationPolicy
+class PackPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope

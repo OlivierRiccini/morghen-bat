@@ -17,7 +17,8 @@ class PagesController < ApplicationController
 
   def your_project
     @banner = Banner.first
-    @offers = Offer.all
+    # @offers = Offer.all
+    @packs = Pack.all
   end
 
   def your_project_houses
@@ -59,9 +60,11 @@ class PagesController < ApplicationController
     @new_project = Project.new
     @new_project.pictures.build
 
-    @offers = Offer.order("created_at DESC").all
-    @new_offer = Offer.new
-    @new_offer.pictures.build
+    # @offers = Offer.order("created_at DESC").all
+    # @new_offer = Offer.new
+    # @new_offer.pictures.build
+    @packs = Pack.all
+    @new_pack = Pack.new
 
     @new_pic = Picture.new
   end

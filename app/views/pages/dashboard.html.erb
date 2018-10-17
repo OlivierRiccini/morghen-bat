@@ -264,70 +264,30 @@
     -->
   </div>
 
-<!-- Offers section -->
-  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-offers">Notre offre <i class="fas fa-arrow-down"></i></span>
-  <div class="dashboard-section" id="section-model-offers">
+<!-- Packs section -->
+  <span href="#" class="btn-toggle-section-model" data-index-section-model="section-model-packs">Les packs <i class="fas fa-arrow-down"></i></span>
+  <div class="dashboard-section" id="section-model-packs">
     <!-- Edit offer -->
-    <% @offers.each do |offer| %>
+    <% @packs.each do |pack| %>
       <div class="row">
-        <div class="col-xs-12 col-sm-6">
-          <%= simple_form_for offer do |f| %>
-            <%= f.input :name %>
-            <%= f.input :category %>
-            <%= f.input :price %>
-            <%= f.input :time_frame %>
-            <%= f.input :content, as: :summernote %>
-            <%= f.button :submit, value: 'Save offer' %>
-            <%= link_to 'Delete offer', offer_path(offer), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer cette offre?"}, class: 'btn btn-danger' %>
-          <% end %>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-          <div class="offer-pic">
-            <h4>New image</h4>
-            <%= simple_form_for [ offer, @new_pic ] do |f| %>
-              <%= f.file_field :url %>
-              <%= f.input :url_cache, as: :hidden %>
-              <%= f.button :submit, value: 'Ajouter' %>
-            <% end %>
-          </div>
-          <% offer.pictures.order("created_at DESC").each do |pic| %>
-            <div class="offer-pic">
-              <%= cl_image_tag pic.url, height:'60' %>
-              <%= simple_form_for [ offer, pic ] do |f| %>
-                <%= f.file_field :url %>
-                <%= f.input :url_cache, as: :hidden %>
-                <%= f.button :submit, value: 'Save' %>
-                <%= link_to 'Delete', offer_picture_path(offer, pic), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer cette image?"}, class: 'btn btn-danger' %>
-              <% end %>
-            </div>
+        <div class="col-xs-12">
+          <%= simple_form_for pack do |f| %>
+            <%= f.input :title %>
+            <%= f.input :description, as: :summernote %>
+            <%= f.button :submit, value: 'Save pack', class: 'btn-save' %>
+            <%= link_to 'Delete pack', pack_path(pack), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer cette offre?"}, class: 'btn btn-danger' %>
           <% end %>
         </div>
       </div>
     <% end %>
 
-    <!-- Create offer -->
-    <div class="col-xs-12 col-sm-6">
-      <h3>Ajouter une offre</h3>
-      <%= simple_form_for @new_offer do |f| %>
-        <%= f.input :name %>
-        <%= f.input :category %>
-        <%= f.input :price %>
-        <%= f.input :time_frame %>
-        <%= f.input :content, as: :summernote %>
-    </div>
-    <div class="col-xs-12 col-sm-6">
-      <h3>Add images</h3>
-      <div id="pictures">
-        <%= f.simple_fields_for :pictures do |new_pic| %>
-          <%= render 'picture_fields', :f => new_pic %>
-        <% end %>
-        <div class='links'>
-          <%= link_to_add_association f, :pictures do %>
-            <h4><i class="fas fa-plus"></i></h4>
-          <% end %>
-        </div>
-      </div>
-        <%= f.button :submit, value: 'Save offer', class: 'btn-save' %>
+    <!-- Create pack -->
+    <div class="col-xs-12">
+      <h3>Ajouter un pack</h3>
+      <%= simple_form_for @new_pack do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description, as: :summernote %>
+        <%= f.button :submit, value: 'Save pack', class: 'btn-save' %>
       <% end %>
     </div>
   </div>

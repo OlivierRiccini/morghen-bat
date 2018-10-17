@@ -15,9 +15,7 @@ Rails.application.routes.draw do
       resources :pictures, only: [ :create, :update, :destroy ]
     end
 
-    resources :offers, only: [ :show, :create, :update, :destroy ] do
-      resources :pictures, only: [ :create, :update, :destroy ]
-    end
+    resources :packs, only: [ :create, :update, :destroy ]
 
     resources :company_histories, only: [ :update ] do
       resources :pictures, only: [ :create, :update, :destroy ]
