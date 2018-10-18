@@ -1,4 +1,8 @@
-<div class="custom-navbar">
+<% if current_page?(your_project_path) %>
+  <div class="custom-navbar" style="position: fixed">
+<% else %>
+  <div class="custom-navbar">
+<% end %>
   <div class="navbar-left">
     <%= link_to root_path, class: 'logo' do %>
       <h1>MORGHEN BAT</h1>
@@ -12,19 +16,19 @@
     <li class="nav-item-small-screen"><%= link_to t('realizations').upcase, realizations_path %></li>
     <li class="nav-item-small-screen"><%= link_to t('your_project').upcase, your_project_path %></li>
     <li class="nav-item-small-screen"><%= link_to t('quotation').upcase, contact_path %></li>
-    <li>
+    <li class='flag-link'>
       <%= link_to locale: "fr" do %>
-        <%= image_tag 'fr.svg', height: '18' %>
+        <%= image_tag 'fr.svg', height: '18', class: 'flag-link' %>
       <% end %>
     </li>
     <li>
       <%= link_to locale: "en" do %>
-        <%= image_tag 'eng.svg', height: '18' %>
+        <%= image_tag 'eng.svg', height: '18', class: 'flag-link' %>
       <% end %>
     </li>
     <li>
       <%= link_to locale: "es" do %>
-        <%= image_tag 'es.svg', height: '18'%>
+        <%= image_tag 'es.svg', height: '18', class: 'flag-link' %>
       <% end %>
     </li>
   </ul>
@@ -48,13 +52,13 @@
     <li class="nav-item" data-item-name="contact"><%= link_to t('quotation').upcase, contact_path %></li>
     <div class="language-choice">
       <li><%= link_to locale: "fr" do %>
-      <%= image_tag 'fr.svg', height: '18' %>
+      <%= image_tag 'fr.svg', height: '18', class: 'flag-link' %>
       <% end %></li>
       <li><%= link_to locale: "en" do %>
-      <%= image_tag 'eng.svg', height: '18' %>
+      <%= image_tag 'eng.svg', height: '18', class: 'flag-link' %>
       <% end %></li>
       <li><%= link_to locale: "es" do %>
-      <%= image_tag 'es.svg', height: '18' %>
+      <%= image_tag 'es.svg', height: '18', class: 'flag-link' %>
       <% end %></li>
     </div>
   </ul>

@@ -1,192 +1,229 @@
 <div class="page" data-page-name="your-project">
-  <div class="banner your-project-banner" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('<%= @banner.image unless @banner.nil? %>')">
-    <h1><%= (@banner.nil? || @banner.tagline.nil?) ? @no_translation : @banner.tagline.capitalize %></h1>
-    <ul>
-      <li><%= t('modular').upcase %></li>
-      <li><%= t('tailored').upcase %></li>
-      <li><%= t('preconceived').upcase %></li>
-    </ul>
-  </div>
- <!--  <div class="row row-buttons-categories">
-    <div class="your-project-category">
-      <%= image_tag 'sunny.svg', height: '70', id: 'sun-houses' %>
-      <%= image_tag 'house.svg', height: '90' %>
-      <%= link_to t('houses').capitalize, contact_path, class: 'your-project-category-button', :data => { :category => 'houses'} %>
-    </div>
-    <div class="your-project-category">
-      <%= image_tag 'sunny.svg', height: '70', id: 'sun-apartments' %>
-      <%= image_tag 'office-block.svg', height: '90' %>
-      <%= link_to t('apartments').capitalize, contact_path, class: 'your-project-category-button', :data => { :category => 'apartments'} %>
-    </div>
-  </div> -->
-</div>
-<div class="container">
-  <h2 class="your-project-title"><%= t('your_project_title').capitalize %></h2>
-  <p class="your-project-subtitle"><%= t('your_project_subtitle').capitalize %></p>
 
-  <div class="row_flex_your_project">
-    <div class="left_column_your_project">
-      <p><%= t('your_project_part_1_1').capitalize %></p>
-      <p><%= t('your_project_part_1_2').capitalize %></p>
+  <div class="section-scroll">
+    <div class="banner your-project-banner" style="background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('<%= @banner.image unless @banner.nil? %>')">
+      <h1><%= (@banner.nil? || @banner.tagline.nil?) ? @no_translation : @banner.tagline.capitalize %></h1>
+      <ul>
+        <li><%= t('modular').upcase %></li>
+        <li><%= t('tailored').upcase %></li>
+        <li><%= t('preconceived').upcase %></li>
+      </ul>
     </div>
-    <div class="right_column_your_project">
-      <%= image_tag 'your_project_1.jpg' %>
+    <div class="container">
+      <h2 class="your-project-title"><%= t('your_project_title').capitalize %></h2>
+      <p class="your-project-subtitle"><%= t('your_project_subtitle').capitalize %></p>
     </div>
   </div>
 
-  <div class="row_flex_your_project">
-    <div class="left_column_your_project">
-      <p><strong><%= t('r_+_2').upcase %> :</strong><br><%= t('your_project_part_2_1').capitalize %></p>
-      <p><strong><%= t('r_+_1').upcase %> :</strong><br><%= t('your_project_part_2_2').capitalize %></p>
-      <p><strong><%= t('r_d_c').upcase %> :</strong><br><%= t('your_project_part_2_3').capitalize %></p>
-    </div>
-    <div class="right_column_your_project">
-      <%= image_tag 'your_project_2.jpg' %>
-    </div>
-  </div>
-
-  <div class="row bootstrap-row">
-    <h2 class="your-project-subtitle"><%= t('your_project_subtitle_facade').capitalize %></h2>
-    <div class="col-xs-12 col-sm-4">
-      <%= image_tag 'your_project_5.jpg' %>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <%= image_tag 'your_project_5.jpg' %>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <%= image_tag 'your_project_5.jpg' %>
-    </div>
-  </div>
-
-  <div class="row_flex_your_project">
-    <div class="left_column_your_project">
-      <p><strong>RDC :</strong>
-        <br><br><%= t('your_project_part_3_1').capitalize %>
-        <br><br><%= t('your_project_part_3_2').capitalize %>
-        <br><br><%= t('your_project_part_3_3').capitalize %>
-      </p>
-    </div>
-    <div class="right_column_your_project">
-      <%= image_tag 'your_project_4.jpg' %>
-    </div>
-  </div>
-
-  <div class="row_flex_your_project">
-    <div class="left_column_your_project">
-      <p><strong><%= t('your_project_part_4_1').capitalize %></strong>
-      </p>
-      <p><strong><%= t('your_project_part_4_2').capitalize %></strong>
-      </p>
-      <p>
-        <strong><%= t('your_project_part_4_3').capitalize %>:</strong><br>
-        <%= t('your_project_part_4_4').capitalize %>
-      </p>
-      <p>
-        <strong><%= t('your_project_part_4_5').capitalize %>:</strong><br>
-        <%= t('your_project_part_4_6').capitalize %>
-      </p>
-      <p>
-        <strong><%= t('your_project_part_4_7').capitalize %>:</strong><br>
-        <%= t('your_project_part_4_8').capitalize %>
-      </p>
-    </div>
-    <div class="right_column_your_project">
-      <%= image_tag 'your_project_5.jpg' %>
-    </div>
-  </div>
-
-  <div class="row_flex_your_project">
-    <div class="left_column_your_project">
-      <p><strong><%= t('your_project_part_5_1').capitalize %></strong>
-      </p>
-      <p><strong><%= t('your_project_part_5_2').capitalize %>:</strong><br>
-        <%= t('your_project_part_5_3').capitalize %>
-      </p>
-      <p>
-        <strong><%= t('your_project_part_5_4').capitalize %>:</strong><br>
-        <%= t('your_project_part_5_5').capitalize %>
-      </p>
-      <p>
-        <strong><%= t('your_project_part_5_6').capitalize %>:</strong><br>
-        <%= t('your_project_part_5_7').capitalize %>
-      </p>
-
-    </div>
-    <div class="right_column_your_project">
-      <%= image_tag 'your_project_6.jpg' %>
-      <p><strong><%= t('your_project_part_5_8').capitalize %></strong></p>
-    </div>
-  </div>
-
-  <div class="row_flex_your_project">
-    <div class="left_column_your_project">
-      <p><strong><%= t('r_+_1').upcase %>:</strong><br>
-        <%= t('your_project_part_6_1').capitalize %><br>
-        <%= t('your_project_part_6_2').capitalize %><br>
-        <%= t('your_project_part_6_3').capitalize %><br>
-        <%= t('your_project_part_6_4').capitalize %><br>
-      </p>
-    </div>
-    <div class="right_column_your_project">
-      <%= image_tag 'your_project_7.jpg' %>
-    </div>
-  </div>
-
-  <div class="row bootstrap-row">
-    <h2 class="your-project-subtitle"><%= t('your_project_part_7_1').capitalize %></h2>
-    <div class="col-xs-12 col-sm-6">
-      <%= image_tag 'your_project_8.jpg' %>
-    </div>
-    <div class="col-xs-12 col-sm-6">
-      <%= image_tag 'your_project_9.jpg' %>
-    </div>
-  </div>
-
-  <h2 class="subtitle-attic"><%= t('your_project_part_8_1').capitalize %></h2>
-  <div class="row_flex_your_project">
-    <div class="left_column_your_project">
-      <p><%= t('your_project_part_8_2').capitalize %>
-      </p>
-    </div>
-    <div class="right_column_your_project">
-      <%= image_tag 'your_project_10.jpg' %>
-    </div>
-  </div>
-
-  <div class="row_flex_your_project">
-    <div class="left_column_your_project">
-      <p><strong><%= t('r_+_2').upcase %>:</strong><br>
-        <%= t('your_project_part_9_1').capitalize %><br>
-        <%= t('your_project_part_9_2').capitalize %>
-      </p>
-    </div>
-    <div class="right_column_your_project">
-      <%= image_tag 'your_project_11.jpg' %>
-    </div>
-  </div>
-
-  <div class="row_column_images">
-    <%= image_tag 'your_project_12.jpg' %>
-    <%= image_tag 'your_project_13.jpg' %>
-  </div>
-
-</div>
-
-<div class="black-banner">
-  <h2><%= t('title_your_project_balck_banner').capitalize %></h2>
-</div>
-
-<div class="container">
-  <% @packs.each do |pack| %>
-    <div class="pack">
-      <div class="title-with-short-bar">
-        <h2>
-          <%= (pack.nil? || pack.title.nil?) ?  @no_translation : pack.title.html_safe %>
-        </h2>
+  <div class="section-scroll">
+    <div class="container">
+      <div class="row_flex_your_project">
+        <div class="left_column_your_project">
+          <p><%= t('your_project_part_1_1').capitalize %></p>
+          <p><%= t('your_project_part_1_2').capitalize %></p>
+        </div>
+        <div class="right_column_your_project">
+          <%= image_tag 'your_project_1.jpg' %>
+        </div>
       </div>
-      <p>
-        <%= (pack.nil? || pack.description.nil?) ?  @no_translation : pack.description.html_safe %>
-      </p>
     </div>
-  <% end %>
+  </div>
+
+  <div class="section-scroll">
+    <div class="container">
+      <div class="row_flex_your_project">
+        <div class="left_column_your_project">
+          <p><strong><%= t('r_+_2').upcase %> :</strong><br><%= t('your_project_part_2_1').capitalize %></p>
+          <p><strong><%= t('r_+_1').upcase %> :</strong><br><%= t('your_project_part_2_2').capitalize %></p>
+          <p><strong><%= t('r_d_c').upcase %> :</strong><br><%= t('your_project_part_2_3').capitalize %></p>
+        </div>
+        <div class="right_column_your_project">
+          <%= image_tag 'your_project_2.jpg' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-scroll">
+    <div class="container">
+      <div class="row bootstrap-row">
+        <h2 class="your-project-subtitle"><%= t('your_project_subtitle_facade').capitalize %>
+        </h2>
+        <div class="col-xs-12 col-sm-4">
+          <%= image_tag 'your_project_5.jpg' %>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <%= image_tag 'your_project_5.jpg' %>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <%= image_tag 'your_project_5.jpg' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-scroll">
+    <div class="container">
+      <div class="row_flex_your_project">
+        <div class="left_column_your_project">
+          <p><strong>RDC :</strong>
+            <br><br><%= t('your_project_part_3_1').capitalize %>
+            <br><br><%= t('your_project_part_3_2').capitalize %>
+            <br><br><%= t('your_project_part_3_3').capitalize %>
+          </p>
+        </div>
+        <div class="right_column_your_project">
+          <%= image_tag 'your_project_4.jpg' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-scroll">
+    <div class="container">
+      <div class="row_flex_your_project">
+        <div class="left_column_your_project">
+          <p><strong><%= t('your_project_part_4_1').capitalize %></strong>
+          </p>
+          <p><strong><%= t('your_project_part_4_2').capitalize %></strong>
+          </p>
+          <p>
+            <strong><%= t('your_project_part_4_3').capitalize %>:</strong><br>
+            <%= t('your_project_part_4_4').capitalize %>
+          </p>
+          <p>
+            <strong><%= t('your_project_part_4_5').capitalize %>:</strong><br>
+            <%= t('your_project_part_4_6').capitalize %>
+          </p>
+          <p>
+            <strong><%= t('your_project_part_4_7').capitalize %>:</strong><br>
+            <%= t('your_project_part_4_8').capitalize %>
+          </p>
+        </div>
+        <div class="right_column_your_project">
+          <%= image_tag 'your_project_5.jpg' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-scroll">
+    <div class="container">
+      <div class="row_flex_your_project">
+        <div class="left_column_your_project">
+          <p><strong><%= t('your_project_part_5_1').capitalize %></strong>
+          </p>
+          <p><strong><%= t('your_project_part_5_2').capitalize %>:</strong><br>
+            <%= t('your_project_part_5_3').capitalize %>
+          </p>
+          <p>
+            <strong><%= t('your_project_part_5_4').capitalize %>:</strong><br>
+            <%= t('your_project_part_5_5').capitalize %>
+          </p>
+          <p>
+            <strong><%= t('your_project_part_5_6').capitalize %>:</strong><br>
+            <%= t('your_project_part_5_7').capitalize %>
+          </p>
+
+        </div>
+        <div class="right_column_your_project">
+          <%= image_tag 'your_project_6.jpg' %>
+          <p><strong><%= t('your_project_part_5_8').capitalize %></strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-scroll">
+    <div class="container">
+      <div class="row_flex_your_project">
+        <div class="left_column_your_project">
+          <p><strong><%= t('r_+_1').upcase %>:</strong><br>
+            <%= t('your_project_part_6_1').capitalize %><br>
+            <%= t('your_project_part_6_2').capitalize %><br>
+            <%= t('your_project_part_6_3').capitalize %><br>
+            <%= t('your_project_part_6_4').capitalize %><br>
+          </p>
+        </div>
+        <div class="right_column_your_project">
+          <%= image_tag 'your_project_7.jpg' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-scroll">
+    <div class="container">
+      <div class="row bootstrap-row">
+        <h2 class="your-project-subtitle"><%= t('your_project_part_7_1').capitalize %></h2>
+        <div class="col-xs-12 col-sm-6">
+          <%= image_tag 'your_project_8.jpg' %>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <%= image_tag 'your_project_9.jpg' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-scroll">
+    <div class="container">
+      <h2 class="subtitle-attic"><%= t('your_project_part_8_1').capitalize %></h2>
+      <div class="row_flex_your_project">
+        <div class="left_column_your_project">
+          <p><%= t('your_project_part_8_2').capitalize %></p>
+        </div>
+        <div class="right_column_your_project">
+          <%= image_tag 'your_project_10.jpg' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-scroll">
+    <div class="container">
+      <div class="row_flex_your_project">
+        <div class="left_column_your_project">
+          <p><strong><%= t('r_+_2').upcase %>:</strong><br>
+            <%= t('your_project_part_9_1').capitalize %><br>
+            <%= t('your_project_part_9_2').capitalize %>
+          </p>
+        </div>
+        <div class="right_column_your_project">
+          <%= image_tag 'your_project_11.jpg' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-scroll">
+    <div class="container">
+      <div class="row_column_images">
+        <%= image_tag 'your_project_12.jpg' %>
+        <%= image_tag 'your_project_13.jpg' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-scroll">
+    <div class="black-banner">
+      <h2><%= t('title_your_project_balck_banner').capitalize %></h2>
+    </div>
+    <div class="container">
+      <% @packs.each do |pack| %>
+        <div class="pack">
+          <div class="title-with-short-bar">
+            <h2>
+              <%= (pack.nil? || pack.title.nil?) ?  @no_translation : pack.title.html_safe %>
+            </h2>
+          </div>
+          <p>
+            <%= (pack.nil? || pack.description.nil?) ?  @no_translation : pack.description.html_safe %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
+
+<%= javascript_pack_tag 'custom_fullpage_inho' %>

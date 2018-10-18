@@ -18,6 +18,7 @@
 //= require_tree .
 
 console.log('Hello World from Webpacker');
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

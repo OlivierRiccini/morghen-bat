@@ -71,14 +71,6 @@
   };
 }
 
-// #sun-houses, #sun-apartments {
-//   display: none;
-//   position: absolute;
-//   height: 70px;
-//   right: -20px;
-//   top: -60px;
-// }
-
 .your-project-title, .your-project-subtitle {
   text-align: center;
 }
@@ -86,7 +78,7 @@
 .row_flex_your_project {
   display: flex;
   flex-wrap: wrap;
-  margin: 150px auto;
+  // margin: 150px auto;
   p {
     margin-bottom: 0;
   }
@@ -119,7 +111,7 @@
 }
 
 .bootstrap-row {
-  margin: 200px auto;
+  // margin: 200px auto;
   h2 {
     margin-bottom: 50px;
   };
@@ -134,17 +126,16 @@
 .subtitle-attic {
   text-align: center;
   position: relative;
-  top: 100px;
 }
 
 .row_column_images {
-  margin: 150px auto;
+  // margin: 150px auto;
   text-align: center;
   img:first-child {
-    width: 45%;
+    width: 35%;
   };
   img:nth-child(2) {
-    width: 65%;
+    width: 55%;
   };
 }
 
@@ -157,17 +148,37 @@
   }
 }
 
+.section-scroll {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  &:first-child, &:last-child {
+    display: block;
+    padding-top: 120px;
+  };
+  &:last-child {
+    height: 120vh;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .your-project-banner {
     h1, ul {
       width: 95%;
     };
+  };
+  .section-scroll:last-child {
+    height: 135vh;
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 755px) {
   .left_column_your_project,
   .right_column_your_project {
     flex: 1 100%;
+  };
+  .section-scroll {
+    height: auto;
+    margin: 100px auto;
   }
 }
