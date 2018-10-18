@@ -22,7 +22,7 @@ body {
   font-size: 14px;
 }
 
-p, span {
+p, p > span {
   font-size: 14px !important;
   font-weight: lighter;
   letter-spacing: 2px !important;
@@ -33,5 +33,3 @@ h2 {
   font-style: bold;
   letter-spacing: 2px;
 }
-
-
