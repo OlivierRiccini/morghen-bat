@@ -27,6 +27,24 @@ body {
 //   margin-top: 170px;
 // }
 
+#landing-mobile {
+  display: none;
+  position: fixed;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+}
+
+@media screen and (max-width: 800px) {
+  #landing-mobile {
+    display: flex;
+  }
+}
+
 .page-realizations,
 .page-contact {
   min-height: calc(100vh - 220px);
