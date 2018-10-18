@@ -23,8 +23,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import '../_carousel'
-import '../_your_project_page'
 import '../_realizations_page'
 import '../_navbar'
 import '../_checkBoxes'
 import '../_arrow_scroll_to_top'
+import '../_your_project_page'
