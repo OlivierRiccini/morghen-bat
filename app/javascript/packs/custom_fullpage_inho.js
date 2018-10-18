@@ -52,7 +52,7 @@ const scroll = (direction) => {
 
 const parseEvent = (e) => {
 
-  // Check if we're on project page
+  // Check if event is set on project page
   if (e.target.baseURI.includes('your_project')) {
 
     // Case arrows keyboard
