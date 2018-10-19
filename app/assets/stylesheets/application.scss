@@ -41,6 +41,12 @@ body {
 }
 
 @media screen and (max-width: 800px) {
+  .custom-navbar,
+  #scrollToTop,
+  .page,
+  .footer {
+    display: none;
+  };
   #landing-mobile {
     display: flex;
   }
