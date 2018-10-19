@@ -1,10 +1,11 @@
 let index = 0;
 const fullpage = document.getElementById('your-project-fullpage');
+const nbOfSections = 12;
 
 const scroll = (direction) => {
   const h = window.innerHeight;
-  if (direction === 'down') {
-    index >= h * 13 ? index = h * 13 : index += h;
+  if (direction === 'down' && index <= h * nbOfSections) {
+    index >= h * nbOfSections ? index = h * nbOfSections : index += h;
   } else if (direction === 'up') {
     index <= 0 ? index = 0 : index -= h;
   }
@@ -12,7 +13,6 @@ const scroll = (direction) => {
 }
 
 const parseEvent = (e) => {
-  console.log(e.currentTarget.performance);
   // Check if event is set on project page
   if (e.target.baseURI.includes('your_project')) {
 
