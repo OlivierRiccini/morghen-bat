@@ -1,42 +1,3 @@
-// const reboot = () => {
-//   if (!window.location.pathname.includes('your_project')) {
-//     console.log('REBOOT');
-    // (function (){
-    //   var rep = /.*\?.*/,
-    //       links = document.getElementsByTagName('link'),
-    //       scripts = document.getElementsByTagName('script'),
-    //       process_scripts = false;
-    //   for (var i=0;i<links.length;i++){
-    //     var link = links[i],
-    //         href = link.href;
-    //     if(rep.test(href)){
-    //       link.href = href+'&'+Date.now();
-    //     }
-    //     else{
-    //       link.href = href+'?'+Date.now();
-    //     }
-
-    //   }
-    //   if(process_scripts){
-    //     for (var i=0;i<scripts.length;i++){
-    //       var script = scripts[i],
-    //           src = script.src;
-    //       if(rep.test(src)){
-    //         script.src = src+'&'+Date.now();
-    //       }
-    //       else{
-    //         script.src = src+'?'+Date.now();
-    //       }
-
-    //     }
-    //   }
-    // })();
-
-//   }
-// }
-
-console.log('Hello from fullpage custom');
-
 let index = 0;
 const fullpage = document.getElementById('your-project-fullpage');
 
@@ -51,7 +12,7 @@ const scroll = (direction) => {
 }
 
 const parseEvent = (e) => {
-
+  console.log(e.currentTarget.performance);
   // Check if event is set on project page
   if (e.target.baseURI.includes('your_project')) {
 
@@ -65,9 +26,9 @@ const parseEvent = (e) => {
 
     // Case Wheel
     } else if (e.constructor.name === 'WheelEvent') {
-      if (e.wheelDelta < 0) {
+      if (e.deltaY > 0) {
         scroll('down');
-      } else if (e.wheelDelta > 0) {
+      } else if (e.deltaY < 0) {
         scroll('up');
       }
       // Call function just once
@@ -83,17 +44,21 @@ const parseEvent = (e) => {
 }
 
 const applyPreventDefault = (event) => {
-  event.preventDefault();
+  if (event.constructor.name === 'WheelEvent' || event.keyCode === 38 || event.keyCode === 40) {
+    event.preventDefault();
+  }
 }
 
 const eventHandler = () => {
   if (window.innerHeight > 500 && window.innerWidth > 755 && window.location.pathname.includes('your_project')) {
-    window.addEventListener('keydown', parseEvent);
+    window.addEventListener('keyup', parseEvent);
+    window.addEventListener('keydown', applyPreventDefault);
     fullpage.addEventListener('wheel', parseEvent);
     fullpage.addEventListener('wheel', applyPreventDefault);
     scrollToTop.addEventListener('click', () => index = 0 );
   } else {
-    window.removeEventListener('keydown', parseEvent);
+    window.removeEventListener('keyup', parseEvent);
+    window.removeEventListener('keydown', applyPreventDefault);
     fullpage.removeEventListener('wheel', parseEvent);
     fullpage.removeEventListener('wheel', applyPreventDefault);
     scrollToTop.removeEventListener('click', () => index = 0 );
