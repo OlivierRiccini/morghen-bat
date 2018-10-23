@@ -144,6 +144,7 @@
 }
 
 .pack {
+  margin: 70px auto;
   h2 {
     font-weight: bolder;
   };
@@ -162,27 +163,5 @@
   };
   &:last-child {
     height: 120vh;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .your-project-banner {
-    h1, ul {
-      width: 95%;
-    };
-  };
-  .section-scroll:last-child {
-    height: 135vh;
-  }
-}
-
-@media screen and (max-width: 755px) {
-  .left_column_your_project,
-  .right_column_your_project {
-    flex: 1 100%;
-  };
-  .section-scroll {
-    height: auto;
-    margin: 100px auto;
   }
 }

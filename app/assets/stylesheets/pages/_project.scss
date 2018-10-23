@@ -78,29 +78,3 @@
   width: 1px;
   background-color: #000;
 }
-
-// Responsive
-
-@media screen and (max-width: 1000px) {
-  .row-project-carousel {
-    width: 100%;
-  };
-  .slick-dots {
-    display: inline-block;;
-    width: 100%;
-    bottom: -30px;
-    right: 0;
-  };
-  .project-infos {
-    justify-content: center;
-  };
-  .row-project-content {
-    width: 100%;
-    margin: 0;
-    text-align: center;
-  };
-  .row-project-content h2 {
-    width: 100%;
-  }
-}
-

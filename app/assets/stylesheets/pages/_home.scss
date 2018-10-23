@@ -23,7 +23,6 @@
   align-items: flex-end;
   padding-left: 15px;
   position: relative;
-  right: 15px;
   img {
     position: absolute;
     top: -50px;
@@ -116,11 +115,15 @@
 // SECTION LOCALIIZATION AND SERVICES
 .section-localization {
   margin-bottom: 100px;
-  .col-xs-12:last-child h2 {
+}
+
+.section-localization .col-xs-12 {
+  // Overrides Bootstrap
+  padding: 0 !important;
+  &:last-child h2 {
     margin-left: 15px;
   }
 }
-
 
 .map {
   height: 350px;

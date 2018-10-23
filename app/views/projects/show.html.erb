@@ -1,7 +1,7 @@
 <div class="container page" data-page-name="realizations">
   <div class="row row-project-carousel">
     <div class="project-carousel">
-      <% @project.pictures.each do |pic| %>
+      <% @project_pictures.each do |pic| %>
         <%= cl_image_tag pic.url, height: '150' unless (pic.nil? || pic.url.nil?) %>
       <% end %>
     </div>

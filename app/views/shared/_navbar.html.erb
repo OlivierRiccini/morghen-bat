@@ -16,20 +16,24 @@
     <li class="nav-item-small-screen"><%= link_to t('realizations').upcase, realizations_path %></li>
     <li class="nav-item-small-screen"><%= link_to t('your_project').upcase, your_project_path %></li>
     <li class="nav-item-small-screen"><%= link_to t('quotation').upcase, contact_path %></li>
-    <li class='flag-link'>
-      <%= link_to locale: "fr" do %>
-        <%= image_tag 'fr.svg', height: '18', class: 'flag-link' %>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to locale: "en" do %>
-        <%= image_tag 'eng.svg', height: '18', class: 'flag-link' %>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to locale: "es" do %>
-        <%= image_tag 'es.svg', height: '18', class: 'flag-link' %>
-      <% end %>
+    <li class="nav-list-small-screen-flags">
+      <ul>
+        <li class='flag-link'>
+          <%= link_to locale: "fr" do %>
+            <%= image_tag 'fr.svg', height: '18', class: 'flag-link' %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to locale: "en" do %>
+            <%= image_tag 'eng.svg', height: '18', class: 'flag-link' %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to locale: "es" do %>
+            <%= image_tag 'es.svg', height: '18', class: 'flag-link' %>
+          <% end %>
+        </li>
+      </ul>
     </li>
   </ul>
 

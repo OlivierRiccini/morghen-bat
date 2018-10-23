@@ -1,6 +1,8 @@
 let index = 0;
 const fullpage = document.getElementById('your-project-fullpage');
 const nbOfSections = 12;
+const responsiveWidth = 768;
+const responsiveHeight = 500;
 
 const scroll = (direction) => {
   const h = window.innerHeight;
@@ -50,7 +52,7 @@ const applyPreventDefault = (event) => {
 }
 
 const eventHandler = () => {
-  if (window.innerHeight > 500 && window.innerWidth > 755 && window.location.pathname.includes('your_project')) {
+  if (window.innerHeight > responsiveHeight && window.innerWidth > responsiveWidth && window.location.pathname.includes('your_project')) {
     window.addEventListener('keyup', parseEvent);
     window.addEventListener('keydown', applyPreventDefault);
     fullpage.addEventListener('wheel', parseEvent);

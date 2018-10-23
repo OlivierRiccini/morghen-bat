@@ -13,9 +13,9 @@
 @import "summernote-custom-theme.min";
 
 // Your CSS partials
-@import "layouts/index";
 @import "components/index";
 @import "pages/index";
+@import "layouts/index";
 
 body {
   background-color: #fff;
@@ -40,17 +40,17 @@ body {
   z-index: 999;
 }
 
-@media screen and (max-width: 800px) {
-  .custom-navbar,
-  #scrollToTop,
-  .page,
-  .footer {
-    display: none;
-  };
-  #landing-mobile {
-    display: flex;
-  }
-}
+// @media screen and (max-width: 800px) {
+//   .custom-navbar,
+//   #scrollToTop,
+//   .page,
+//   .footer {
+//     display: none;
+//   };
+//   #landing-mobile {
+//     display: flex;
+//   }
+// }
 
 .page-realizations,
 .page-contact {
@@ -77,3 +77,4 @@ body {
 .title-with-short-bar {
   height: 50px;
 }
+

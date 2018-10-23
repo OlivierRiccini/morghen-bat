@@ -207,8 +207,14 @@
           <% project.pictures.each do |pic| %>
             <div class="project-pic" id="project-pic-<%= pic.id %>">
               <%= cl_image_tag pic.url, height:'60' %>
-              <%= simple_form_for [ project, pic ] do |f| %>
-              <%= link_to 'Delete', project_picture_path(project, pic), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer cette image?"}, class: 'btn-delete' %>
+              <%= simple_form_for [ project, pic ], :method => :patch do |f| %>
+              <%= f.file_field :url %>
+              <%= f.input :url_cache, as: :hidden %>
+              <%= f.input :position %>
+              <div class="project-pic-btn">
+                <%= f.button :submit, value: 'Save', class: 'btn-save' %>
+                <%= link_to 'Delete', project_picture_path(project, pic), remote: true, :method => :delete, :data => {:confirm => "Veux-tu vraiment supprimer cette image?"}, class: 'btn-delete' %>
+              </div>
               <% end %>
             </div>
           <% end %>
@@ -217,6 +223,7 @@
             <%= simple_form_for [ project, @new_pic ] do |f| %>
               <%= f.file_field :url %>
               <%= f.input :url_cache, as: :hidden %>
+              <%= f.input :position, input_html: {value: (project.pictures.last.nil? || project.pictures.last.position.nil? ) ? 0 + 1 : project.pictures.last.position + 1} %>
               <%= f.button :submit, value: 'Save', class: 'btn-save' %>
             <% end %>
           </div>

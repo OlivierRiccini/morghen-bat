@@ -8,4 +8,18 @@ module PagesHelper
       title_to_display.html_safe
     end
   end
+
+  def define_first_picture(project)
+    if !project.pictures.where(position: 1).empty?
+      if project.pictures.where(position: 1).size < 1
+        first_picture = project.pictures.where(position: 1).first.take.url
+      else
+        first_picture = project.pictures.where(position: 1).take.url
+      end
+    elsif !project.pictures.first.nil?
+      first_picture = project.pictures.first.url
+    else
+      first_picture = "no pictures available"
+    end
+  end
 end

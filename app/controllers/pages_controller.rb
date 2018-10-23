@@ -21,14 +21,6 @@ class PagesController < ApplicationController
     @packs = Pack.all
   end
 
-  def your_project_houses
-    @houses = Offer.where(category: "house")
-  end
-
-  def your_project_apartments
-    @apartments = Offer.where(category: "apartment")
-  end
-
   def contact
     @company_details = CompanyDetail.first
     @message = Message.new

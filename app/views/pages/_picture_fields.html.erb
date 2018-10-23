@@ -1,5 +1,6 @@
 <div class='nested-fields project-pic'>
   <%= f.file_field :url %>
   <%= f.input :url_cache, as: :hidden %>
+  <%= f.input :position %>
   <%= link_to_remove_association "remove", f, class: 'btn-delete' %>
 </div>
