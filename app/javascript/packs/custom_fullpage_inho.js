@@ -65,6 +65,7 @@ const eventHandler = () => {
     fullpage.addEventListener('wheel', parseEvent);
     fullpage.addEventListener('wheel', applyPreventDefault);
     scrollToTop.addEventListener('click', () => index = 0 );
+    footerPosition(nbOfSections);
   } else {
     window.removeEventListener('keyup', parseEvent);
     window.removeEventListener('keydown', applyPreventDefault);
@@ -72,7 +73,6 @@ const eventHandler = () => {
     fullpage.removeEventListener('wheel', applyPreventDefault);
     scrollToTop.removeEventListener('click', () => index = 0 );
   }
-  footerPosition(nbOfSections);
 };
 
 eventHandler();

@@ -5,7 +5,7 @@
     </div>
     <div class="home-services-flex-box">
       <% @services.each do |service| %>
-        <div class="home-service-box" title='<%= service.title.capitalize unless (service.nil? || service.title.nil?) %>' data-toggle="popover" data-trigger="hover" data-content='<%= service.content.html_safe %>'>
+        <div class="home-service-box" title='<%= service.title.capitalize unless (service.nil? || service.title.nil?) %>' data-toggle="popover" data-trigger="hover" data-content='<%= service.content.html_safe unless (service.nil? || service.content.nil?) %>'>
           <%= cl_image_tag service.icon, height: '80' %>
           <p><%= (service.nil? || service.title.nil?) ? @no_translation : service.title.upcase %></p>
         </div>

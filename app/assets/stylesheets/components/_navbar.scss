@@ -120,9 +120,7 @@ font-style: medium;
 .nav-list-small-screen {
   list-style: none;
   position: absolute;
-  width: 100vw;
-  height: calc(100vh - 120px);
-  bottom: 0;
+  top: 120px;
   background-color: #fff;
   padding: 20px;
   z-index: 9;
@@ -166,9 +164,6 @@ font-style: medium;
   .nav-list {
     display: none;
   };
-  .nav-list-small-screen {
-    display: flex;
-  }
 }
 
 #company-sub-categories {
