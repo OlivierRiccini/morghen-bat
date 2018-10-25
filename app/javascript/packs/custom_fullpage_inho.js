@@ -3,15 +3,13 @@ const fullpage = document.getElementById('your-project-fullpage');
 const nbOfSections = 12;
 const responsiveWidth = 768;
 const responsiveHeight = 500;
+const footer = document.querySelector('.footer');
 
-const footerPosition = (nbSections) => {
-  const footer = document.querySelector('.footer');
-  if (footer !== null && window.location.pathname.includes('your_project')) {
-    let positionInPx = `calc(${nbSections * 100}vh + 120px)`;
-    footer.style.position = 'absolute';
-    footer.style.top = positionInPx;
-  }
-}
+if (footer !== null && window.location.pathname.includes('your_project')) {
+  footer.classList.add('footer-your-project');
+} else {
+  footer.classList.remove('footer-your-project');
+};
 
 const scroll = (direction) => {
   const h = window.innerHeight;
