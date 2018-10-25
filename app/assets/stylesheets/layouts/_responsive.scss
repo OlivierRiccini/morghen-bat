@@ -100,6 +100,15 @@
     margin-top: 50px;
   };
 
+  #section-values .col-md-4:last-child {
+    margin-top: 0;
+  };
+
+  .value-card {
+    width: 100%;
+    margin-bottom: 50px;
+  };
+
   // REALISATIONS
 
   // PROJECT SHOW
@@ -124,14 +133,83 @@
 }
 
 @media screen and (max-width: 425px) {
+  // ALL PAGES
+  // .page {
+  //   margin-top: 200px;
+  // };
 
   // HOME
+  .history-image-flex-box {
+    display: none;
+  };
+
+  .history-content-box {
+    width: 100%;
+  };
+
+  #section-mission h2, #section-know-how h2 {
+    margin-bottom: 25px;
+  };
+
+  .history-title {
+    border: none;
+    padding: 0;
+    // margin: 35px auto;
+    // text-align: center;
+    img {
+      display: none;
+    }
+  };
+
+  .title-with-bar {
+    display: none;
+  };
+
+
+  .buttons-flexbox {
+    flex-wrap: wrap;
+    justify-content: center;
+  };
+
+  #section-localization .title-with-short-bar {
+    border: none;
+  };
+
+  .map {
+    background-size: contain;
+    background-repeat: no-repeat;
+  };
+
+
 
   // REALISATIONS
 
   // PROJECT SHOW
+  .project-infos {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    div {
+      padding: 0;
+      text-align: center;
+    }
+  }
 
   // YOUR PROJECT
+  .your-project-banner ul {
+    flex-wrap: wrap;
+  };
+
+  .footer {
+    position: absolute;
+    top: 1375vh;
+  }
 
   // CONTACT
+  .col-bootstrap-in-form-left {
+    padding-right: 0;
+  };
+
+  .col-bootstrap-in-form-right {
+    padding-left: 0;
+  }
 }
