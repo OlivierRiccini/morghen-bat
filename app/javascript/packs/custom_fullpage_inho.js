@@ -6,9 +6,11 @@ const responsiveHeight = 500;
 
 const footerPosition = (nbSections) => {
   const footer = document.querySelector('.footer');
-  let positionInPx = `calc(${nbSections * 100}vh + 120px)`;
-  footer.style.position = 'absolute';
-  footer.style.top = positionInPx;
+  if (footer !== null && window.location.pathname.includes('your_project')) {
+    let positionInPx = `calc(${nbSections * 100}vh + 120px)`;
+    footer.style.position = 'absolute';
+    footer.style.top = positionInPx;
+  }
 }
 
 const scroll = (direction) => {
@@ -65,7 +67,6 @@ const eventHandler = () => {
     fullpage.addEventListener('wheel', parseEvent);
     fullpage.addEventListener('wheel', applyPreventDefault);
     scrollToTop.addEventListener('click', () => index = 0 );
-    footerPosition(nbOfSections);
   } else {
     window.removeEventListener('keyup', parseEvent);
     window.removeEventListener('keydown', applyPreventDefault);
@@ -77,3 +78,4 @@ const eventHandler = () => {
 
 eventHandler();
 window.addEventListener('resize', eventHandler);
+footerPosition(nbOfSections);
