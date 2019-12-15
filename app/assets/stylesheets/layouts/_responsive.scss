@@ -39,14 +39,16 @@
 
   .slick-arrow {
     z-index: 8;
-    left: 25px;
+    left: 10px;
+    width: fit-content;
+    height: fit-content;
     &:before {
       font-size: 60px;
     }
   };
 
   .slick-prev {
-    top: 35%;
+    top: 20%;
   };
 
   .slick-next {
@@ -126,6 +128,9 @@
   .section-scroll {
     height: auto;
     margin: 165px auto;
+    &:first-child {
+      padding-top: 0;
+    }
   };
 
   // CONTACT
@@ -134,9 +139,6 @@
 
 @media screen and (max-width: 425px) {
   // ALL PAGES
-  // .page {
-  //   margin-top: 200px;
-  // };
 
   // HOME
   .history-image-flex-box {
@@ -145,6 +147,7 @@
 
   .history-content-box {
     width: 100%;
+    bottom: 70px;
   };
 
   #section-mission h2, #section-know-how h2 {
@@ -154,8 +157,6 @@
   .history-title {
     border: none;
     padding: 0;
-    // margin: 35px auto;
-    // text-align: center;
     img {
       display: none;
     }
@@ -171,8 +172,14 @@
     justify-content: center;
   };
 
+
+
   #section-localization .title-with-short-bar {
     border: none;
+  };
+
+  .section-localization {
+    margin-bottom: 0;
   };
 
   .map {
@@ -198,11 +205,6 @@
   .your-project-banner ul {
     flex-wrap: wrap;
   };
-
-  .footer {
-    position: absolute;
-    top: 1375vh;
-  }
 
   // CONTACT
   .col-bootstrap-in-form-left {
