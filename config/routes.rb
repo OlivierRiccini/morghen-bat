@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     get 'contact', to: 'pages#contact'
     get 'dashboard', to: 'pages#dashboard'
 
+    get 'sitemap', to: 'sitemap#index', defaults: {format: "xml"}
+
     resources :projects, only: [ :show, :create, :update, :destroy ] do
       resources :pictures, only: [ :create, :update, :destroy ]
     end
