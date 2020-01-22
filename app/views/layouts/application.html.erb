@@ -6,15 +6,18 @@
 
     <%= favicon_link_tag(source='favicon.ico', options={}) %>
 
-    <title>Morghen Bat - Entreprise du bâtiment tout corps d'État</title>
-    <meta name="language" content="fr-FR" />
-    <meta name="description" content="Morghen Bat est une entreprise du bâtiment tout corps d’État. Nous rénovons vos appartements et maisons avec passion car votre confort est notre priorité.">
-    <meta name="keywords" content="Renovation, construction, batiment, renovation, construction maison, renovation maison, renovation appartement, renovation maison seine-saint-denis, renovation appartement seine-saint-denis, construction seine-saint-denis, renovation paris, renovation banlieue parisienne, renovation region parisienne">
-    <meta property="og:type" content="business.business">
-    <meta property="og:title" content="Morghen Bat - Entreprise du bâtiment tout corps d'État">
-    <meta property="og:url" content="http://morghenbat.com/">
-    <meta property="og:image" content="https://res.cloudinary.com/morghenbat/image/upload/v1539992434/FB-OpenGraph-Morghen.png">
-    <meta property="og:description" content="Morghen Bat est une entreprise du bâtiment tout corps d’État. Nous rénovons vos appartements et maisons avec passion car votre confort est notre priorité.">
+    <title = meta_title>
+
+    <meta name="description" content="#{meta_description}">
+    <meta name="keywords" content="#{meta_keywords}">
+
+    <meta property="og:title" content="#{meta_title}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="#{request.original_url}">
+    <meta property="og:image" content="#{meta_image}">
+    <meta property="og:description" content="#{meta_description}">
+    <meta property="og:site_name" content="#{meta_title}">
+
 
     <%= csrf_meta_tags %>
 

@@ -1,0 +1,6 @@
+# config/meta.yml
+
+meta_title: "Morghen Bat - Entreprise du bâtiment tout corps d'État"
+meta_description: "Morghen Bat est une entreprise du bâtiment tout corps d’État. Nous rénovons vos appartements et maisons avec passion car votre confort est notre priorité."
+meta_image: "https://res.cloudinary.com/morghenbat/image/upload/v1539992434/FB-OpenGraph-Morghen.png" # Une image dans votre dossier app/assets/images/
+meta_keywords: "Renovation, construction, batiment, renovation, construction maison, renovation maison, renovation appartement, renovation maison seine-saint-denis, renovation appartement seine-saint-denis, construction seine-saint-denis, renovation paris, renovation banlieue parisienne, renovation region parisienne"
