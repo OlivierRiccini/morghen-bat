@@ -44,7 +44,7 @@ gem 'country_select', require: 'country_select_without_sort_alphabetical'
 gem "letter_opener", group: :development
 
 # Image Uploader
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 # Images hosting
 gem 'cloudinary'
 
